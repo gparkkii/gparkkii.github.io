@@ -1,5 +1,6 @@
 import React from 'react';
 import { graphql, Link } from 'gatsby';
+import DefaultLayout from '../components/DefaultLayout';
 
 type InfoPageProps = {
   data: {
@@ -16,13 +17,12 @@ type InfoPageProps = {
 const InfoPage = ({ data }: InfoPageProps) => {
   const { title, description, author } = data.site.siteMetadata;
   return (
-    <div>
-      Info Page
+    <DefaultLayout title="Info">
       <div>{title}</div>
       <div>{description}</div>
       <div>{author}</div>
       <Link to="/">HOME</Link>
-    </div>
+    </DefaultLayout>
   );
 };
 
