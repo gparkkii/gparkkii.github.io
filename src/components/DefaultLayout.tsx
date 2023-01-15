@@ -1,5 +1,7 @@
+import { Global } from '@emotion/react';
 import styled from '@emotion/styled';
 import React from 'react';
+import { globalStyle } from '../theme';
 
 const Header = styled.header`
   width: 100%;
@@ -44,6 +46,7 @@ type DefaultLayoutProps = {
 const DefaultLayout = ({ title, children }: DefaultLayoutProps) => {
   return (
     <div>
+      <Global styles={globalStyle} />
       <Header>
         <HeaderTitle>{title}</HeaderTitle>
       </Header>
