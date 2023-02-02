@@ -1,7 +1,8 @@
 import { graphql, Link } from 'gatsby';
 import * as React from 'react';
 import DefaultLayout from '../components/DefaultLayout';
-import PostList, { PostType } from '../components/PostList';
+import PostList from '../components/PostList';
+import { PostType } from '../types/Post.types';
 
 type IndexPageProps = {
   data: {
@@ -16,7 +17,7 @@ const IndexPage = ({
     allMarkdownRemark: { edges },
   },
 }: IndexPageProps) => (
-  <DefaultLayout title="Gparkkii Dev'log">
+  <DefaultLayout title="Dev'log">
     <Link to="/info">INFO</Link>
     <PostList posts={edges} />
   </DefaultLayout>
@@ -38,7 +39,9 @@ export const postContentQuery = graphql`
             date(formatString: "YYYY.MM.DD.")
             categories
             thumbnail {
-              publicURL
+              childImageSharp {
+                gatsbyImageData(width: 700)
+              }
             }
           }
         }

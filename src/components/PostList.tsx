@@ -1,26 +1,16 @@
+import styled from '@emotion/styled';
+import { GatsbyImage } from 'gatsby-plugin-image';
 import * as React from 'react';
-import DefaultLayout from './DefaultLayout';
-
-export type PostType = {
-  node: {
-    id: string;
-    frontmatter: PostFrontMatterType;
-  };
-};
-
-export type PostFrontMatterType = {
-  title: string;
-  summary: string;
-  date: string;
-  categories: string[];
-  thumbnail: {
-    publicURL: string;
-  };
-};
+import { PostType } from 'types/Post.types';
 
 type PostListProps = {
   posts: PostType[];
 };
+
+const ThumbnailImage = styled(GatsbyImage)`
+  width: 400px;
+  height: 200px;
+`;
 
 const PostList = ({ posts }: PostListProps): JSX.Element => {
   React.useEffect(() => {
@@ -30,11 +20,18 @@ const PostList = ({ posts }: PostListProps): JSX.Element => {
   return (
     <div>
       {posts?.map(post => {
+        const { title, categories, date, summary, thumbnail } =
+          post.node.frontmatter;
         return (
           <div>
-            <div>{post.node.frontmatter.title}</div>
-            <div>{post.node.frontmatter.date}</div>
-            <div>{post.node.frontmatter.summary}</div>
+            <div>{title}</div>
+            <div>{categories}</div>
+            <div>{date}</div>
+            <div>{summary}</div>
+            <ThumbnailImage
+              image={thumbnail.childImageSharp.gatsbyImageData}
+              alt={`${title}_thumbnail`}
+            />
           </div>
         );
       })}

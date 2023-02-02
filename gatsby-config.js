@@ -18,12 +18,38 @@ module.exports = {
     `gatsby-plugin-image`,
     `gatsby-plugin-emotion`,
     `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-plugin-sharp`,
+      options: {
+        defaults: {
+          formats: ['auto', 'webp'],
+          quality: 100,
+          placeholder: 'blurred',
+        }
+      }
+    },
     {    
       resolve: 'gatsby-plugin-typescript',
       options: {
       isTSX: true,
       allExtensions: true,
+      },
+    },
+    {
+      resolve: `gatsby-omni-font-loader`,
+      options: {
+        enableListener: true,
+        preconnect: [`https://fonts.googleapis.com`, `https://fonts.gstatic.com`],
+        web: [
+          {
+            name: `Noto Sans`,
+            file: `https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700&display=swap`,
+          },
+          {
+            name: `Open Sans`,
+            file: `https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap`,
+          },
+        ],
       },
     },
     {
