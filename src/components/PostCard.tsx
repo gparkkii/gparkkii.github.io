@@ -30,7 +30,7 @@ const PostCardContainer = styled.div`
   transition: all ease 0.25s;
 
   &:hover {
-    background-color: #f9f9f9;
+    background-color: ${({ theme }) => theme.lightTheme.postCard.hover};
     margin-top: 1px;
     /* box-shadow: 0px 4px 8px 0px #8e8e8e33; */
   }
@@ -54,7 +54,7 @@ const PostTitle = styled.h3`
 const Date = styled.p`
   font-size: 14px;
   font-weight: 400;
-  color: #afafaf;
+  color: ${({ theme }) => theme.lightTheme.text.light[400]};
   margin-bottom: 16px;
 `;
 
@@ -89,7 +89,7 @@ const PostCard = ({ posts }: PostCardProps): JSX.Element => {
       }}
     >
       <div style={{ padding: '40px 0px' }}>
-        <PostTitle>개발 블로그</PostTitle>
+        <PostTitle>Latest Posts</PostTitle>
       </div>
       {posts?.map(post => {
         const { title, categories, date, summary, thumbnail } =

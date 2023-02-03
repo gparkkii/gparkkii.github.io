@@ -6,6 +6,7 @@ const FooterLayout = styled.footer`
   height: 200px;
   background-color: #ddd;
   padding: 16px;
+  margin-top: 40px;
 
   display: flex;
   flex-direction: row;

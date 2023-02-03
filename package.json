@@ -5,6 +5,7 @@
   "version": "0.1.0",
   "author": "JiYeon Park <jyp933@gmail.com>",
   "dependencies": {
+    "@emotion/core": "^11.0.0",
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
     "gatsby": "^5.4.0",
@@ -24,7 +25,8 @@
     "prismjs": "^1.29.0",
     "query-string": "^6.14.1",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-helmet": "^6.1.0"
   },
   "devDependencies": {
     "prettier": "^2.8.1",

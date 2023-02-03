@@ -1,26 +1,27 @@
 import { Global } from '@emotion/react';
 import styled from '@emotion/styled';
 import React from 'react';
-import { globalStyle } from '../../theme';
-import Footer from '../Footer';
-import Header from '../Header';
+import { globalStyle } from '../styles';
+import Footer from '../components/Footer';
+import Header from '../components/Header';
 
 const Body = styled.main`
   max-width: 1140px;
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
+  height: 100%;
   padding: 16px;
   padding-top: 88px; /* header height + 16px */
   margin: 0 auto;
-  background-color: #fff;
+  background-color: ${({ theme }) => theme.lightTheme.backgroundColor};
 `;
 
-type DefaultLayoutProps = {
+type BaseLayoutProps = {
   title: string;
   children: React.ReactNode;
 };
 
-const DefaultLayout = ({ title, children }: DefaultLayoutProps) => {
+const BaseLayout = ({ title, children }: BaseLayoutProps) => {
   return (
     <div>
       <Global styles={globalStyle} />
@@ -31,4 +32,4 @@ const DefaultLayout = ({ title, children }: DefaultLayoutProps) => {
   );
 };
 
-export default DefaultLayout;
+export default BaseLayout;

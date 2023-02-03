@@ -10,16 +10,14 @@ const CategoryBox = styled.div`
 
 const CategoryTag = styled.div`
   display: inline-block;
-  /* padding: 4px 10px; */
   margin-right: 16px;
-  /* background-color: #ff2e2e; */
   border-radius: 1000px;
 `;
 
 const PostCategory = styled.p`
   font-size: 14px;
   font-weight: 500;
-  color: #ff2e2e;
+  color: ${({ theme }) => theme.lightTheme.text.primary};
 `;
 
 interface TagProps {

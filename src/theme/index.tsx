@@ -1,15 +1,28 @@
-import { css } from '@emotion/react';
+import { primary, dark, light } from './color';
 
-export const globalStyle = css`
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+export const lightTheme = {
+  backgroundColor: light.default,
+  postCard: {
+    hover: light[50],
+  },
+  text: {
+    primary: primary.default,
+    white: light.default,
+    black: dark.default,
+    light: light,
+  },
+} as const;
 
-    font-family: Pretendard, -apple-system, BlinkMacSystemFont, 'Noto Sans',
-      'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue',
-      sans-serif;
-    font-weight: 400;
-    color: #212121;
-  }
-`;
+export const darkTheme = {
+  backgroundColor: dark.default,
+} as const;
+
+export const theme = {
+  lightTheme,
+  darkTheme,
+  colors: {
+    primary,
+    light,
+    dark,
+  },
+};

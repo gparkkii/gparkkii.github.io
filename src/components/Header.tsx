@@ -1,6 +1,6 @@
 import React from 'react';
-import styled from '@emotion/styled';
 import { StaticImage } from 'gatsby-plugin-image';
+import styled from '@emotion/styled';
 
 const HeaderLayout = styled.header`
   position: fixed;
@@ -13,7 +13,7 @@ const HeaderLayout = styled.header`
 
   width: 100%;
   height: 88px;
-  background-color: #fff;
+  background-color: ${({ theme }) => theme.lightTheme.backgroundColor};
   /* box-shadow: 0px 2px 6px 0px #f2f2f233; */
   /* border-bottom: 1px solid #fafafa; */
 
@@ -38,7 +38,10 @@ const NavMenu = styled.p<{ active: boolean }>`
   font-family: 'Poppins';
   font-size: 18px;
   font-weight: 600;
-  color: ${props => (props.active ? '#ff2e2e' : '#212121')};
+  color: ${props =>
+    props.active
+      ? props.theme.lightTheme.text.primary
+      : props.theme.lightTheme.text.black};
   /* font-weight: ${props => (props.active ? 600 : 600)}; */
   /* border-bottom: ${props => (props.active ? '2.5px solid #ff2e2e' : 0)}; */
 `;
@@ -56,16 +59,22 @@ interface HeaderProps {
 const Header = ({ title }: HeaderProps) => {
   return (
     <HeaderLayout>
-      <StaticImage
+      {/* full logo */}
+      {/* <StaticImage
         style={{ width: '140px', height: '48px', objectFit: 'contain' }}
         src="../images/g_full_logo.png"
         alt="logo"
+      /> */}
+      <StaticImage
+        style={{ width: '48px', height: '48px', objectFit: 'contain' }}
+        src="../images/g_logo.png"
+        alt="logo"
       />
       <NavBox>
-        <NavMenu active={true}>TECH BLOG</NavMenu>
-        <NavMenu active={false}>STORY</NavMenu>
-        <NavMenu active={false}>PROJECT</NavMenu>
-        <NavMenu active={false}>ABOUT</NavMenu>
+        <NavMenu active={true}>Tech</NavMenu>
+        <NavMenu active={false}>Story</NavMenu>
+        <NavMenu active={false}>Project</NavMenu>
+        <NavMenu active={false}>About</NavMenu>
       </NavBox>
       <HeaderTitle>{title}</HeaderTitle>
     </HeaderLayout>

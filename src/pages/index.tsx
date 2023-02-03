@@ -1,8 +1,10 @@
 import { graphql, Link } from 'gatsby';
 import * as React from 'react';
-import DefaultLayout from '../components/layout/DefaultLayout';
+import BaseLayout from '../layout';
 import PostCard from '../components/PostCard';
-import { PostType } from '../types/Post.types';
+import { PostType } from '../@types/Post.types';
+import { ThemeProvider } from '@emotion/react';
+import { theme } from '../theme';
 
 type IndexPageProps = {
   data: {
@@ -17,10 +19,12 @@ const IndexPage = ({
     allMarkdownRemark: { edges },
   },
 }: IndexPageProps) => (
-  <DefaultLayout title="DEV">
-    {/* <Link to="/info">INFO</Link> */}
-    <PostCard posts={edges} />
-  </DefaultLayout>
+  <ThemeProvider theme={theme}>
+    <BaseLayout title="">
+      {/* <Link to="/info">INFO</Link> */}
+      <PostCard posts={edges} />
+    </BaseLayout>
+  </ThemeProvider>
 );
 
 export default IndexPage;
