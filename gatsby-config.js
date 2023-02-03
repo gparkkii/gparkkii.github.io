@@ -10,9 +10,9 @@
 module.exports = {
   siteMetadata: {
     title: `gparkkii-gatsby`,
-    description: `Developer gparkkii's blog.`,
+    description: `gparkkii's personal blog.`,
     author: `@gatsbyjs`,
-    siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
+    siteUrl: `https://github.com/gparkkii/gparkkii-gatsby`,
   },
   plugins: [
     `gatsby-plugin-image`,
