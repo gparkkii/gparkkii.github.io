@@ -46,8 +46,12 @@ module.exports = {
             file: `https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700&display=swap`,
           },
           {
-            name: `Open Sans`,
-            file: `https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap`,
+            name: `Poppins`,
+            file: `https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap`,
+          },
+          {
+            name: `Pretendard`,
+            file: `https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard-dynamic-subset.css`,
           },
         ],
       },
