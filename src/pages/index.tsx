@@ -1,7 +1,7 @@
 import { graphql, Link } from 'gatsby';
 import * as React from 'react';
-import DefaultLayout from '../components/DefaultLayout';
-import PostList from '../components/PostList';
+import DefaultLayout from '../components/layout/DefaultLayout';
+import PostCard from '../components/PostCard';
 import { PostType } from '../types/Post.types';
 
 type IndexPageProps = {
@@ -17,9 +17,9 @@ const IndexPage = ({
     allMarkdownRemark: { edges },
   },
 }: IndexPageProps) => (
-  <DefaultLayout title="Dev'log">
-    <Link to="/info">INFO</Link>
-    <PostList posts={edges} />
+  <DefaultLayout title="DEV">
+    {/* <Link to="/info">INFO</Link> */}
+    <PostCard posts={edges} />
   </DefaultLayout>
 );
 
@@ -36,7 +36,7 @@ export const postContentQuery = graphql`
           frontmatter {
             title
             summary
-            date(formatString: "YYYY.MM.DD.")
+            date(formatString: "YYYY.MM.DD")
             categories
             thumbnail {
               childImageSharp {
