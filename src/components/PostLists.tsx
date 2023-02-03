@@ -4,19 +4,23 @@ import * as React from 'react';
 import { PostType } from 'types/Post.types';
 import Tag from './Tag';
 
-type PostCardProps = {
-  posts: PostType[];
-};
-
 const ThumbnailBox = styled.div`
-  width: 240px;
-  height: 240px;
+  width: 250px;
+  height: 250px;
   border-radius: 20px;
   overflow: hidden;
   isolation: isolate;
+  /* box-shadow: 0px 5px 10px 0px #7575752e; */
 `;
 
-const PostCardContainer = styled.div`
+const ThumbnailImage = styled(GatsbyImage)`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+`;
+
+const PostCard = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -24,15 +28,14 @@ const PostCardContainer = styled.div`
 
   width: 100%;
   padding: 20px;
-  margin: 10px 0px;
+  margin: 20px 0px;
   border-radius: 20px;
 
   transition: all ease 0.25s;
 
   &:hover {
+    transform: translateY(-8px);
     background-color: ${({ theme }) => theme.lightTheme.postCard.hover};
-    margin-top: 1px;
-    /* box-shadow: 0px 4px 8px 0px #8e8e8e33; */
   }
 `;
 
@@ -74,40 +77,35 @@ const Summary = styled.p`
   height: 4.8em;
 `;
 
-const PostCard = ({ posts }: PostCardProps): JSX.Element => {
-  React.useEffect(() => {
-    console.log({ posts });
-  }, [posts]);
+type PostListsProps = {
+  posts: PostType[];
+  selectedTag: string;
+};
+
+const PostLists = ({ posts, selectedTag }: PostListsProps): JSX.Element => {
+  const currentPostList = React.useMemo(
+    () =>
+      posts.filter(
+        ({
+          node: {
+            frontmatter: { categories },
+          },
+        }: PostType) =>
+          selectedTag !== 'All' ? categories.includes(selectedTag) : true,
+      ),
+    [selectedTag],
+  );
 
   return (
-    <div
-      style={{
-        maxWidth: '1000px',
-        width: '100%',
-        margin: '0 auto',
-        padding: '20px',
-      }}
-    >
-      <div style={{ padding: '40px 0px' }}>
-        <PostTitle>Latest Posts</PostTitle>
-      </div>
-      {posts?.map(post => {
+    <>
+      {currentPostList?.map((post, index) => {
         const { title, categories, date, summary, thumbnail } =
           post.node.frontmatter;
         return (
-          <PostCardContainer>
+          <PostCard key={`${title}_${index}`}>
             <ThumbnailBox>
-              <GatsbyImage
+              <ThumbnailImage
                 loading="lazy"
-                style={{
-                  width: '100%',
-                  height: '100%',
-                  borderRadius: 20,
-                  objectFit: 'cover',
-                  objectPosition: 'center',
-                  overflow: 'hidden',
-                  isolation: 'isolate',
-                }}
                 image={thumbnail.childImageSharp.gatsbyImageData}
                 alt={`${title}_thumbnail`}
               />
@@ -118,11 +116,11 @@ const PostCard = ({ posts }: PostCardProps): JSX.Element => {
               <Summary>{summary}</Summary>
               <Tag categories={categories} />
             </PostCardTextBox>
-          </PostCardContainer>
+          </PostCard>
         );
       })}
-    </div>
+    </>
   );
 };
 
-export default PostCard;
+export default PostLists;

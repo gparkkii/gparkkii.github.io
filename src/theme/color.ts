@@ -1,5 +1,6 @@
 export const primary = {
   default: '#ff2e2e',
+  50: '#ff2e2e',
 } as const;
 
 export const light = {
@@ -11,8 +12,14 @@ export const light = {
   250: '#ddd',
   300: '#ccc',
   400: '#afafaf',
+  500: '#999',
+  600: '#757575',
 } as const;
 
 export const dark = {
   default: '#212121',
+  50: '#353535',
+  100: '#454545',
+  150: '#505050',
+  200: '#666666',
 } as const;

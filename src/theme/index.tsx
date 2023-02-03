@@ -9,7 +9,8 @@ export const lightTheme = {
     primary: primary.default,
     white: light.default,
     black: dark.default,
-    light: light,
+    dark,
+    light,
   },
 } as const;
 

@@ -27,8 +27,8 @@ interface TagProps {
 const Tag = ({ categories }: TagProps) => {
   return (
     <CategoryBox>
-      {categories.map(category => (
-        <CategoryTag>
+      {categories.map((category, index) => (
+        <CategoryTag key={`${category}_${index}`}>
           <PostCategory>#{category}</PostCategory>
         </CategoryTag>
       ))}

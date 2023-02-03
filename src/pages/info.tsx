@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { graphql, Link } from 'gatsby';
-import DefaultLayout from '../layout';
+import DefaultLayout from '../layout/BaseLayout';
 
 type InfoPageProps = {
   data: {
