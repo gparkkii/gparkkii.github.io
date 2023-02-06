@@ -24,6 +24,22 @@ export const type = {
     fontSize: size['3xl'],
     fontWeight: weight['semibold'],
   },
+  heading1: {
+    fontSize: size['2xl'],
+    fontWeight: weight['semibold'],
+  },
+  heading2: {
+    fontSize: size['xl'],
+    fontWeight: weight['semibold'],
+  },
+  heading3: {
+    fontSize: size['lg'],
+    fontWeight: weight['bold'],
+  },
+  title: {
+    fontSize: size['md'],
+    fontWeight: weight['semibold'],
+  },
   subtitle: {
     fontSize: size['md'],
     fontWeight: weight['normal'],

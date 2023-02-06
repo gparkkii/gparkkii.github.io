@@ -11,6 +11,9 @@ export const globalStyle = css`
       sans-serif;
     font-weight: 400;
     color: #212121;
+
+    word-break: keep-all;
+    word-wrap: break-word;
   }
 
   /* CSS RESET */
@@ -88,7 +91,6 @@ export const globalStyle = css`
 
   /* POST CARD WORD BREAK */
   .typography-ellipsis-2line {
-    word-wrap: break-word;
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
