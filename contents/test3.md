@@ -1,7 +1,7 @@
 ---
 date: '2021-05-14'
 title: 'Template Literal Types로 타입 안전하게 코딩하기'
-categories: ['Javascript', 'Eslint']
+tags: ['Javascript', 'Eslint']
 summary: '2020년 11월 TypeScript 4.1이 출시되면서 “Template Literal Type”을 사용할 수 있게 되었습니다. TypeScript로 JSON Parser를 만들거나, document.querySelector 의 결과 타입을 추론할 수 있게 되어 화제가 되었는데요. 이번 아티클에서는 Template Literal Type이란 무엇인지, 이를 바탕으로 어떻게 그런 결과물을 만들 수 있었는지 간단히 예시로 소개드리고자 합니다.'
 thumbnail: './assets/example3.png'
 ---

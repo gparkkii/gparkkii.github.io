@@ -1,7 +1,7 @@
 ---
 date: '2021-10-14'
 title: '개발자의 애질리티'
-categories: ['Engineer', 'Agile']
+tags: ['Engineer', 'Agile']
 summary: '애자일하게 일한다는 것은 어떠한 의미일까요? 한 시간을 일하면 한 시간 만큼의 가치를 만들어 내는 방식이 아닐까 합니다. 예를 들어, 동작하는 함수를 구현하거나 난해한 개념을 이해하는 식으로요.'
 thumbnail: './assets/example1.png'
 ---

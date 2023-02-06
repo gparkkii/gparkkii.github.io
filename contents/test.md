@@ -1,7 +1,7 @@
 ---
 date: '2020-07-29'
 title: 'TypeScript 타입 시스템 뜯어보기'
-categories: ['Web', 'SEO', 'Optimization']
+tags: ['Web', 'SEO', 'Optimization']
 summary: '토스 Node.js 챕터에서는 높은 코드 가독성과 품질을 위해 TypeScript의 타입 시스템을 적극적으로 활용하고 있고 이에 대한 이해도를 높이기 위해 스터디를 꾸준히 진행하고 있습니다. TypeScript의 타입 시스템에 대해 공부해보던 중 알게된 흥미로운 몇가지 토픽들을 소개하려 합니다.'
 thumbnail: './assets/example.png'
 ---
