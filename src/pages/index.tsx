@@ -1,13 +1,13 @@
 import * as React from 'react';
-import { graphql, Link } from 'gatsby';
+import { graphql } from 'gatsby';
 import queryString, { ParsedQuery } from 'query-string';
 import { ThemeProvider } from '@emotion/react';
 import { PostType } from 'types/Post.types';
 import { theme } from 'theme';
 import BaseLayout from 'layout/BaseLayout';
-import ContentLayout from 'layout/ContentLayout';
-import PostLists from 'components/PostLists';
-import TagMenu, { TagListProps } from '../components/TagMenu';
+import { TagListProps } from 'components/TagMenu';
+import Blog from 'components/Blog';
+import Drawer from '../components/Drawer';
 
 type IndexPageProps = {
   location: { search: string };
@@ -27,20 +27,20 @@ const IndexPage = ({
   const parsed: ParsedQuery<string> = queryString.parse(search);
   const selectedTag = typeof parsed.tag === 'string' ? parsed.tag : 'All';
 
-  const tagMenuList = React.useMemo(
+  const tagList = React.useMemo(
     () =>
       edges.reduce(
         (
           list: TagListProps['categories'],
           {
             node: {
-              frontmatter: { categories },
+              frontmatter: { tags },
             },
           }: PostType,
         ) => {
-          categories.forEach(category => {
-            if (list[category] === undefined) list[category] = 1;
-            else list[category]++;
+          tags.forEach(tag => {
+            if (list[tag] === undefined) list[tag] = 1;
+            else list[tag]++;
           });
 
           list['All']++;
@@ -52,20 +52,17 @@ const IndexPage = ({
     [],
   );
 
-  React.useEffect(() => {
-    console.log(location.search);
-    console.log(queryString.parse(location.search).tag);
-    console.log({ selectedTag, tagMenuList });
-  }, [queryString, selectedTag, tagMenuList]);
-
   return (
     <ThemeProvider theme={theme}>
       <BaseLayout title="">
-        {/* <Link to="/info">INFO</Link> */}
-        <ContentLayout header={`Latest Posts`}>
-          <TagMenu tags={tagMenuList} selectedTag={selectedTag} />
-          <PostLists posts={edges} selectedTag={selectedTag} />
-        </ContentLayout>
+        {/* Blog */}
+        <Blog
+          header="All"
+          posts={edges}
+          tagList={tagList}
+          selectedTag={selectedTag}
+        />
+        <Drawer title="Tags" />
       </BaseLayout>
     </ThemeProvider>
   );
@@ -85,7 +82,7 @@ export const postContentQuery = graphql`
             title
             summary
             date(formatString: "YYYY.MM.DD")
-            categories
+            tags
             thumbnail {
               childImageSharp {
                 gatsbyImageData(width: 700)

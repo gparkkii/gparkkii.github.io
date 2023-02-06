@@ -11,7 +11,7 @@ export type PostFrontMatterType = {
   title: string;
   summary: string;
   date: string;
-  categories: string[];
+  tags: string[];
   thumbnail: {
     childImageSharp: {
       gatsbyImageData: IGatsbyImageData;

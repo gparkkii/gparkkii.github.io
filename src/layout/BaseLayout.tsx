@@ -1,12 +1,17 @@
 import { Global } from '@emotion/react';
 import styled from '@emotion/styled';
 import React from 'react';
-import { globalStyle } from '../styles';
-import Footer from '../components/Footer';
-import Header from '../components/Header';
+import { globalStyle } from 'styles';
+import Footer from 'components/Footer';
+import Header from 'components/Header';
 
 const Body = styled.main`
-  max-width: 1140px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+
+  max-width: 1280px;
   width: 100%;
   min-height: 100vh;
   height: 100%;

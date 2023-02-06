@@ -9,7 +9,7 @@ const HeaderLayout = styled.header`
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
 
   width: 100%;
   height: 88px;
@@ -23,6 +23,7 @@ const HeaderLayout = styled.header`
 `;
 
 const NavBox = styled.div`
+  margin-left: 24px;
   max-width: 960px;
   width: 100%;
   height: 60px;
@@ -76,7 +77,7 @@ const Header = ({ title }: HeaderProps) => {
         <NavMenu active={false}>Project</NavMenu>
         <NavMenu active={false}>About</NavMenu>
       </NavBox>
-      <HeaderTitle>{title}</HeaderTitle>
+      {/* <HeaderTitle>{title}</HeaderTitle> */}
     </HeaderLayout>
   );
 };

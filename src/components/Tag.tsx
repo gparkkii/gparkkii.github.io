@@ -1,38 +1,28 @@
-import styled from '@emotion/styled';
 import React from 'react';
+import styled from '@emotion/styled';
+import { Link } from 'gatsby';
 
-const CategoryBox = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
-`;
-
-const CategoryTag = styled.div`
+const TagBox = styled(Link)`
   display: inline-block;
   margin-right: 16px;
   border-radius: 1000px;
 `;
 
-const PostCategory = styled.p`
-  font-size: 14px;
-  font-weight: 500;
+const TagName = styled.p`
+  ${({ theme }) => theme.fonts.type.tag};
   color: ${({ theme }) => theme.lightTheme.text.primary};
 `;
 
 interface TagProps {
-  categories: string[];
+  key: string;
+  tag: string;
 }
 
-const Tag = ({ categories }: TagProps) => {
+const Tag = ({ key, tag }: TagProps) => {
   return (
-    <CategoryBox>
-      {categories.map((category, index) => (
-        <CategoryTag key={`${category}_${index}`}>
-          <PostCategory>#{category}</PostCategory>
-        </CategoryTag>
-      ))}
-    </CategoryBox>
+    <TagBox key={key} to={`/?tag=${tag}`}>
+      <TagName>#{tag}</TagName>
+    </TagBox>
   );
 };
 
