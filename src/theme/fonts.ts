@@ -3,9 +3,11 @@ export const size = {
   '4xl': '36px',
   '3xl': '32px',
   '2xl': '28px',
+  '1xl': '25px',
   xl: '24px',
   lg: '20px',
   md: '16px',
+  md1: '15px',
   sm: '14px',
   xs: '12px',
 } as const;
@@ -29,7 +31,7 @@ export const type = {
     fontWeight: weight['semibold'],
   },
   heading2: {
-    fontSize: size['xl'],
+    fontSize: size['1xl'],
     fontWeight: weight['semibold'],
   },
   heading3: {
@@ -44,12 +46,16 @@ export const type = {
     fontSize: size['md'],
     fontWeight: weight['normal'],
   },
+  summary: {
+    fontSize: size['md1'],
+    fontWeight: weight['normal'],
+  },
   tag: {
-    fontSize: size['sm'],
+    fontSize: size['xs'],
     fontWeight: weight['medium'],
   },
   caption: {
-    fontSize: size['sm'],
+    fontSize: '13px',
     fontWeight: weight['normal'],
   },
 } as const;

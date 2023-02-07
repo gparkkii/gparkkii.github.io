@@ -3,9 +3,10 @@ import { Link } from 'gatsby';
 import React from 'react';
 
 const DrawerContainer = styled.aside`
-  width: 260px;
+  width: 240px;
   height: 100%;
-  padding: 40px 20px;
+  padding: 40px 0px;
+  margin-left: 40px;
   margin-top: 80px;
   flex-shrink: 0;
 `;

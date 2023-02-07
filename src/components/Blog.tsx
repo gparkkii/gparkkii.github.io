@@ -3,22 +3,31 @@ import styled from '@emotion/styled';
 import { PostType } from 'types/Post.types';
 import PostCard from './PostCard';
 import TagMenu from './TagMenu';
+import { Link } from 'gatsby';
 
 const BlogContainer = styled.section`
   width: 100%;
   margin: 0 auto;
-  padding: 40px;
+  padding: 40px 20px;
 `;
 
-const BlogHeader = styled.h1`
+const BlogHeader = styled.div`
   padding: 0px 20px;
-  margin-top: 40px;
-  padding-bottom: 8px;
+  margin-top: 28px;
+  padding-bottom: 20px;
 
-  font-family: 'Poppins', 'Pretendard', 'Noto Sans';
-  font-size: 36px;
-  font-weight: 600;
-  color: ${props => props.theme.lightTheme.text.dark[50]};
+  a {
+    font-family: 'Poppins', 'Pretendard', 'Noto Sans';
+    font-size: 28px;
+    font-weight: 600;
+    color: ${props => props.theme.lightTheme.text.black};
+  }
+  b {
+    font-family: 'Poppins', 'Pretendard', 'Noto Sans';
+    font-size: 28px;
+    font-weight: 600;
+    color: ${props => props.theme.lightTheme.text.primary};
+  }
 `;
 
 interface BlogLayoutProps {
@@ -44,7 +53,10 @@ const Blog = ({ header, posts, tagList, selectedTag }: BlogLayoutProps) => {
 
   return (
     <BlogContainer>
-      {/* <BlogHeader>{header}</BlogHeader> */}
+      <BlogHeader>
+        <Link to="/">#Tech&nbsp;</Link>
+        <b>#{selectedTag}</b>
+      </BlogHeader>
       {/* <TagMenu tags={tagList} selectedTag={selectedTag} /> */}
       {currentPostList?.map((post, index) => {
         return (

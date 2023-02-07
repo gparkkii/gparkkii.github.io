@@ -1,6 +1,7 @@
 import React from 'react';
 import { StaticImage } from 'gatsby-plugin-image';
 import styled from '@emotion/styled';
+import { Link } from 'gatsby';
 
 const HeaderLayout = styled.header`
   position: fixed;
@@ -18,12 +19,11 @@ const HeaderLayout = styled.header`
   /* border-bottom: 1px solid #fafafa; */
 
   margin: 0 auto;
-  padding: 0 16px;
-  padding-top: 8px;
+  padding: 0 48px;
 `;
 
 const NavBox = styled.div`
-  margin-left: 24px;
+  margin-left: 60px;
   max-width: 960px;
   width: 100%;
   height: 60px;
@@ -37,14 +37,18 @@ const NavMenu = styled.p<{ active: boolean }>`
   padding: 6px 2px;
 
   font-family: 'Poppins';
-  font-size: 18px;
+  font-size: 17px;
   font-weight: 600;
   color: ${props =>
     props.active
       ? props.theme.lightTheme.text.primary
       : props.theme.lightTheme.text.black};
-  /* font-weight: ${props => (props.active ? 600 : 600)}; */
+  /* font-weight: ${props => (props.active ? 600 : 500)}; */
   /* border-bottom: ${props => (props.active ? '2.5px solid #ff2e2e' : 0)}; */
+
+  &:hover {
+    /* color: #ff2e2e; */
+  }
 `;
 
 const HeaderTitle = styled.p`
@@ -61,16 +65,19 @@ const Header = ({ title }: HeaderProps) => {
   return (
     <HeaderLayout>
       {/* full logo */}
+      <Link to="/">
+        <StaticImage
+          style={{ width: '40px', height: '40px', objectFit: 'contain' }}
+          src="../images/g_logo.png"
+          alt="logo"
+        />
+      </Link>
+
       {/* <StaticImage
-        style={{ width: '140px', height: '48px', objectFit: 'contain' }}
+        style={{ width: '128px', height: '40px', objectFit: 'contain' }}
         src="../images/g_full_logo.png"
         alt="logo"
       /> */}
-      <StaticImage
-        style={{ width: '48px', height: '48px', objectFit: 'contain' }}
-        src="../images/g_logo.png"
-        alt="logo"
-      />
       <NavBox>
         <NavMenu active={true}>Tech</NavMenu>
         <NavMenu active={false}>Story</NavMenu>

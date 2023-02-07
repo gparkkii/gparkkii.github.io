@@ -11,12 +11,12 @@ const Body = styled.main`
   align-items: flex-start;
   justify-content: center;
 
-  max-width: 1280px;
+  max-width: 1200px;
   width: 100%;
   min-height: 100vh;
   height: 100%;
   padding: 16px;
-  padding-top: 88px; /* header height + 16px */
+  padding-top: 80px;
   margin: 0 auto;
   background-color: ${({ theme }) => theme.lightTheme.backgroundColor};
 `;

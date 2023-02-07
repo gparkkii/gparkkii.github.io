@@ -9,7 +9,7 @@ export const lightTheme = {
   text: {
     primary: primary.default,
     white: light.default,
-    black: dark.default,
+    black: dark[0],
     dark,
     light,
   },

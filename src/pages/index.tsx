@@ -57,7 +57,7 @@ const IndexPage = ({
       <BaseLayout title="">
         {/* Blog */}
         <Blog
-          header="All"
+          header="#All"
           posts={edges}
           tagList={tagList}
           selectedTag={selectedTag}

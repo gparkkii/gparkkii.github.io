@@ -12,8 +12,8 @@ const PostCardBox = styled.article`
 
   width: 100%;
   padding: 20px;
-  margin: 20px 0px;
-  border-radius: 20px;
+  margin: 24px 0px;
+  border-radius: 12px;
 
   transition: all ease 0.25s;
 
@@ -27,10 +27,10 @@ const PostCardBox = styled.article`
 `;
 
 const ThumbnailBox = styled.div`
-  min-width: 240px;
-  width: 240px;
-  height: 240px;
-  border-radius: 20px;
+  min-width: 200px;
+  width: 200px;
+  height: 200px;
+  border-radius: 12px;
   overflow: hidden;
   isolation: isolate;
   /* box-shadow: 0px 5px 10px 0px #7575752e; */
@@ -50,28 +50,27 @@ const PostCardTextBox = styled.div`
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  margin-left: 40px;
+  margin-left: 48px;
 `;
 
 const PostTitle = styled.h1`
-  width: 90%;
   word-break: keep-all;
   line-height: 1.35em;
-  ${({ theme }) => theme.fonts.type.heading};
+  ${({ theme }) => theme.fonts.type.heading2};
   color: ${({ theme }) => theme.lightTheme.text.black};
 `;
 
 const Date = styled.time`
   ${({ theme }) => theme.fonts.type.caption};
-  color: ${({ theme }) => theme.lightTheme.text.light[400]};
-  margin-bottom: 14px;
+  color: ${({ theme }) => theme.lightTheme.text.light[350]};
+  margin-bottom: 16px;
 `;
 
 const Summary = styled.p`
-  ${({ theme }) => theme.fonts.type.subtitle};
+  ${({ theme }) => theme.fonts.type.summary};
   color: ${({ theme }) => theme.lightTheme.text.dark[200]};
-  margin-top: 16px;
-  margin-bottom: 24px;
+  margin-top: 12px;
+  margin-bottom: 20px;
 `;
 
 const TagBox = styled.div`
