@@ -126,7 +126,6 @@ export const type = {
   summary: {
     fontSize: size.md1,
     fontWeight: weight.medium,
-    lineHeight: lineHeight.md1,
   },
   body: {
     fontSize: size.sm,

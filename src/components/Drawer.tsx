@@ -12,13 +12,13 @@ const DrawerContainer = styled.aside`
 `;
 
 const DrawerTitle = styled.h3`
-  ${({ theme }) => theme.fonts.type.heading3};
+  ${({ theme }) => theme.fonts.type.title};
   color: ${({ theme }) => theme.lightTheme.text.black};
   margin-bottom: 28px;
 `;
 
 const DrawerSubTitle = styled.h6`
-  ${({ theme }) => theme.fonts.type.title};
+  ${({ theme }) => theme.fonts.type.subtitle};
   color: ${({ theme }) => theme.lightTheme.text.black};
 `;
 

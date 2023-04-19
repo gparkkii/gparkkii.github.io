@@ -1,9 +1,10 @@
-import { Global } from '@emotion/react';
+import { Global, ThemeProvider } from '@emotion/react';
 import styled from '@emotion/styled';
 import React from 'react';
 import { globalStyle } from 'styles';
-import Footer from 'components/Footer';
-import Header from 'components/Header';
+import Footer from 'components/Navigation/Footer';
+import Header from 'components/Navigation/Header';
+import { theme } from '../theme';
 
 const Body = styled.main`
   display: flex;
@@ -22,18 +23,18 @@ const Body = styled.main`
 `;
 
 type BaseLayoutProps = {
-  title: string;
+  path: string;
   children: React.ReactNode;
 };
 
-const BaseLayout = ({ title, children }: BaseLayoutProps) => {
+const BaseLayout = ({ path, children }: BaseLayoutProps) => {
   return (
-    <div>
+    <ThemeProvider theme={theme}>
       <Global styles={globalStyle} />
-      <Header title={title} />
+      <Header path={path} />
       <Body>{children}</Body>
       <Footer />
-    </div>
+    </ThemeProvider>
   );
 };
 
