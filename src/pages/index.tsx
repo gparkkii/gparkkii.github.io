@@ -1,13 +1,12 @@
 import * as React from 'react';
 import { graphql } from 'gatsby';
 import queryString, { ParsedQuery } from 'query-string';
-import { ThemeProvider } from '@emotion/react';
 import { PostType } from 'types/Post.types';
-import { theme } from 'theme';
 import BaseLayout from 'layout/BaseLayout';
 import { TagListProps } from 'components/TagMenu';
 import Blog from 'components/Blog';
-import Drawer from '../components/Drawer';
+import Drawer from 'components/Drawer';
+import { PATH } from '../routes/path';
 
 type IndexPageProps = {
   location: { search: string };
@@ -53,18 +52,16 @@ const IndexPage = ({
   );
 
   return (
-    <ThemeProvider theme={theme}>
-      <BaseLayout title="">
-        {/* Blog */}
-        <Blog
-          header="#All"
-          posts={edges}
-          tagList={tagList}
-          selectedTag={selectedTag}
-        />
-        <Drawer title="Tags" />
-      </BaseLayout>
-    </ThemeProvider>
+    <BaseLayout path={PATH.index}>
+      {/* Blog */}
+      <Blog
+        header="#All"
+        posts={edges}
+        tagList={tagList}
+        selectedTag={selectedTag}
+      />
+      <Drawer title="Tags" />
+    </BaseLayout>
   );
 };
 

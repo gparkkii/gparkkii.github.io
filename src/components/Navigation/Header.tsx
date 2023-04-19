@@ -1,9 +1,11 @@
 import React from 'react';
 import { StaticImage } from 'gatsby-plugin-image';
 import styled from '@emotion/styled';
-import { Link } from 'gatsby';
+import { Link, navigate } from 'gatsby';
 import NavMenu from './NavMenu';
 import { mediaQuery } from 'theme/breakpoints';
+import { PATH } from '../../routes/path';
+import Icon from '../Icon';
 
 const HeaderLayout = styled.header`
   position: fixed;
@@ -41,15 +43,19 @@ const NavMenuBox = styled.div`
   justify-content: flex-end;
 `;
 
+const IconWrapper = styled.div`
+  margin-left: 20px;
+`;
+
 interface HeaderProps {
-  title: string;
+  path: string;
 }
 
-const Header = ({ title }: HeaderProps) => {
+const Header = ({ path }: HeaderProps) => {
   return (
     <HeaderLayout>
       {/* full logo */}
-      <Link to="/">
+      <Link to={PATH.index}>
         <StaticImage
           style={{ width: '44px', height: '44px', objectFit: 'contain' }}
           src="../../images/g_logo.png"
@@ -63,6 +69,17 @@ const Header = ({ title }: HeaderProps) => {
           <NavMenu title="Project" active={false} />
           <NavMenu title="About" active={false} />
         </NavMenuBox>
+        <IconWrapper>
+          {path !== PATH.search ? (
+            <Link to={PATH.search}>
+              <Icon size="xs" icon="search" />
+            </Link>
+          ) : (
+            <div onClick={() => navigate(-1)}>
+              <Icon size="sm" icon="cancel" />
+            </div>
+          )}
+        </IconWrapper>
       </NavWrapper>
     </HeaderLayout>
   );

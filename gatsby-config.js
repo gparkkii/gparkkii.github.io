@@ -15,6 +15,7 @@ module.exports = {
     siteUrl: `https://github.com/gparkkii/gparkkii-gatsby`,
   },
   plugins: [
+    `gatsby-plugin-fontawesome-css`,
     `gatsby-plugin-image`,
     `gatsby-plugin-emotion`,
     `gatsby-transformer-sharp`,

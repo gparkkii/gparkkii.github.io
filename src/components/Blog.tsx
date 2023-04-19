@@ -58,11 +58,11 @@ const Blog = ({ header, posts, tagList, selectedTag }: BlogLayoutProps) => {
         <b>#{selectedTag}</b>
       </BlogHeader>
       {/* <TagMenu tags={tagList} selectedTag={selectedTag} /> */}
-      {currentPostList?.map((post, index) => {
+      {/* {currentPostList?.map((post, index) => {
         return (
           <PostCard key={`post_${index}`} postData={post.node.frontmatter} />
         );
-      })}
+      })} */}
     </BlogContainer>
   );
 };
