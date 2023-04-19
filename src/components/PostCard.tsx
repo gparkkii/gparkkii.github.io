@@ -21,7 +21,7 @@ const PostCardBox = styled.article`
     transform: translateY(-8px);
     background-color: ${({ theme }) => theme.lightTheme.postCard.hover};
     & h1 {
-      color: ${({ theme }) => theme.lightTheme.text.dark[150]};
+      color: ${({ theme }) => theme.lightTheme.text.dark[50]};
     }
   }
 `;
@@ -62,7 +62,7 @@ const PostTitle = styled.h1`
 
 const Date = styled.time`
   ${({ theme }) => theme.fonts.type.caption};
-  color: ${({ theme }) => theme.lightTheme.text.light[350]};
+  color: ${({ theme }) => theme.lightTheme.text.light[500]};
   margin-bottom: 16px;
 `;
 

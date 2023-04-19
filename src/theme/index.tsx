@@ -1,5 +1,5 @@
-import { primary, dark, light } from './color';
-import { type, size, weight } from './fonts';
+import { primary, dark, light, secondary, bluegray } from './color';
+import { type, size, weight, lineHeight } from './fonts';
 
 export const lightTheme = {
   backgroundColor: light.default,
@@ -26,10 +26,13 @@ export const theme = {
     type,
     weight,
     size,
+    lineHeight,
   },
   colors: {
     primary,
     light,
     dark,
+    bluegray,
+    secondary,
   },
 };
