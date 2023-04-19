@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 import { Link } from 'gatsby';
 import React from 'react';
 
-const DrawerContainer = styled.aside`
+const CategoryContainer = styled.aside`
   width: 240px;
   height: 100%;
   padding: 40px 0px;
@@ -11,24 +11,24 @@ const DrawerContainer = styled.aside`
   flex-shrink: 0;
 `;
 
-const DrawerTitle = styled.h3`
+const CategoryTitle = styled.h3`
   ${({ theme }) => theme.fonts.type.title};
   color: ${({ theme }) => theme.lightTheme.text.black};
   margin-bottom: 28px;
 `;
 
-const DrawerSubTitle = styled.h6`
+const CategorySubTitle = styled.h6`
   ${({ theme }) => theme.fonts.type.subtitle};
   color: ${({ theme }) => theme.lightTheme.text.black};
 `;
 
-const DrawerNavigation = styled.nav`
+const CategoryNavigation = styled.nav`
   padding-left: 16px;
   margin-top: 16px;
   margin-bottom: 20px;
 `;
 
-const DrawerLink = styled(Link)`
+const CategoryLink = styled(Link)`
   display: inline-block;
   ${({ theme }) => theme.fonts.type.caption};
   line-height: 2em;
@@ -39,7 +39,7 @@ const DrawerLink = styled(Link)`
   }
 `;
 
-interface DrawerProps {
+interface CategoryProps {
   title: string;
 }
 
@@ -55,40 +55,40 @@ const LANGUAGE = ['JavaScript'] as const;
 
 const DEVELOPMENT_TOOLS = ['React', 'React Native'] as const;
 
-const Drawer = ({ title }: DrawerProps) => {
+const Category = ({ title }: CategoryProps) => {
   return (
-    <DrawerContainer>
-      <DrawerTitle>{title}</DrawerTitle>
-      <DrawerSubTitle>Technical Field</DrawerSubTitle>
-      <DrawerNavigation>
+    <CategoryContainer>
+      <CategoryTitle>{title}</CategoryTitle>
+      <CategorySubTitle>Technical Field</CategorySubTitle>
+      <CategoryNavigation>
         {TECHNICAL_FIELD.map((tag, index) => (
-          <DrawerLink key={`${tag}_${index}`} to={`/?tag=${tag}`}>
+          <CategoryLink key={`${tag}_${index}`} to={`/?tag=${tag}`}>
             #{tag}
-          </DrawerLink>
+          </CategoryLink>
         ))}
-      </DrawerNavigation>
-      <DrawerSubTitle>Programming Languages</DrawerSubTitle>
-      <DrawerNavigation>
+      </CategoryNavigation>
+      <CategorySubTitle>Programming Languages</CategorySubTitle>
+      <CategoryNavigation>
         {LANGUAGE.map((tag, index) => (
-          <DrawerLink key={`${tag}_${index}`} to={`/?tag=${tag}`}>
+          <CategoryLink key={`${tag}_${index}`} to={`/?tag=${tag}`}>
             #{tag}
             {'\n'}
-          </DrawerLink>
+          </CategoryLink>
         ))}
-      </DrawerNavigation>
-      <DrawerSubTitle>Development Tools</DrawerSubTitle>
-      <DrawerNavigation>
+      </CategoryNavigation>
+      <CategorySubTitle>Development Tools</CategorySubTitle>
+      <CategoryNavigation>
         {DEVELOPMENT_TOOLS.map((tag, index) => (
-          <DrawerLink key={`${tag}_${index}`} to={`/?tag=${tag}`}>
+          <CategoryLink key={`${tag}_${index}`} to={`/?tag=${tag}`}>
             #{tag}
             {'\n'}
-          </DrawerLink>
+          </CategoryLink>
         ))}
-      </DrawerNavigation>
-      <DrawerSubTitle>Keyword</DrawerSubTitle>
-      <DrawerNavigation></DrawerNavigation>
-    </DrawerContainer>
+      </CategoryNavigation>
+      <CategorySubTitle>Keyword</CategorySubTitle>
+      <CategoryNavigation></CategoryNavigation>
+    </CategoryContainer>
   );
 };
 
-export default Drawer;
+export default Category;

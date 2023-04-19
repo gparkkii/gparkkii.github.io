@@ -14,6 +14,7 @@ export const globalStyle = css`
 
     word-break: keep-all;
     word-wrap: break-word;
+    transition: all 0.25s ease;
   }
 
   /* CSS RESET */

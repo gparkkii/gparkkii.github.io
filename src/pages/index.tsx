@@ -2,11 +2,11 @@ import * as React from 'react';
 import { graphql } from 'gatsby';
 import queryString, { ParsedQuery } from 'query-string';
 import { PostType } from 'types/Post.types';
-import BaseLayout from 'layout/BaseLayout';
-import { TagListProps } from 'components/TagMenu';
-import Blog from 'components/Blog';
-import Drawer from 'components/Drawer';
 import { PATH } from '../routes/path';
+import { TagListProps } from 'components/TagMenu';
+import BaseLayout from 'layout/BaseLayout';
+import Blog from 'components/Blog';
+import Category from 'components/Category';
 
 type IndexPageProps = {
   location: { search: string };
@@ -60,7 +60,7 @@ const IndexPage = ({
         tagList={tagList}
         selectedTag={selectedTag}
       />
-      <Drawer title="Tags" />
+      <Category title="Tags" />
     </BaseLayout>
   );
 };
