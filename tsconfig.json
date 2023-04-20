@@ -49,6 +49,7 @@
     "paths": {
       "types/*": ["./@types/*"],
       "components/*": ["./components/*"],
+      "hooks/*": ["./hooks/*"],
       "images/*": ["./images/*"],
       "layout/*": ["./layout/*"],
       "pages/*": ["./pages/*"],
