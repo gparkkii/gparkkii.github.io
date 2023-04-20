@@ -10,7 +10,7 @@ export const globalStyle = css`
       'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue',
       sans-serif;
     font-weight: 400;
-    color: #212121;
+    color: #000;
 
     word-break: keep-all;
     word-wrap: break-word;

@@ -18,7 +18,7 @@ const Body = styled.main`
   min-height: 100vh;
   height: 100%;
   padding: 0px 40px;
-  padding-top: 88px;
+  padding-top: 80px;
   margin: 0 auto;
   background-color: ${({ theme }) => theme.lightTheme.backgroundColor};
 

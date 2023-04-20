@@ -12,12 +12,31 @@ const PostCardBox = styled.article`
   justify-content: flex-start;
 
   width: 100%;
-  padding: 20px;
+  padding: 16px 0px;
   border-radius: 12px;
+  /* & h1::after {
+    display: block;
+    content: '';
+    width: 0;
+    height: 32px;
+    margin-top: -32px;
+    background-color: ${props => props.theme.colors.primary[100]};
+    transition: width 0.3s;
+  }
+  &:hover {
+    & h1::after {
+      width: 100%;
+    }
+  } */
 
   &:hover {
-    background-color: #fafafa;
-    border: 20px;
+    /* transform: translateY(-6px); */
+    & h1 {
+      color: ${props => props.theme.colors.dark[200]};
+    }
+    .postcard-thumbnail {
+      opacity: 0.75;
+    }
   }
 
   ${mediaQuery.sm} {
@@ -30,6 +49,7 @@ const PostCardDivider = styled.div`
   width: 100%;
   height: 2px;
   margin: 20px 0px;
+  background-color: ${props => props.theme.colors.light[100]};
 
   ${mediaQuery.sm} {
     margin: 16px 0px;
@@ -38,9 +58,9 @@ const PostCardDivider = styled.div`
 `;
 
 const ThumbnailBox = styled.div`
-  min-width: 200px;
-  width: 200px;
-  height: 200px;
+  min-width: 328px;
+  width: 328px;
+  height: 220px;
   border-radius: 12px;
   overflow: hidden;
   isolation: isolate;
@@ -61,20 +81,19 @@ const ThumbnailImage = styled(GatsbyImage)`
 `;
 
 const PostCardTextBox = styled.div`
-  max-width: 580px;
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  margin-left: 40px;
+  margin-left: 60px;
+  margin-right: 40px;
 
   ${mediaQuery.sm} {
     max-width: 100%;
-    margin-left: 0px;
+    margin: 0px;
   }
 `;
-
 const PostTitle = styled.h1`
   word-break: keep-all;
   line-height: 1.35em;

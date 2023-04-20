@@ -14,8 +14,8 @@ export const size = {
 } as const;
 
 export const lineHeight = {
-  '6xl': '68px',
-  '5xl': '56px',
+  '6xl': '72px',
+  '5xl': '60px',
   '4xl': '50px',
   '3xl': '44px',
   '2xl': '36px',
@@ -39,31 +39,31 @@ export const weight = {
 
 export const type = {
   headline: {
-    fontFamily: 'Poppins, Pretendard, Noto Sans',
+    fontFamily: 'Inter, Pretendard, Noto Sans',
     fontSize: size['5xl'],
-    fontWeight: weight['bold'],
+    fontWeight: weight['black'],
     lineHeight: lineHeight['5xl'],
   },
   headlineMobile: {
-    fontFamily: 'Poppins, Pretendard, Noto Sans',
+    fontFamily: 'Inter, Pretendard, Noto Sans',
     fontSize: size['3xl'],
     fontWeight: weight['bold'],
     lineHeight: lineHeight['3xl'],
   },
   Menu: {
-    fontFamily: 'Poppins, Pretendard, Noto Sans',
+    fontFamily: 'Inter, Pretendard, Noto Sans',
     fontSize: size['3xl'],
     fontWeight: weight['medium'],
     lineHeight: lineHeight['3xl'],
   },
   Menu1: {
-    fontFamily: 'Poppins, Pretendard, Noto Sans',
+    fontFamily: 'Inter, Pretendard, Noto Sans',
     fontSize: size['3xl'],
     fontWeight: weight['semibold'],
     lineHeight: lineHeight['3xl'],
   },
   Nav: {
-    fontFamily: 'Poppins, Pretendard, Noto Sans',
+    fontFamily: 'Inter, Pretendard, Noto Sans',
     fontSize: '17px',
     fontWeight: weight['semibold'],
     lineHeight: '23px',
@@ -144,7 +144,7 @@ export const type = {
   },
   tag: {
     fontSize: size.xs,
-    fontWeight: weight.semibold,
+    fontWeight: weight.medium,
     lineHeight: lineHeight.xs,
   },
   caption: {

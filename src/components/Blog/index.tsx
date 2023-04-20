@@ -4,7 +4,7 @@ import { PostType } from 'types/Post.types';
 import PostCard from '../PostCard';
 import Category from '../Category';
 import BlogHeader from './BlogHeader';
-import { mediaQuery } from '../../theme/breakpoints';
+import { mediaQuery } from 'theme/breakpoints';
 
 const BlogContainer = styled.div`
   display: flex;
@@ -62,7 +62,6 @@ const Blog = ({ posts, selectedTag }: BlogLayoutProps) => {
             );
           })}
         </section>
-        <Category title="Tags" />
       </PostWrapper>
     </BlogContainer>
   );

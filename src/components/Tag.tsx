@@ -9,7 +9,6 @@ const TagBox = styled(Link)`
 `;
 
 const TagName = styled.p`
-  font-family: 'Poppins', 'Pretendard';
   ${({ theme }) => theme.fonts.type.tag};
   color: ${({ theme }) => theme.lightTheme.text.primary};
 `;
