@@ -54,12 +54,7 @@ const IndexPage = ({
   return (
     <BaseLayout path={PATH.index}>
       {/* Blog */}
-      <Blog
-        header="#All"
-        posts={edges}
-        tagList={tagList}
-        selectedTag={selectedTag}
-      />
+      <Blog posts={edges} selectedTag={selectedTag} />
       <Category title="Tags" />
     </BaseLayout>
   );

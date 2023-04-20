@@ -40,9 +40,9 @@ export const weight = {
 export const type = {
   headline: {
     fontFamily: 'Poppins, Pretendard, Noto Sans',
-    fontSize: size['6xl'],
+    fontSize: size['5xl'],
     fontWeight: weight['bold'],
-    lineHeight: lineHeight['6xl'],
+    lineHeight: lineHeight['5xl'],
   },
   headlineMobile: {
     fontFamily: 'Poppins, Pretendard, Noto Sans',
