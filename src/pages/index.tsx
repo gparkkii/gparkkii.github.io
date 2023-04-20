@@ -6,7 +6,6 @@ import { PATH } from '../routes/path';
 import { TagListProps } from 'components/TagMenu';
 import BaseLayout from 'layout/BaseLayout';
 import Blog from 'components/Blog';
-import Category from 'components/Category';
 
 type IndexPageProps = {
   location: { search: string };
@@ -55,7 +54,6 @@ const IndexPage = ({
     <BaseLayout path={PATH.index}>
       {/* Blog */}
       <Blog posts={edges} selectedTag={selectedTag} />
-      <Category title="Tags" />
     </BaseLayout>
   );
 };

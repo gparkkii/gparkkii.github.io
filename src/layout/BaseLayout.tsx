@@ -4,7 +4,8 @@ import React from 'react';
 import { globalStyle } from 'styles';
 import Footer from 'components/Navigation/Footer';
 import Header from 'components/Navigation/Header';
-import { theme } from '../theme';
+import { theme } from 'theme/index';
+import { mediaQuery } from 'theme/breakpoints';
 
 const Body = styled.main`
   display: flex;
@@ -16,10 +17,15 @@ const Body = styled.main`
   width: 100%;
   min-height: 100vh;
   height: 100%;
-  padding: 16px;
-  padding-top: 80px;
+  padding: 0px 40px;
+  padding-top: 88px;
   margin: 0 auto;
   background-color: ${({ theme }) => theme.lightTheme.backgroundColor};
+
+  ${mediaQuery.sm} {
+    padding: 40px 0px;
+    padding-top: 72px;
+  }
 `;
 
 type BaseLayoutProps = {

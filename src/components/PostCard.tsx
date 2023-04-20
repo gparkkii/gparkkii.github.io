@@ -2,6 +2,7 @@ import React from 'react';
 import styled from '@emotion/styled';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import { PostFrontMatterType } from 'types/Post.types';
+import { mediaQuery } from 'theme/breakpoints';
 import Tag from './Tag';
 
 const PostCardBox = styled.article`
@@ -12,17 +13,27 @@ const PostCardBox = styled.article`
 
   width: 100%;
   padding: 20px;
-  margin: 24px 0px;
   border-radius: 12px;
 
-  transition: all ease 0.25s;
-
   &:hover {
-    transform: translateY(-8px);
-    background-color: ${({ theme }) => theme.lightTheme.postCard.hover};
-    & h1 {
-      color: ${({ theme }) => theme.lightTheme.text.dark[50]};
-    }
+    background-color: #fafafa;
+    border: 20px;
+  }
+
+  ${mediaQuery.sm} {
+    padding: 16px 24px;
+    border-radius: 0px;
+  }
+`;
+
+const PostCardDivider = styled.div`
+  width: 100%;
+  height: 2px;
+  margin: 20px 0px;
+
+  ${mediaQuery.sm} {
+    margin: 16px 0px;
+    background-color: ${props => props.theme.colors.light[100]};
   }
 `;
 
@@ -33,7 +44,13 @@ const ThumbnailBox = styled.div`
   border-radius: 12px;
   overflow: hidden;
   isolation: isolate;
-  /* box-shadow: 0px 5px 10px 0px #7575752e; */
+
+  ${mediaQuery.sm} {
+    visibility: hidden;
+    position: absolute;
+    left: 40px;
+    opacity: 0;
+  }
 `;
 
 const ThumbnailImage = styled(GatsbyImage)`
@@ -50,7 +67,12 @@ const PostCardTextBox = styled.div`
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  margin-left: 48px;
+  margin-left: 40px;
+
+  ${mediaQuery.sm} {
+    max-width: 100%;
+    margin-left: 0px;
+  }
 `;
 
 const PostTitle = styled.h1`
@@ -58,19 +80,23 @@ const PostTitle = styled.h1`
   line-height: 1.35em;
   ${({ theme }) => theme.fonts.type.heading2};
   color: ${({ theme }) => theme.lightTheme.text.black};
+  box-sizing: inline-box;
+  ${mediaQuery.sm} {
+    ${({ theme }) => theme.fonts.type.heading2mobile};
+  }
 `;
 
 const Date = styled.time`
   ${({ theme }) => theme.fonts.type.caption};
   color: ${({ theme }) => theme.lightTheme.text.light[500]};
-  margin-bottom: 16px;
+  margin-bottom: 12px;
 `;
 
 const Summary = styled.p`
   ${({ theme }) => theme.fonts.type.summary};
   color: ${({ theme }) => theme.lightTheme.text.dark[200]};
   margin-top: 12px;
-  margin-bottom: 20px;
+  margin-bottom: 24px;
 `;
 
 const TagBox = styled.div`
@@ -88,25 +114,28 @@ interface PostCardProps {
 const PostCard = ({ key, postData }: PostCardProps) => {
   const { title, date, summary, thumbnail, tags } = postData;
   return (
-    <PostCardBox key={key}>
-      <ThumbnailBox>
-        <ThumbnailImage
-          loading="lazy"
-          image={thumbnail.childImageSharp.gatsbyImageData}
-          alt={`${title}_thumbnail`}
-        />
-      </ThumbnailBox>
-      <PostCardTextBox>
-        <Date>{date}</Date>
-        <PostTitle>{title}</PostTitle>
-        <Summary className="typography-ellipsis-2line">{summary}</Summary>
-        <TagBox>
-          {tags.map((tag, index) => (
-            <Tag key={`${tag}_${index}`} tag={tag} />
-          ))}
-        </TagBox>
-      </PostCardTextBox>
-    </PostCardBox>
+    <>
+      <PostCardBox key={key}>
+        <ThumbnailBox className="postcard-thumbnail">
+          <ThumbnailImage
+            loading="lazy"
+            image={thumbnail.childImageSharp.gatsbyImageData}
+            alt={`${title}_thumbnail`}
+          />
+        </ThumbnailBox>
+        <PostCardTextBox>
+          <Date>{date}</Date>
+          <PostTitle>{title}</PostTitle>
+          <Summary className="typography-ellipsis-2line">{summary}</Summary>
+          <TagBox>
+            {tags.map((tag, index) => (
+              <Tag key={`${tag}_${index}`} tag={tag} />
+            ))}
+          </TagBox>
+        </PostCardTextBox>
+      </PostCardBox>
+      <PostCardDivider />
+    </>
   );
 };
 

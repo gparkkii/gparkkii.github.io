@@ -1,14 +1,20 @@
 import styled from '@emotion/styled';
 import { Link } from 'gatsby';
 import React from 'react';
+import { mediaQuery } from '../theme/breakpoints';
 
 const CategoryContainer = styled.aside`
-  width: 240px;
+  width: 204px;
   height: 100%;
-  padding: 40px 0px;
   margin-left: 40px;
-  margin-top: 80px;
   flex-shrink: 0;
+
+  ${mediaQuery.md} {
+    visibility: hidden;
+    position: absolute;
+    right: 40px;
+    opacity: 0;
+  }
 `;
 
 const CategoryTitle = styled.h3`
