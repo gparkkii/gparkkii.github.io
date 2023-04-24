@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import { PostType } from 'types/Post.types';
-import PostCard from '../Post/PostCard';
 import BlogHeader from './BlogHeader';
-import { mediaQuery } from 'theme/breakpoints';
+import PostCard from '../Post/PostCard';
 import NoContent from '../Common/NoContent';
+import { mediaQuery } from 'theme/index';
 
 const BlogContainer = styled.div`
   display: flex;

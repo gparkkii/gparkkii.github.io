@@ -3,7 +3,7 @@ import { StaticImage } from 'gatsby-plugin-image';
 import React from 'react';
 import { useMediaQuery } from 'hooks/useMediaQuery';
 import { PATH } from 'routes/path';
-import { breakpoints } from 'theme/breakpoints';
+import { breakpoints } from 'theme/index';
 
 const Logo = () => {
   const mobileSize = useMediaQuery(breakpoints.sm);

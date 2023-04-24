@@ -2,6 +2,8 @@ import styled from '@emotion/styled';
 import React from 'react';
 import Icon from '../Common/Icon';
 import { Link } from 'gatsby';
+import { Caption } from 'styles/typography';
+import { theme } from 'theme/index';
 
 const FooterLayout = styled.footer`
   width: 100%;
@@ -16,12 +18,6 @@ const FooterLayout = styled.footer`
   background-color: ${props => props.theme.colors.light[50]};
 `;
 
-const LicenseTypo = styled.p<{ bold?: boolean }>`
-  ${props => props.theme.fonts.type.caption};
-  color: ${props =>
-    props.bold ? props.theme.colors.dark[150] : props.theme.colors.light[800]};
-`;
-
 const IconWrapper = styled.div`
   opacity: 0.25;
   &:hover {
@@ -33,10 +29,12 @@ const Footer = () => {
   return (
     <FooterLayout>
       <div>
-        <LicenseTypo bold>Copyright ©gparkkii All rights reserved.</LicenseTypo>
-        <LicenseTypo>
+        <Caption textColor={theme.colors.dark[150]} style={{ marginBottom: 2 }}>
+          Copyright ©gparkkii All rights reserved.
+        </Caption>
+        <Caption textColor={theme.colors.light[800]}>
           2023 | built with gatsby | Developed & Designed by gparkkii
-        </LicenseTypo>
+        </Caption>
       </div>
       <Link to="https://github.com/gparkkii">
         <IconWrapper>

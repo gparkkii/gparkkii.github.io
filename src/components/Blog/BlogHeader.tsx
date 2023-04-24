@@ -2,7 +2,8 @@ import styled from '@emotion/styled';
 import { Link } from 'gatsby';
 import React from 'react';
 import { PATH } from 'routes/path';
-import { mediaQuery } from 'theme/breakpoints';
+import { theme, mediaQuery } from 'theme/index';
+import { Headline } from 'styles/typography';
 import BlogFilter from './BlogFilter';
 
 const BlogHeaderWrapper = styled.div`
@@ -49,17 +50,6 @@ const BlogHeaderDivider = styled.div`
   }
 `;
 
-const Headline = styled.p<{ default?: boolean }>`
-  color: ${props =>
-    props.default
-      ? props.theme.lightTheme.text.black
-      : props.theme.lightTheme.text.primary};
-  ${props => props.theme.fonts.type.headline};
-  ${mediaQuery.sm} {
-    ${props => props.theme.fonts.type.headlineMobile};
-  }
-`;
-
 interface BlogHeaderProps {
   selectedTag: string;
 }
@@ -70,7 +60,7 @@ const BlogHeader = ({ selectedTag }: BlogHeaderProps) => {
       <HeadlineContainer>
         <HeadlineWrapper>
           <Link to={PATH.index}>
-            <Headline default>#Tech</Headline>
+            <Headline textColor={theme.colors.primary.default}>#Tech</Headline>
           </Link>
           <Headline>#{selectedTag}</Headline>
         </HeadlineWrapper>

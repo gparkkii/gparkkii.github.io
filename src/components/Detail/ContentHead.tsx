@@ -1,19 +1,12 @@
 import styled from '@emotion/styled';
 import React from 'react';
-import { mediaQuery } from '../../theme/breakpoints';
+import { Heading1 } from 'styles/typography';
 
 const HeadWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-`;
-
-const Heading = styled.div`
-  ${props => props.theme.fonts.type.heading1};
-  ${mediaQuery.sm} {
-    ${props => props.theme.fonts.type.heading1mobile}
-  }
 `;
 
 interface ContentHeadProps {
@@ -23,7 +16,7 @@ interface ContentHeadProps {
 const ContentHead = ({ title }: ContentHeadProps) => {
   return (
     <HeadWrapper>
-      <Heading>{title}</Heading>
+      <Heading1>{title}</Heading1>
     </HeadWrapper>
   );
 };

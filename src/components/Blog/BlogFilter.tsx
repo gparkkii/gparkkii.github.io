@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import React from 'react';
-import { mediaQuery } from '../../theme/breakpoints';
+import { mediaQuery } from 'theme/breakpoints';
 
 const FilterLayout = styled.div`
   display: flex;

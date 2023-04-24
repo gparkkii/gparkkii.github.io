@@ -2,6 +2,7 @@ import styled from '@emotion/styled';
 import { Link } from 'gatsby';
 import React from 'react';
 import { mediaQuery } from '../theme/breakpoints';
+import { Subtitle, Title } from '../styles/typography';
 
 const CategoryContainer = styled.aside`
   width: 204px;
@@ -15,17 +16,6 @@ const CategoryContainer = styled.aside`
     right: 40px;
     opacity: 0;
   }
-`;
-
-const CategoryTitle = styled.h3`
-  ${({ theme }) => theme.fonts.type.title};
-  color: ${({ theme }) => theme.lightTheme.text.black};
-  margin-bottom: 28px;
-`;
-
-const CategorySubTitle = styled.h6`
-  ${({ theme }) => theme.fonts.type.subtitle};
-  color: ${({ theme }) => theme.lightTheme.text.black};
 `;
 
 const CategoryNavigation = styled.nav`
@@ -64,8 +54,8 @@ const DEVELOPMENT_TOOLS = ['React', 'React Native'] as const;
 const Category = ({ title }: CategoryProps) => {
   return (
     <CategoryContainer>
-      <CategoryTitle>{title}</CategoryTitle>
-      <CategorySubTitle>Technical Field</CategorySubTitle>
+      <Title style={{ marginBottom: '28px' }}>{title}</Title>
+      <Subtitle>Technical Field</Subtitle>
       <CategoryNavigation>
         {TECHNICAL_FIELD.map((tag, index) => (
           <CategoryLink key={`${tag}_${index}`} to={`/?tag=${tag}`}>
@@ -73,7 +63,7 @@ const Category = ({ title }: CategoryProps) => {
           </CategoryLink>
         ))}
       </CategoryNavigation>
-      <CategorySubTitle>Programming Languages</CategorySubTitle>
+      <Subtitle>Programming Languages</Subtitle>
       <CategoryNavigation>
         {LANGUAGE.map((tag, index) => (
           <CategoryLink key={`${tag}_${index}`} to={`/?tag=${tag}`}>
@@ -82,7 +72,7 @@ const Category = ({ title }: CategoryProps) => {
           </CategoryLink>
         ))}
       </CategoryNavigation>
-      <CategorySubTitle>Development Tools</CategorySubTitle>
+      <Subtitle>Development Tools</Subtitle>
       <CategoryNavigation>
         {DEVELOPMENT_TOOLS.map((tag, index) => (
           <CategoryLink key={`${tag}_${index}`} to={`/?tag=${tag}`}>
@@ -91,7 +81,7 @@ const Category = ({ title }: CategoryProps) => {
           </CategoryLink>
         ))}
       </CategoryNavigation>
-      <CategorySubTitle>Keyword</CategorySubTitle>
+      <Subtitle>Keyword</Subtitle>
       <CategoryNavigation></CategoryNavigation>
     </CategoryContainer>
   );

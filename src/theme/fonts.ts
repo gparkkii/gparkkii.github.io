@@ -50,19 +50,19 @@ export const type = {
     fontWeight: weight['bold'],
     lineHeight: lineHeight['3xl'],
   },
-  Menu: {
+  menu: {
     fontFamily: 'Inter, Pretendard, Noto Sans',
     fontSize: size['3xl'],
     fontWeight: weight['medium'],
     lineHeight: lineHeight['3xl'],
   },
-  Menu1: {
+  menu1: {
     fontFamily: 'Inter, Pretendard, Noto Sans',
     fontSize: size['3xl'],
     fontWeight: weight['semibold'],
     lineHeight: lineHeight['3xl'],
   },
-  Nav: {
+  nav: {
     fontFamily: 'Inter, Pretendard, Noto Sans',
     fontSize: '17px',
     fontWeight: weight['semibold'],

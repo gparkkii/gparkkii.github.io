@@ -1,5 +1,4 @@
 import React, { useEffect, createRef } from 'react';
-
 import lottie from 'lottie-web';
 
 interface Props {

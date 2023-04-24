@@ -2,9 +2,9 @@ import React from 'react';
 import NoContentLottie from 'images/lotties/no-content.json';
 import { Animations } from './Animation';
 import styled from '@emotion/styled';
-import { useMediaQuery } from '../../hooks/useMediaQuery';
-import { breakpoints, mediaQuery } from '../../theme/breakpoints';
-import { theme } from '../../theme';
+import { useMediaQuery } from 'hooks/useMediaQuery';
+import { theme, breakpoints } from 'theme/index';
+import { Heading2, Subtitle } from 'styles/typography';
 
 const FlexContainer = styled.div`
   display: flex;
@@ -12,20 +12,15 @@ const FlexContainer = styled.div`
   align-items: center;
   justify-content: center;
 
-  padding-top: 80px;
+  padding-top: 40px;
 
   width: 100%;
   height: 100%;
 `;
 
-const NoContentTypo = styled.p`
-  ${props => props.theme.fonts.type.heading2};
-  color: ${props => props.theme.colors.bluegray[600]};
+const Margin = styled.div`
   margin-top: -20px;
   margin-bottom: 12px;
-  ${mediaQuery.sm} {
-    ${props => props.theme.fonts.type.heading2mobile};
-  }
 `;
 
 const NoContent = () => {
@@ -37,10 +32,14 @@ const NoContent = () => {
         height={mobileSize ? 240 : 400}
         animation={NoContentLottie}
       />
-      <NoContentTypo>피드가 텅! 비었어요</NoContentTypo>
-      <p style={{ color: theme.colors.primary[200] }}>
+      <Margin>
+        <Heading2 textColor={theme.colors.bluegray[600]}>
+          피드가 텅! 비었어요
+        </Heading2>
+      </Margin>
+      <Subtitle textColor={theme.colors.primary[200]}>
         곧 새로운 소식이 올라올지도 몰라요
-      </p>
+      </Subtitle>
     </FlexContainer>
   );
 };

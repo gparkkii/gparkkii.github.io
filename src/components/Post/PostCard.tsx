@@ -5,6 +5,7 @@ import { PostFrontMatterType } from 'types/Post.types';
 import { mediaQuery } from 'theme/breakpoints';
 import Tag from './Tag';
 import { Link } from 'gatsby';
+import { Caption, Heading2, Summary } from '../../styles/typography';
 
 const PostCardBox = styled.article`
   display: flex;
@@ -95,28 +96,20 @@ const PostCardTextBox = styled.div`
     margin: 0px;
   }
 `;
-const PostTitle = styled.h1`
-  word-break: keep-all;
-  line-height: 1.35em;
-  ${({ theme }) => theme.fonts.type.heading2};
-  color: ${({ theme }) => theme.lightTheme.text.black};
-  box-sizing: inline-box;
-  ${mediaQuery.sm} {
-    ${({ theme }) => theme.fonts.type.heading2mobile};
+
+const Date = styled.div`
+  margin-bottom: 12px;
+  & p {
+    color: ${({ theme }) => theme.lightTheme.text.light[500]};
   }
 `;
 
-const Date = styled.time`
-  ${({ theme }) => theme.fonts.type.caption};
-  color: ${({ theme }) => theme.lightTheme.text.light[500]};
-  margin-bottom: 12px;
-`;
-
-const Summary = styled.p`
-  ${({ theme }) => theme.fonts.type.summary};
-  color: ${({ theme }) => theme.lightTheme.text.dark[200]};
+const Margin = styled.div`
   margin-top: 12px;
   margin-bottom: 24px;
+  & p {
+    color: ${({ theme }) => theme.lightTheme.text.dark[200]};
+  }
 `;
 
 const TagBox = styled.div`
@@ -145,9 +138,13 @@ const PostCard = ({ key, slug, postData }: PostCardProps) => {
           />
         </ThumbnailBox>
         <PostCardTextBox>
-          <Date>{date}</Date>
-          <PostTitle>{title}</PostTitle>
-          <Summary className="typography-ellipsis-2line">{summary}</Summary>
+          <Date>
+            <Caption>{date}</Caption>
+          </Date>
+          <Heading2>{title}</Heading2>
+          <Margin>
+            <Summary className="typography-ellipsis-2line">{summary}</Summary>
+          </Margin>
           <TagBox>
             {tags.map((tag, index) => (
               <Tag key={`${tag}_${index}`} tag={tag} />

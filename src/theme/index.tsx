@@ -1,6 +1,10 @@
 import { primary, dark, light, secondary, bluegray } from './color';
 import { type, size, weight, lineHeight } from './fonts';
 
+export * from './color';
+export * from './fonts';
+export * from './breakpoints';
+
 export const lightTheme = {
   backgroundColor: light.default,
   postCard: {

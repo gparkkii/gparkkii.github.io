@@ -1,7 +1,7 @@
 import React from 'react';
+import styled from '@emotion/styled';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faXmark, faSearch, faBars } from '@fortawesome/free-solid-svg-icons';
-import styled from '@emotion/styled';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 
 type IconType = 'cancel' | 'search' | 'menu' | 'github';
