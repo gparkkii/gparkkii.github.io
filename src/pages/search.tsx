@@ -1,9 +1,13 @@
 import React from 'react';
-import BaseLayout from 'layout/BaseLayout';
+import SearchLayout from 'layout/SearchLayout';
 import { PATH } from '../routes/path';
 
 const search = () => {
-  return <BaseLayout path={PATH.search}>search</BaseLayout>;
+  return (
+    <SearchLayout path={PATH.search}>
+      <h1>search</h1>
+    </SearchLayout>
+  );
 };
 
 export default search;

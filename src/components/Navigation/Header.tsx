@@ -80,14 +80,14 @@ const DesktopMenu = ({ path }: { path: string }) => {
     <>
       <NavMenuBox>
         <NavMenu title="Tech" active={true} />
-        <NavMenu title="Tags" active={false} />
-        <NavMenu title="Project" active={false} />
-        <NavMenu title="About" active={false} />
+        <NavMenu title="Story" disabled={true} active={false} />
+        <NavMenu title="Project" disabled={true} active={false} />
+        <NavMenu title="About" disabled={true} active={false} />
       </NavMenuBox>
       <IconWrapper>
         {path !== PATH.search ? (
           <Link to={PATH.search}>
-            <Icon size="xs" icon="search" />
+            <Icon size="sm" icon="search" />
           </Link>
         ) : (
           <div onClick={() => navigate(-1)}>

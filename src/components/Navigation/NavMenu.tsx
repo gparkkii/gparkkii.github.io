@@ -16,7 +16,7 @@ const StyledNav = styled.nav<{ active: boolean; disabled?: boolean }>`
       : props.active
       ? props.theme.lightTheme.text.primary
       : props.theme.lightTheme.text.black};
-  font-weight: ${props => (props.active ? 700 : 600)};
+  font-weight: ${props => (props.active ? 600 : 500)};
   cursor: pointer;
 
   &:hover {

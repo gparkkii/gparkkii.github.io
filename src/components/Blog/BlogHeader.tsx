@@ -74,7 +74,7 @@ const BlogHeader = ({ selectedTag }: BlogHeaderProps) => {
           </Link>
           <Headline>#{selectedTag}</Headline>
         </HeadlineWrapper>
-        <BlogFilter />
+        {/* <BlogFilter /> */}
       </HeadlineContainer>
       <BlogHeaderDivider />
     </BlogHeaderWrapper>

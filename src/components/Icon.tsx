@@ -2,13 +2,15 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faXmark, faSearch, faBars } from '@fortawesome/free-solid-svg-icons';
 import styled from '@emotion/styled';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
 
-type IconType = 'cancel' | 'search' | 'menu';
+type IconType = 'cancel' | 'search' | 'menu' | 'github';
 
 const CustomIcon = {
   cancel: faXmark,
   search: faSearch,
   menu: faBars,
+  github: faGithub,
 } as const;
 
 type IconSizeType = 'xs' | 'sm' | 'md' | 'lg' | 'xl';
