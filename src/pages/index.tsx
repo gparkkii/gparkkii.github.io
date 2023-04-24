@@ -68,6 +68,9 @@ export const postContentQuery = graphql`
       edges {
         node {
           id
+          fields {
+            slug
+          }
           frontmatter {
             title
             summary

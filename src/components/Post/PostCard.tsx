@@ -4,6 +4,7 @@ import { GatsbyImage } from 'gatsby-plugin-image';
 import { PostFrontMatterType } from 'types/Post.types';
 import { mediaQuery } from 'theme/breakpoints';
 import Tag from './Tag';
+import { Link } from 'gatsby';
 
 const PostCardBox = styled.article`
   display: flex;
@@ -127,13 +128,14 @@ const TagBox = styled.div`
 
 interface PostCardProps {
   key: string;
+  slug: string;
   postData: PostFrontMatterType;
 }
 
-const PostCard = ({ key, postData }: PostCardProps) => {
+const PostCard = ({ key, slug, postData }: PostCardProps) => {
   const { title, date, summary, thumbnail, tags } = postData;
   return (
-    <>
+    <Link to={slug}>
       <PostCardBox key={key}>
         <ThumbnailBox className="postcard-thumbnail">
           <ThumbnailImage
@@ -154,7 +156,7 @@ const PostCard = ({ key, postData }: PostCardProps) => {
         </PostCardTextBox>
       </PostCardBox>
       <PostCardDivider />
-    </>
+    </Link>
   );
 };
 

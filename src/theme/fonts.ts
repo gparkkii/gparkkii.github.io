@@ -79,9 +79,9 @@ export const type = {
     lineHeight: lineHeight['5xl'],
   },
   heading1: {
-    fontSize: size['4xl'],
+    fontSize: size['3xl'],
     fontWeight: weight['bold'],
-    lineHeight: lineHeight['4xl'],
+    lineHeight: lineHeight['3xl'],
   },
   heading1mobile: {
     fontSize: size.xl,

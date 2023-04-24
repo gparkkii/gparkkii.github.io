@@ -3,6 +3,9 @@ import { IGatsbyImageData } from 'gatsby-plugin-image';
 export type PostType = {
   node: {
     id: string;
+    fields: {
+      slug: string;
+    };
     frontmatter: PostFrontMatterType;
   };
 };
