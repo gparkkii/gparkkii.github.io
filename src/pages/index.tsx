@@ -3,7 +3,7 @@ import { graphql } from 'gatsby';
 import queryString, { ParsedQuery } from 'query-string';
 import { PostType } from 'types/Post.types';
 import { PATH } from '../routes/path';
-import { TagListProps } from 'components/TagMenu';
+import { TagListProps } from 'components/Post/TagMenu';
 import BaseLayout from 'layout/BaseLayout';
 import Blog from 'components/Blog';
 

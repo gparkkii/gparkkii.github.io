@@ -15,7 +15,7 @@ const Body = styled.main`
 
   max-width: 1200px;
   width: 100%;
-  min-height: 100vh;
+  min-height: calc(100vh - 80px);
   height: 100%;
   padding: 0px 40px;
   padding-top: 80px;

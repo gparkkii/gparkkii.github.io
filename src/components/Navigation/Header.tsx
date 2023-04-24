@@ -4,8 +4,8 @@ import { Link, navigate } from 'gatsby';
 import NavMenu from './NavMenu';
 import { mediaQuery } from 'theme/breakpoints';
 import { PATH } from '../../routes/path';
-import Icon from '../Icon';
-import Logo from '../Logo';
+import Icon from '../Common/Icon';
+import Logo from '../Common/Logo';
 import Drawer from './Drawer';
 
 const HeaderLayout = styled.header`

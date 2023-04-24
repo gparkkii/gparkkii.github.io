@@ -1,10 +1,11 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import { PostType } from 'types/Post.types';
-import PostCard from '../PostCard';
+import PostCard from '../Post/PostCard';
 import Category from '../Category';
 import BlogHeader from './BlogHeader';
 import { mediaQuery } from 'theme/breakpoints';
+import NoContent from '../Common/NoContent';
 
 const BlogContainer = styled.div`
   display: flex;
@@ -37,32 +38,39 @@ interface BlogLayoutProps {
 const Blog = ({ posts, selectedTag }: BlogLayoutProps) => {
   const currentPostList = React.useMemo(
     () =>
-      posts.filter(
-        ({
-          node: {
-            frontmatter: { tags },
-          },
-        }: PostType) =>
-          selectedTag !== 'All' ? tags.includes(selectedTag) : true,
-      ),
+      // posts.filter(
+      //   ({
+      //     node: {
+      //       frontmatter: { tags },
+      //     },
+      //   }: PostType) =>
+      //     selectedTag !== 'All' ? tags.includes(selectedTag) : true,
+      // )
+      undefined,
     [selectedTag],
   );
 
   return (
     <BlogContainer>
-      <BlogHeader selectedTag={selectedTag} />
-      <PostWrapper>
-        <section>
-          {currentPostList?.map((post, index) => {
-            return (
-              <PostCard
-                key={`post_${index}`}
-                postData={post.node.frontmatter}
-              />
-            );
-          })}
-        </section>
-      </PostWrapper>
+      {currentPostList ? (
+        <>
+          <BlogHeader selectedTag={selectedTag} />
+          <PostWrapper>
+            <section>
+              {/* {currentPostList.map((post, index) => {
+                return (
+                  <PostCard
+                    key={`post_${index}`}
+                    postData={post.node.frontmatter}
+                  />
+                );
+              })} */}
+            </section>
+          </PostWrapper>
+        </>
+      ) : (
+        <NoContent />
+      )}
     </BlogContainer>
   );
 };

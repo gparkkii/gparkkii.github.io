@@ -1,11 +1,12 @@
 import styled from '@emotion/styled';
 import React from 'react';
-import Icon from '../Icon';
+import Icon from '../Common/Icon';
 import { Link } from 'gatsby';
 
 const FooterLayout = styled.footer`
   width: 100%;
-  padding: 16px;
+  padding: 20px 16px;
+  height: 80px;
 
   display: flex;
   flex-direction: row;
@@ -32,10 +33,10 @@ const Footer = () => {
   return (
     <FooterLayout>
       <div>
+        <LicenseTypo bold>Copyright ©gparkkii All rights reserved.</LicenseTypo>
         <LicenseTypo>
           2023 | built with gatsby | Developed & Designed by gparkkii
         </LicenseTypo>
-        <LicenseTypo bold>Copyright ©gparkkii All rights reserved.</LicenseTypo>
       </div>
       <Link to="https://github.com/gparkkii">
         <IconWrapper>

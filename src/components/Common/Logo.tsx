@@ -16,7 +16,7 @@ const Logo = () => {
           height: mobileSize ? '40px' : '44px',
           objectFit: 'contain',
         }}
-        src="../images/g_logo.png"
+        src="../../images/g_logo.png"
         alt="logo"
       />
     </Link>

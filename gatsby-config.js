@@ -69,6 +69,16 @@ module.exports = {
       options: {
         plugins: [
           {
+            resolve: "gatsby-remark-lottie",
+            options: {
+              generatePlaceholders: true,
+              lottieVersion: "5.7.1",
+              renderer: "svg",
+              loop: true,
+              autoplay: true
+            }
+          },
+          {
             resolve: 'gatsby-remark-smartypants',
             options: {
               dashes: 'oldschool',
