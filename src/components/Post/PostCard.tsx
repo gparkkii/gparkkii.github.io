@@ -1,11 +1,11 @@
 import React from 'react';
 import styled from '@emotion/styled';
+import { Link } from 'gatsby';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import { PostFrontMatterType } from 'types/Post.types';
 import { mediaQuery } from 'theme/breakpoints';
+import { Caption2, Heading2, Summary } from 'styles/typography';
 import Tag from './Tag';
-import { Link } from 'gatsby';
-import { Caption, Heading2, Summary } from '../../styles/typography';
 
 const PostCardBox = styled.article`
   display: flex;
@@ -33,9 +33,9 @@ const PostCardBox = styled.article`
 
   &:hover {
     /* transform: translateY(-6px); */
-    & h1 {
+    /* & h1 {
       color: ${props => props.theme.colors.dark[200]};
-    }
+    } */
     .postcard-thumbnail {
       opacity: 0.75;
     }
@@ -88,7 +88,7 @@ const PostCardTextBox = styled.div`
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  margin-left: 60px;
+  margin-left: 48px;
   margin-right: 40px;
 
   ${mediaQuery.sm} {
@@ -98,17 +98,17 @@ const PostCardTextBox = styled.div`
 `;
 
 const Date = styled.div`
-  margin-bottom: 12px;
+  margin-bottom: 10px;
   & p {
     color: ${({ theme }) => theme.lightTheme.text.light[500]};
   }
 `;
 
 const Margin = styled.div`
-  margin-top: 12px;
-  margin-bottom: 24px;
+  margin-top: 10px;
+  margin-bottom: 20px;
   & p {
-    color: ${({ theme }) => theme.lightTheme.text.dark[200]};
+    color: ${({ theme }) => theme.lightTheme.text.dark[150]};
   }
 `;
 
@@ -139,7 +139,7 @@ const PostCard = ({ key, slug, postData }: PostCardProps) => {
         </ThumbnailBox>
         <PostCardTextBox>
           <Date>
-            <Caption>{date}</Caption>
+            <Caption2>{date}</Caption2>
           </Date>
           <Heading2>{title}</Heading2>
           <Margin>

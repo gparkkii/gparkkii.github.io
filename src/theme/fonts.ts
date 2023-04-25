@@ -1,5 +1,5 @@
 export const size = {
-  '6xl': '48px',
+  '6xl': '44px',
   '5xl': '40px',
   '4xl': '36px',
   '3xl': '32px',
@@ -14,8 +14,8 @@ export const size = {
 } as const;
 
 export const lineHeight = {
-  '6xl': '72px',
-  '5xl': '60px',
+  '6xl': '64px',
+  '5xl': '58px',
   '4xl': '50px',
   '3xl': '44px',
   '2xl': '36px',
@@ -40,15 +40,27 @@ export const weight = {
 export const type = {
   headline: {
     fontFamily: 'Inter, Pretendard, Noto Sans',
-    fontSize: size['5xl'],
+    fontSize: size['6xl'],
     fontWeight: weight['black'],
-    lineHeight: lineHeight['5xl'],
+    lineHeight: lineHeight['6xl'],
   },
   headlineMobile: {
     fontFamily: 'Inter, Pretendard, Noto Sans',
-    fontSize: size['3xl'],
+    fontSize: size['4xl'],
     fontWeight: weight['bold'],
-    lineHeight: lineHeight['3xl'],
+    lineHeight: lineHeight['4xl'],
+  },
+  headline2: {
+    fontFamily: 'Pretendard, Noto Sans',
+    fontSize: size['6xl'],
+    fontWeight: weight['bold'],
+    lineHeight: lineHeight['6xl'],
+  },
+  headline2Mobile: {
+    fontFamily: 'Pretendard, Noto Sans',
+    fontSize: size['2xl'],
+    fontWeight: weight['bold'],
+    lineHeight: lineHeight['2xl'],
   },
   menu: {
     fontFamily: 'Inter, Pretendard, Noto Sans',
@@ -64,9 +76,9 @@ export const type = {
   },
   nav: {
     fontFamily: 'Inter, Pretendard, Noto Sans',
-    fontSize: '17px',
+    fontSize: size['md'],
     fontWeight: weight['semibold'],
-    lineHeight: '23px',
+    lineHeight: lineHeight['md'],
   },
   guidance1: {
     fontSize: size['5xl'],
@@ -85,7 +97,7 @@ export const type = {
   },
   heading1mobile: {
     fontSize: size.xl,
-    fontWeight: weight.semibold,
+    fontWeight: weight.bold,
     lineHeight: lineHeight.xl,
   },
   heading2: {
@@ -125,7 +137,7 @@ export const type = {
   },
   summary: {
     fontSize: size.md1,
-    fontWeight: weight.medium,
+    fontWeight: weight.normal,
   },
   body: {
     fontSize: size.sm,
@@ -143,11 +155,26 @@ export const type = {
     lineHeight: lineHeight.sm,
   },
   tag: {
+    fontSize: size.sm,
+    fontWeight: weight.medium,
+    lineHeight: lineHeight.sm,
+  },
+  tagMobile: {
     fontSize: size.xs,
     fontWeight: weight.medium,
     lineHeight: lineHeight.xs,
   },
   caption: {
+    fontSize: size.xs,
+    fontWeight: weight.normal,
+    lineHeight: lineHeight.sm,
+  },
+  caption2: {
+    fontSize: '13px',
+    fontWeight: weight.normal,
+    lineHeight: lineHeight.sm,
+  },
+  captionMobile: {
     fontSize: size.xs,
     fontWeight: weight.normal,
     lineHeight: lineHeight.xs,

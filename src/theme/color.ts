@@ -6,6 +6,7 @@ export const primary = {
   300: '#FF9F94',
   400: '#FFBFB8',
   500: '#FFDFDB',
+  600: '#FFECEA',
 } as const;
 
 export const secondary = {
@@ -49,7 +50,10 @@ export const bluegray = {
   200: '#DDDFEA',
   300: '#CCCED9',
   400: '#ABAFB7',
+  450: '#8F97A8',
   500: '#717784',
-  600: '#353E51',
-  700: '#2F3043',
+  550: '#595F6A',
+  600: '#3F4758',
+  700: '#3B424F',
+  800: '#2A2E36',
 } as const;

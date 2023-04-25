@@ -18,17 +18,18 @@ const FilterLayout = styled.div`
 const Button = styled.button<{ selected?: boolean }>`
   display: flex;
   align-items: center;
-  height: 40px;
-  padding: 0px 28px;
+  height: 36px;
+  padding: 0px 24px;
 
   background-color: ${props => (props.selected ? 'black' : 'white')};
   color: ${props => (props.selected ? 'white' : 'black')};
 
-  ${props => props.theme.fonts.type.subtitle};
+  font-size: 15px;
+  font-weight: 500;
 
   ${mediaQuery.sm} {
-    height: 36px;
-    padding: 0px 24px;
+    height: 32px;
+    padding: 0px 20px;
     ${props => props.theme.fonts.type.body1};
   }
 `;

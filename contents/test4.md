@@ -1,23 +1,9 @@
 ---
 date: '2022-02-06'
 title: 'ESLINT 제대로 알아보기'
-tags: ['Javascript', 'Eslint']
+tags: ['JavaScript', 'Eslint', 'TIL']
 summary: '2020년 11월 TypeScript 4.1이 출시되면서 “Template Literal Type”을 사용할 수 있게 되었습니다. TypeScript로 JSON Parser를 만들거나, document.querySelector 의 결과 타입을 추론할 수 있게 되어 화제가 되었는데요. 이번 아티클에서는 Template Literal Type이란 무엇인지, 이를 바탕으로 어떻게 그런 결과물을 만들 수 있었는지 간단히 예시로 소개드리고자 합니다.'
 thumbnail: './assets/example3.png'
----
-
----
-title: ESLint 설정 뜯어보기 (feat. React, TypeScript)
-date: 2022-01-26
-categories: [TIL]
-tags: [eslint, 리액트] # TAG names should always be lowercase
-image:
-  src: https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1599890132/noticon/c9dgkhp3m5rxmzn3fnp9.png
-  width: 100 # in pixels
-  height: 100 # in pixels
-  alt: ESLint
-mermaid: true
-excerpt_separator: <!--end-of-description-->
 ---
 
 ## 목표
@@ -27,7 +13,7 @@ excerpt_separator: <!--end-of-description-->
 <!--end-of-description-->
 
 <details markdown="1">
-<summary><strong>TL;DR</strong></summary>
+<summary><strong>ESLINT 사용법</strong></summary>
 
 - 플러그인에 정의된 프리셋 규칙을 즉시 적용하고 싶다면: `extends`
 - 플러그인에 정의된 규칙을 개별적으로 적용하고 싶다면: `plugins`로 불러오고 `rules`에 추가한다
@@ -77,7 +63,7 @@ module.exports = {
 
 <!-- prettier-ignore-start -->
 
-| 용어 | {::nomarkdown} <div style="width:290px"> 뜻 </div> {:/}| 자주 사용하는 값 | 비고 |
+| **용어** | {::nomarkdown} <div style="width:290px"> 뜻 </div> {:/}| 자주 사용하는 값 | 비고 |
 | :---: | :--- | :--- | :--- |
 | root | {::nomarkdown}<li>린트를 적용할 프로젝트의 루트가 현재 린트 설정 파일과 동일한 레벨에 있다</li> <li>따라서 부모 디렉토리는 린팅 대상에 포함하지 않는다</li> {:/} | `true` 또는 생략 |
 | [env](https://eslint.org/docs/user-guide/configuring/language-options#specifying-environments) | {::nomarkdown}<li>프로젝트가 실행될 환경을 정의한다</li> <li>각 환경에 맞는 전역 변수를 사전에 제공한다</li> {:/} | `{ browser: true, es2021: true, node: true, jest: true }` | `es*` 값을 사용하면 파서 옵션의 `ecmaVersion`도 자동으로 설정된다 |

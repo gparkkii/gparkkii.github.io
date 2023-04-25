@@ -23,6 +23,16 @@ export const Headline = styled.h1<TypographyProps>`
   }
 `;
 
+export const Headline2 = styled.h1<TypographyProps>`
+  word-break: keep-all;
+  ${({ theme }) => theme.fonts.type.headline2};
+  color: ${({ textColor, theme }) =>
+    textColor ? textColor : theme.lightTheme.text.black};
+  ${mediaQuery.sm} {
+    ${({ theme }) => theme.fonts.type.headline2Mobile};
+  }
+`;
+
 export const Menu = styled.h3<FontWeightProps>`
   ${({ theme, bold }) =>
     bold ? theme.fonts.type.menu1 : theme.fonts.type.menu};
@@ -120,10 +130,28 @@ export const Tag = styled.p<TypographyProps>`
   ${({ theme }) => theme.fonts.type.tag};
   color: ${({ textColor, theme }) =>
     textColor ? textColor : theme.lightTheme.text.black};
+
+  ${mediaQuery.sm} {
+    ${({ theme }) => theme.fonts.type.tagMobile};
+  }
 `;
 
 export const Caption = styled.p<TypographyProps>`
   ${({ theme }) => theme.fonts.type.caption};
   color: ${({ textColor, theme }) =>
     textColor ? textColor : theme.lightTheme.text.black};
+
+  ${mediaQuery.sm} {
+    ${({ theme }) => theme.fonts.type.captionMobile};
+  }
+`;
+
+export const Caption2 = styled.p<TypographyProps>`
+  ${({ theme }) => theme.fonts.type.caption2};
+  color: ${({ textColor, theme }) =>
+    textColor ? textColor : theme.lightTheme.text.black};
+
+  ${mediaQuery.sm} {
+    ${({ theme }) => theme.fonts.type.captionMobile};
+  }
 `;

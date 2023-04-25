@@ -9,7 +9,7 @@ interface NavMenuProps {
 }
 
 const StyledNav = styled.div<{ active: boolean; disabled?: boolean }>`
-  padding: 0px 20px;
+  padding: 0px 16px;
   & p {
     color: ${props =>
       props.disabled

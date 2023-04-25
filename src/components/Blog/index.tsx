@@ -13,7 +13,7 @@ const BlogContainer = styled.div`
   justify-content: flex-start;
 
   width: 100%;
-  padding-top: 80px;
+  padding-top: 60px;
 
   ${mediaQuery.sm} {
     padding-top: 40px;

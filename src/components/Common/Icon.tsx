@@ -1,16 +1,24 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faXmark, faSearch, faBars } from '@fortawesome/free-solid-svg-icons';
+import {
+  faXmark,
+  faSearch,
+  faBars,
+  faLink,
+  faShareAlt,
+} from '@fortawesome/free-solid-svg-icons';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 
-type IconType = 'cancel' | 'search' | 'menu' | 'github';
+type IconType = 'cancel' | 'search' | 'menu' | 'github' | 'link' | 'share';
 
 const CustomIcon = {
   cancel: faXmark,
   search: faSearch,
   menu: faBars,
   github: faGithub,
+  link: faLink,
+  share: faShareAlt,
 } as const;
 
 type IconSizeType = 'xs' | 'sm' | 'md' | 'lg' | 'xl';
@@ -22,7 +30,7 @@ const IconSize = {
   xl: '48px',
 } as const;
 
-interface IconProps {
+export interface IconProps {
   size: IconSizeType;
   icon: IconType;
 }
@@ -32,6 +40,12 @@ const IconBox = styled.div`
   align-items: center;
   justify-content: center;
   object-fit: contain;
+
+  svg > path {
+    fill: ${props => props.theme.colors.dark[50]};
+    stroke: #fff !important;
+    stroke-width: 3.5% !important;
+  }
 `;
 
 const Icon = ({ size, icon }: IconProps) => {

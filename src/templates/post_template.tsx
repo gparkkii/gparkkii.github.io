@@ -2,6 +2,7 @@ import React, { FunctionComponent } from 'react';
 import BaseLayout from 'layout/BaseLayout';
 import PostLayout from 'layout/PostLayout';
 import ContentHead from 'components/Detail/ContentHead';
+import ContentBody from 'components/Detail/ContentBody';
 import { graphql } from 'gatsby';
 
 type PostTemplateProps = {
@@ -24,7 +25,7 @@ const PostTemplate: FunctionComponent<PostTemplateProps> = function ({
         title,
         summary,
         date,
-        categories,
+        tags,
         thumbnail: {
           childImageSharp: { gatsbyImageData },
         },
@@ -32,10 +33,13 @@ const PostTemplate: FunctionComponent<PostTemplateProps> = function ({
     },
   } = data.allMarkdownRemark.edges[0];
 
+  console.log(date, tags);
+
   return (
     <BaseLayout path={path}>
       <PostLayout>
-        <ContentHead title={title} />
+        <ContentHead title={title} date={date} thumbnail={gatsbyImageData} />
+        <ContentBody html={html} thumbnail={gatsbyImageData} />
       </PostLayout>
     </BaseLayout>
   );
@@ -52,7 +56,7 @@ export const queryMarkdownDataBySlug = graphql`
           frontmatter {
             title
             summary
-            date(formatString: "YYYY.MM.DD.")
+            date(formatString: "YYYY년 MM월 DD일 HH:mm")
             tags
             thumbnail {
               childImageSharp {

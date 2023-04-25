@@ -15,12 +15,13 @@ const Body = styled.main`
 
   max-width: 1200px;
   width: 100%;
-  min-height: calc(100vh - 80px);
+  min-height: calc(100vh - 80px); // minus footer height
   height: 100%;
   padding: 0px 40px;
-  padding-top: 80px;
+  padding-top: 72px; // padding to header height
   margin: 0 auto;
   background-color: ${({ theme }) => theme.lightTheme.backgroundColor};
+  transition: all 0.5s ease-in-out;
 
   ${mediaQuery.sm} {
     padding: 40px 0px;

@@ -5,8 +5,8 @@ import { mediaQuery } from 'theme/index';
 import { PATH } from 'routes/path';
 import NavMenu from './NavMenu';
 import Drawer from './Drawer';
-import Icon from '../Common/Icon';
 import Logo from '../Common/Logo';
+import IconButton from '../Controls/IconButton';
 
 const HeaderLayout = styled.header`
   position: fixed;
@@ -18,16 +18,20 @@ const HeaderLayout = styled.header`
   justify-content: space-between;
 
   width: 100%;
-  height: 80px;
+  height: 72px;
   background-color: ${({ theme }) => theme.lightTheme.backgroundColor};
-  box-shadow: 0px 2px 8px 4px rgba(229, 229, 229, 0.25);
+  box-shadow: 0px 2px 4px 2px rgba(225, 225, 225, 0.15);
+  /* border-bottom: 2px solid #fafafa; */
 
   margin: 0 auto;
-  padding: 0 40px;
+  padding-left: 40px;
+  padding-right: 32px;
+  transition: all 0.5s ease;
 
   ${mediaQuery.sm} {
-    height: 72px;
-    padding: 0 24px;
+    height: 64px;
+    padding-left: 16px;
+    padding-right: 12px;
   }
 `;
 
@@ -66,7 +70,7 @@ const MobileMenuBox = styled.div`
 `;
 
 const IconWrapper = styled.div`
-  margin-left: 20px;
+  margin-left: 8px;
   ${mediaQuery.sm} {
     visibility: hidden;
     opacity: 0;
@@ -80,19 +84,17 @@ const DesktopMenu = ({ path }: { path: string }) => {
     <>
       <NavMenuBox>
         <NavMenu title="Tech" active={true} />
-        <NavMenu title="Story" disabled={true} active={false} />
+        <NavMenu title="Diary" disabled={true} active={false} />
         <NavMenu title="Project" disabled={true} active={false} />
         <NavMenu title="About" disabled={true} active={false} />
       </NavMenuBox>
       <IconWrapper>
         {path !== PATH.search ? (
           <Link to={PATH.search}>
-            <Icon size="sm" icon="search" />
+            <IconButton size="xs" icon="search" />
           </Link>
         ) : (
-          <div onClick={() => navigate(-1)}>
-            <Icon size="sm" icon="cancel" />
-          </div>
+          <IconButton size="xs" icon="cancel" onClick={() => navigate(-1)} />
         )}
       </IconWrapper>
     </>
@@ -108,9 +110,9 @@ const MobileMenu = ({
 }) => (
   <MobileMenuBox onClick={onClick}>
     {visible ? (
-      <Icon size="sm" icon={'cancel'} />
+      <IconButton size="xs" icon={'cancel'} />
     ) : (
-      <Icon size="xs" icon={'menu'} />
+      <IconButton size="xs" icon={'menu'} />
     )}
   </MobileMenuBox>
 );
@@ -119,16 +121,14 @@ const Header = ({ path }: { path: string }) => {
   const [showDrawer, setShowDrawer] = useState(false);
   const handleDrawer = () => setShowDrawer(prev => !prev);
   return (
-    <>
-      <HeaderLayout>
-        <Logo />
-        <NavWrapper>
-          <DesktopMenu path={path} />
-          <MobileMenu visible={showDrawer} onClick={handleDrawer} />
-        </NavWrapper>
-      </HeaderLayout>
+    <HeaderLayout>
+      <Logo />
+      <NavWrapper>
+        <DesktopMenu path={path} />
+        <MobileMenu visible={showDrawer} onClick={handleDrawer} />
+      </NavWrapper>
       <Drawer visible={showDrawer} />
-    </>
+    </HeaderLayout>
   );
 };
 
