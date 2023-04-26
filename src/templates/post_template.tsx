@@ -3,6 +3,7 @@ import BaseLayout from 'layout/BaseLayout';
 import PostLayout from 'layout/PostLayout';
 import ContentHead from 'components/Detail/ContentHead';
 import ContentBody from 'components/Detail/ContentBody';
+import CommentWidget from 'components/Detail/CommentWidget';
 import { graphql } from 'gatsby';
 
 type PostTemplateProps = {
@@ -33,13 +34,12 @@ const PostTemplate: FunctionComponent<PostTemplateProps> = function ({
     },
   } = data.allMarkdownRemark.edges[0];
 
-  console.log(date, tags);
-
   return (
     <BaseLayout path={path}>
       <PostLayout>
         <ContentHead title={title} date={date} thumbnail={gatsbyImageData} />
         <ContentBody html={html} thumbnail={gatsbyImageData} />
+        <CommentWidget />
       </PostLayout>
     </BaseLayout>
   );

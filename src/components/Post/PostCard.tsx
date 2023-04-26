@@ -120,16 +120,15 @@ const TagBox = styled.div`
 `;
 
 interface PostCardProps {
-  key: string;
   slug: string;
   postData: PostFrontMatterType;
 }
 
-const PostCard = ({ key, slug, postData }: PostCardProps) => {
+const PostCard = ({ slug, postData }: PostCardProps) => {
   const { title, date, summary, thumbnail, tags } = postData;
   return (
     <Link to={slug}>
-      <PostCardBox key={key}>
+      <PostCardBox>
         <ThumbnailBox className="postcard-thumbnail">
           <ThumbnailImage
             loading="lazy"
