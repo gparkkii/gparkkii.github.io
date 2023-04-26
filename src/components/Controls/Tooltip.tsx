@@ -3,6 +3,9 @@ import React from 'react';
 
 const TooltipWrapper = styled.div`
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   :hover {
     .tooltip {
       visibility: visible;
@@ -13,11 +16,12 @@ const TooltipWrapper = styled.div`
 const TooltipBox = styled.div`
   visibility: hidden;
   position: absolute;
-  bottom: -48px;
-  padding: 8px 16px;
+  bottom: -40px;
+  padding: 4px 12px;
   border-radius: 8px;
   background-color: rgba(113, 119, 132, 0.25);
-  ${({ theme }) => theme.fonts.type.body1};
+  color: ${({ theme }) => theme.colors.bluegray[500]};
+  ${({ theme }) => theme.fonts.type.caption2};
 `;
 
 interface TooltipProps {

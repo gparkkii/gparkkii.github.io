@@ -33,7 +33,7 @@ const Footer = () => {
           Copyright ©gparkkii All rights reserved.
         </Caption>
         <Caption textColor={theme.colors.light[800]}>
-          2023 | built with gatsby | Developed & Designed by gparkkii
+          2023 | built with gatsby | Developed by gparkkii
         </Caption>
       </div>
       <Link to="https://github.com/gparkkii">

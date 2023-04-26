@@ -84,7 +84,9 @@ const DesktopMenu = ({ path }: { path: string }) => {
   return (
     <>
       <NavMenuBox>
-        <NavMenu title="Tech" active={true} />
+        <Link to={PATH.index}>
+          <NavMenu title="Tech" active={true} />
+        </Link>
         <Tooltip tip="준비중...">
           <NavMenu title="Diary" disabled={true} active={false} />
         </Tooltip>

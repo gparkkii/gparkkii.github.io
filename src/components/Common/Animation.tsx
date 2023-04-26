@@ -29,5 +29,10 @@ export const Animations: React.FC<Props> = ({
     return () => anim.destroy(); // optional clean up for unmounting
   }, []);
 
-  return <div style={{ height, width }} ref={animationContainer} />;
+  return (
+    <div
+      style={{ height, width, objectFit: 'contain' }}
+      ref={animationContainer}
+    />
+  );
 };
