@@ -9,9 +9,9 @@
  */
 module.exports = {
   siteMetadata: {
-    title: `gparkkii-blog`,
-    description: `gparkkii's personal blog.`,
-    author: `@gatsbyjs`,
+    title: `gparkkii.log`,
+    description: `프론트엔드 엔지니어 지파키의 테크 블로그`,
+    author: `gparkkii`,
     siteUrl: `https://github.com/gparkkii/gparkkii.github.io`,
   },
   plugins: [
@@ -19,6 +19,7 @@ module.exports = {
     `gatsby-plugin-image`,
     `gatsby-plugin-emotion`,
     `gatsby-transformer-sharp`,
+    `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-plugin-sharp`,
       options: {
@@ -62,6 +63,13 @@ module.exports = {
       options: {
         name: `contents`,
         path: `${__dirname}/contents`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: `${__dirname}/static`,
       },
     },
     {

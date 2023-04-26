@@ -6,6 +6,7 @@ import Footer from 'components/Navigation/Footer';
 import Header from 'components/Navigation/Header';
 import { theme } from 'theme/index';
 import { mediaQuery } from 'theme/breakpoints';
+import { Helmet } from 'react-helmet';
 
 const Body = styled.main`
   display: flex;
@@ -32,11 +33,45 @@ const Body = styled.main`
 type BaseLayoutProps = {
   path: string;
   children: React.ReactNode;
+  meta?: {
+    title: string;
+    description: string;
+    image: string;
+    url: string;
+  };
 };
 
-const BaseLayout = ({ path, children }: BaseLayoutProps) => {
+const INITIAL_META = {
+  title: 'gparkkii.log',
+  description: '프론트엔드 엔지니어 지파키의 테크 블로그',
+  image: '/static/profile-image.jpeg',
+  url: 'https://github.com/gparkkii/gparkkii.github.io',
+};
+
+const BaseLayout = ({ path, children, meta }: BaseLayoutProps) => {
   return (
     <ThemeProvider theme={theme}>
+      <Helmet>
+        <title>{meta?.title ?? INITIAL_META.title}</title>
+        <meta
+          name="description"
+          content={meta?.description ?? INITIAL_META.description}
+        />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta httpEquiv="Content-Type" content="text/html;charset=UTF-8" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content={meta?.title ?? INITIAL_META.title} />
+        <meta
+          property="og:description"
+          content={meta?.description ?? INITIAL_META.description}
+        />
+        <meta property="og:image" content={meta?.image ?? INITIAL_META.image} />
+        <meta property="og:url" content={meta?.url ?? INITIAL_META.url} />
+        <meta
+          property="og:site_name"
+          content={meta?.title ?? INITIAL_META.title}
+        />
+      </Helmet>
       <Global styles={globalStyle} />
       <Header path={path} />
       <Body>{children}</Body>

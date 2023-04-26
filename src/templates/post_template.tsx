@@ -13,11 +13,15 @@ type PostTemplateProps = {
       edges: PostPageItemType[];
     };
   };
+  location: {
+    href: string;
+  };
 };
 
 const PostTemplate: FunctionComponent<PostTemplateProps> = function ({
   path,
   data,
+  location,
 }: PostTemplateProps) {
   const {
     node: {
@@ -29,13 +33,22 @@ const PostTemplate: FunctionComponent<PostTemplateProps> = function ({
         tags,
         thumbnail: {
           childImageSharp: { gatsbyImageData },
+          publicURL,
         },
       },
     },
   } = data.allMarkdownRemark.edges[0];
 
   return (
-    <BaseLayout path={path}>
+    <BaseLayout
+      path={path}
+      meta={{
+        title,
+        description: summary,
+        url: location.href,
+        image: publicURL,
+      }}
+    >
       <PostLayout>
         <ContentHead title={title} date={date} thumbnail={gatsbyImageData} />
         <ContentBody html={html} thumbnail={gatsbyImageData} />
@@ -62,6 +75,7 @@ export const queryMarkdownDataBySlug = graphql`
               childImageSharp {
                 gatsbyImageData
               }
+              publicURL
             }
           }
         }

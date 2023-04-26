@@ -19,5 +19,6 @@ export type PostFrontMatterType = {
     childImageSharp: {
       gatsbyImageData: IGatsbyImageData;
     };
+    publicURL: string;
   };
 };
