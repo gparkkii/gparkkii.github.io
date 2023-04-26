@@ -45,7 +45,7 @@ const INITIAL_META = {
   title: 'gparkkii.log',
   description: '프론트엔드 엔지니어 지파키의 테크 블로그',
   image: '/static/profile-image.jpeg',
-  url: 'https://gparkkii.github.io',
+  url: 'https://gparkkii.github.io/',
 };
 
 const BaseLayout = ({ path, children, meta }: BaseLayoutProps) => {

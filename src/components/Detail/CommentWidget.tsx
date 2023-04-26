@@ -13,7 +13,7 @@ const UtteranceBox = styled.div`
 `;
 
 const src = 'https://utteranc.es/client.js';
-const repo = 'gparkkii/gparkkii.github.io';
+const repo = 'gparkkii/gparkkii.github.io/';
 
 type UtterancesAttributesType = {
   src: string;

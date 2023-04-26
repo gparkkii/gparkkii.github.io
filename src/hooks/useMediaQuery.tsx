@@ -1,16 +1,26 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 
 export const useMediaQuery = (query: string) => {
-  const [matches, setMatches] = useState(false);
+  const [targetReached, setTargetReached] = useState(false);
+
+  const updateTarget = useCallback(e => {
+    if (e.matches) {
+      setTargetReached(true);
+    } else {
+      setTargetReached(false);
+    }
+  }, []);
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
-      const mediaMatch = window.matchMedia(`(max-width:${query})`);
-      const handler = (e: MediaQueryListEvent) => setMatches(e.matches);
-      mediaMatch.addEventListener('change', handler);
-      return () => mediaMatch.removeEventListener('change', handler);
+      const media = window.matchMedia(`(max-width:${query}px)`);
+      media.addEventListener('change', updateTarget);
+      if (media.matches) {
+        setTargetReached(true);
+      }
+
+      return () => media.removeEventListener('change', updateTarget);
     }
-    return;
-  });
-  return matches;
+  }, []);
+  return targetReached;
 };

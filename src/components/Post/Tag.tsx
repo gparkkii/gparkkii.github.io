@@ -29,13 +29,12 @@ const LineAnimation = styled.div`
 `;
 
 interface TagProps {
-  key: string;
   tag: string;
 }
 
-const Tag = ({ key, tag }: TagProps) => {
+const Tag = ({ tag }: TagProps) => {
   return (
-    <TagBox key={key} to={`/?tag=${tag}`}>
+    <TagBox to={`/?tag=${tag}`}>
       <LineAnimation>
         <TagTypo textColor={theme.colors.primary.default}>#{tag}</TagTypo>
       </LineAnimation>

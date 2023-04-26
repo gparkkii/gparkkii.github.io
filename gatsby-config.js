@@ -12,7 +12,7 @@ module.exports = {
     title: `gparkkii.log`,
     description: `프론트엔드 엔지니어 지파키의 테크 블로그`,
     author: `gparkkii`,
-    siteUrl: `https://gparkkii.github.io`,
+    siteUrl: `https://gparkkii.github.io/`,
   },
   flags: {
     DEV_SSR: true,
@@ -67,7 +67,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-canonical-urls',
       options: {
-        siteUrl: '<https://gparkkii.github.io/>',
+        siteUrl: '<https://gparkkii.github.io//>',
         stripQueryString: true,
       },
     },
