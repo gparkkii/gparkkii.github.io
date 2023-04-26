@@ -45,13 +45,14 @@ const INITIAL_META = {
   title: 'gparkkii.log',
   description: '프론트엔드 엔지니어 지파키의 테크 블로그',
   image: '/static/profile-image.jpeg',
-  url: 'https://github.com/gparkkii/gparkkii.github.io',
+  url: 'https://gparkkii.github.io',
 };
 
 const BaseLayout = ({ path, children, meta }: BaseLayoutProps) => {
   return (
     <ThemeProvider theme={theme}>
       <Helmet>
+        <html lang="ko" />
         <title>{meta?.title ?? INITIAL_META.title}</title>
         <meta
           name="description"
@@ -59,6 +60,7 @@ const BaseLayout = ({ path, children, meta }: BaseLayoutProps) => {
         />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta httpEquiv="Content-Type" content="text/html;charset=UTF-8" />
+
         <meta property="og:type" content="website" />
         <meta property="og:title" content={meta?.title ?? INITIAL_META.title} />
         <meta

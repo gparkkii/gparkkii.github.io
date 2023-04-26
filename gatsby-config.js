@@ -12,13 +12,17 @@ module.exports = {
     title: `gparkkii.log`,
     description: `프론트엔드 엔지니어 지파키의 테크 블로그`,
     author: `gparkkii`,
-    siteUrl: `https://github.com/gparkkii/gparkkii.github.io`,
+    siteUrl: `https://gparkkii.github.io`,
+  },
+  flags: {
+    DEV_SSR: true,
   },
   plugins: [
     `gatsby-plugin-fontawesome-css`,
     `gatsby-plugin-image`,
     `gatsby-plugin-emotion`,
     `gatsby-transformer-sharp`,
+    `gatsby-plugin-sitemap`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-plugin-sharp`,
@@ -44,10 +48,6 @@ module.exports = {
         preconnect: [`https://fonts.googleapis.com`, `https://fonts.gstatic.com`],
         web: [
           {
-            name: `Noto Sans`,
-            file: `https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700&display=swap`,
-          },
-          {
             name: `Inter`,
             file: `https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800&display=swap`,
           },
@@ -56,6 +56,19 @@ module.exports = {
             file: `https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard-dynamic-subset.css`,
           },
         ],
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        policy: [{ userAgent: '*', allow: '/' }],
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-canonical-urls',
+      options: {
+        siteUrl: '<https://gparkkii.github.io/>',
+        stripQueryString: true,
       },
     },
     {
