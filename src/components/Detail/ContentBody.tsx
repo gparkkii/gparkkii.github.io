@@ -11,6 +11,9 @@ interface ContentBodyProps {
 const ImageWrapper = styled.div`
   margin: 0 auto;
   margin-bottom: 60px;
+  border-radius: 20px;
+  overflow: hidden;
+  isolation: isolate;
 `;
 
 const MarkdownRenderer = styled.div`
@@ -98,10 +101,11 @@ const MarkdownRenderer = styled.div`
   // Adjust Quotation Element Style
   blockquote {
     margin: 16px 0;
-    padding: 4px 20px;
+    padding: 20px;
     border-left: 4px solid ${({ theme }) => theme.colors.bluegray[300]};
+    background-color: ${({ theme }) => theme.colors.bluegray[50]};
     & p {
-      color: ${({ theme }) => theme.colors.bluegray[450]};
+      color: ${({ theme }) => theme.colors.bluegray[500]};
     }
   }
 
@@ -115,6 +119,10 @@ const MarkdownRenderer = styled.div`
   a {
     color: ${({ theme }) => theme.colors.secondary[600]};
     font-weight: 500;
+
+    strong {
+      color: ${({ theme }) => theme.colors.secondary[600]};
+    }
 
     :hover {
       text-decoration: underline;
@@ -152,7 +160,7 @@ const MarkdownRenderer = styled.div`
     th {
       border-right: 1px solid ${({ theme }) => theme.colors.bluegray[300]};
       border-bottom: 1px solid ${({ theme }) => theme.colors.bluegray[300]};
-      padding: 8px;
+      padding: 16px;
       font-weight: 500;
       color: ${({ theme }) => theme.colors.bluegray[800]};
     }
@@ -202,6 +210,13 @@ const MarkdownRenderer = styled.div`
     margin: 0px 4px;
     font-size: 14px;
   }
+
+  pre > code[class*='language-text'] {
+    background-color: #2d2d2d;
+    border: 0px;
+    font-size: 15px;
+    color: ${({ theme }) => theme.colors.light[300]};
+  }
 `;
 
 const ContentBody = ({ thumbnail, html }: ContentBodyProps) => {
@@ -219,7 +234,7 @@ const ContentBody = ({ thumbnail, html }: ContentBodyProps) => {
           alt="thumbnail"
         />
       </ImageWrapper>
-      <MarkdownRenderer dangerouslySetInnerHTML={{ __html: html }} />;
+      <MarkdownRenderer dangerouslySetInnerHTML={{ __html: html }} />
     </>
   );
 };

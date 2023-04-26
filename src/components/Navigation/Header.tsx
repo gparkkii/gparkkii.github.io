@@ -7,6 +7,7 @@ import NavMenu from './NavMenu';
 import Drawer from './Drawer';
 import Logo from '../Common/Logo';
 import IconButton from '../Controls/IconButton';
+import Tooltip from '../Controls/Tooltip';
 
 const HeaderLayout = styled.header`
   position: fixed;
@@ -84,9 +85,15 @@ const DesktopMenu = ({ path }: { path: string }) => {
     <>
       <NavMenuBox>
         <NavMenu title="Tech" active={true} />
-        <NavMenu title="Diary" disabled={true} active={false} />
-        <NavMenu title="Project" disabled={true} active={false} />
-        <NavMenu title="About" disabled={true} active={false} />
+        <Tooltip tip="준비중...">
+          <NavMenu title="Diary" disabled={true} active={false} />
+        </Tooltip>
+        <Tooltip tip="준비중...">
+          <NavMenu title="Project" disabled={true} active={false} />
+        </Tooltip>
+        <Tooltip tip="준비중...">
+          <NavMenu title="About" disabled={true} active={false} />
+        </Tooltip>
       </NavMenuBox>
       <IconWrapper>
         {path !== PATH.search ? (

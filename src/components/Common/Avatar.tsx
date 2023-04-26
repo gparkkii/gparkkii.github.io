@@ -6,6 +6,8 @@ import { breakpoints } from 'theme/index';
 
 const Rounded = styled.div`
   border-radius: 100px;
+  overflow: hidden;
+  isolation: isolate;
 `;
 
 const Avatar = () => {

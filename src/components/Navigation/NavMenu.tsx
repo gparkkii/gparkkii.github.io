@@ -22,9 +22,7 @@ const StyledNav = styled.div<{ active: boolean; disabled?: boolean }>`
   cursor: pointer;
 
   &:hover {
-    ${props =>
-      !props.disabled &&
-      !props.active && { p: { color: props.theme.colors.dark[200] } }};
+    ${props => !props.active && { p: { color: props.theme.colors.dark[200] } }};
   }
 `;
 
