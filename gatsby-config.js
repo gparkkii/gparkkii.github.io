@@ -9,10 +9,10 @@
  */
 module.exports = {
   siteMetadata: {
-    title: `gparkkii-gatsby`,
+    title: `gparkkii-blog`,
     description: `gparkkii's personal blog.`,
     author: `@gatsbyjs`,
-    siteUrl: `https://github.com/gparkkii/gparkkii-gatsby`,
+    siteUrl: `https://github.com/gparkkii/gparkkii.github.io`,
   },
   plugins: [
     `gatsby-plugin-fontawesome-css`,

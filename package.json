@@ -1,5 +1,5 @@
 {
-  "name": "gparkkii-gatsby-starter",
+  "name": "gparkkii-blog",
   "private": true,
   "description": "A simple starter to make a good-looking personal blog",
   "version": "0.1.0",
@@ -55,9 +55,9 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/gparkkii/gparkkii-gatsby"
+    "url": "https://github.com/gparkkii/gparkkii.github.io"
   },
   "bugs": {
-    "url": "https://github.com/gparkkii/gparkkii-gatsby/issues"
+    "url": "https://github.com/gparkkii/gparkkii.github.io/issues"
   }
 }
