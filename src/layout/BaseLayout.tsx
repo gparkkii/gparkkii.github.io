@@ -44,16 +44,22 @@ type BaseLayoutProps = {
 const INITIAL_META = {
   title: 'gparkkii.log',
   description: '프론트엔드 엔지니어 지파키의 테크 블로그',
-  image: 'static/profile-image.jpeg',
+  image: '/static/profile-image.png',
   url: 'https://gparkkii.github.io/',
 };
 
 const BaseLayout = ({ path, children, meta }: BaseLayoutProps) => {
+  console.log(meta ? meta.image : INITIAL_META.image);
+
   return (
     <ThemeProvider theme={theme}>
       <Helmet>
         <html lang="ko" />
         <title>{meta ? meta.title : INITIAL_META.title}</title>
+        <meta
+          name="google-site-verification"
+          content="i1k9fAJNvByDpCtfnvLiC1aCfhuag46Ftm5CVnntwrI"
+        />
         <meta
           name="description"
           content={meta ? meta.description : INITIAL_META.description}

@@ -12,7 +12,7 @@ module.exports = {
     title: `gparkkii.log`,
     description: `프론트엔드 엔지니어 지파키의 테크 블로그`,
     author: {name: `gparkkii`, introduction: `live in Seoul, Korea`},
-    icon: `static/profile-image.jpeg`,
+    icon: `/static/profile-image.png`,
     siteUrl: `https://gparkkii.github.io/`,
     keywords: [`blog`, `gatsby`, `gparkkii`, `frontend`, `developer`, `react`]
   },
