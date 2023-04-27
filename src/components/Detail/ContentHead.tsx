@@ -2,7 +2,6 @@ import styled from '@emotion/styled';
 import React from 'react';
 import { Headline2 } from 'styles/typography';
 import AuthorInfo from './AuthorInfo';
-import { Link } from 'gatsby';
 import IconButton from '../Controls/IconButton';
 import Tooltip from '../Controls/Tooltip';
 
@@ -63,7 +62,7 @@ const ContentHead = ({ title, date }: ContentHeadProps) => {
             <IconButton
               size="xs"
               icon="share"
-              onClick={() => alert('share!')}
+              onClick={() => console.log('share!')}
             />
           </Tooltip>
           <Margin />
