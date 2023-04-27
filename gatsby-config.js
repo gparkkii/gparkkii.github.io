@@ -25,6 +25,12 @@ module.exports = {
     `gatsby-plugin-sitemap`,
     `gatsby-plugin-react-helmet`,
     {
+      resolve: 'gatsby-plugin-manifest',
+      options: {
+        icon: 'src/images/g_favicon.png',
+      },
+    },
+    {
       resolve: `gatsby-plugin-sharp`,
       options: {
         defaults: {
