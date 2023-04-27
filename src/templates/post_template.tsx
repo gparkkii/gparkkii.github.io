@@ -41,7 +41,7 @@ const PostTemplate: FunctionComponent<PostTemplateProps> = function ({
 
   return (
     <BaseLayout
-      path={path}
+      path={'/'}
       meta={{
         title,
         description: summary,
