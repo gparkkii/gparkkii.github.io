@@ -1,0 +1,27 @@
+on:
+  push:
+    branches:
+      - gh-pages
+name: build gatsby
+jobs:
+  build_gatsby:
+    name: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: yarn install
+        run: yarn install
+
+      - name: gatsby build
+        env:
+          GH_API_KEY: ${{ secrets.GPARKKII }}
+        run: yarn build
+
+      - name: deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          GITHUB_TOKEN: ${{ secrets.GPARKKII_TOKEN }}
+          GH_PAT: ${{ secrets.GPARKKII }}
+          PUBLISH_BRANCH: master
+          BUILD_DIR: 'public/'
