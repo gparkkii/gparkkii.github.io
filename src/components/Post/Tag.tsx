@@ -6,7 +6,7 @@ import { Tag as TagTypo } from 'styles/typography';
 
 const TagBox = styled(Link)`
   display: inline-block;
-  margin-right: 16px;
+  margin-right: 12px;
   border-radius: 1000px;
 `;
 

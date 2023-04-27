@@ -1,13 +1,13 @@
 import styled from '@emotion/styled';
 import React from 'react';
 import Icon from '../Common/Icon';
-import { Link } from 'gatsby';
 import { Caption } from 'styles/typography';
 import { theme } from 'theme/index';
 
-const FooterLayout = styled.footer`
+const FooterLayout = styled.footer<FooterProps>`
   width: 100%;
   padding: 20px 16px;
+  ${({ expand }) => expand && `padding: 0px`};
   height: 80px;
 
   display: flex;
@@ -25,9 +25,13 @@ const IconWrapper = styled.div`
   }
 `;
 
-const Footer = () => {
+interface FooterProps {
+  expand?: boolean;
+}
+
+const Footer = ({ expand }: FooterProps) => {
   return (
-    <FooterLayout>
+    <FooterLayout expand={expand}>
       <div>
         <Caption textColor={theme.colors.dark[150]} style={{ marginBottom: 2 }}>
           Copyright ©gparkkii All rights reserved.
@@ -36,11 +40,15 @@ const Footer = () => {
           2023 | built with gatsby | Developed by gparkkii
         </Caption>
       </div>
-      <Link to="https://github.com/gparkkii">
+      <a
+        href="https://github.com/gparkkii"
+        target="_blank"
+        rel="noopener norefferer"
+      >
         <IconWrapper>
           <Icon icon="github" size="md" />
         </IconWrapper>
-      </Link>
+      </a>
     </FooterLayout>
   );
 };

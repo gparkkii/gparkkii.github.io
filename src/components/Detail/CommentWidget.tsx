@@ -3,8 +3,8 @@ import React, { createRef, FunctionComponent, useEffect } from 'react';
 
 const UtteranceBox = styled.div`
   width: 100%;
-  margin-top: 40px;
-  border-top: 1.5px solid ${({ theme }) => theme.colors.bluegray[100]};
+  margin-top: 60px;
+  border-top: 2px solid ${({ theme }) => theme.colors.bluegray[300]};
   padding-top: 60px;
   .utterances {
     max-width: 960px;
@@ -13,7 +13,7 @@ const UtteranceBox = styled.div`
 `;
 
 const src = 'https://utteranc.es/client.js';
-const repo = 'gparkkii/gparkkii.github.io/';
+const repo = 'gparkkii/gparkkii.github.io';
 
 type UtterancesAttributesType = {
   src: string;

@@ -4,6 +4,7 @@ import { Headline2 } from 'styles/typography';
 import AuthorInfo from './AuthorInfo';
 import { Link } from 'gatsby';
 import IconButton from '../Controls/IconButton';
+import Tooltip from '../Controls/Tooltip';
 
 const HeadWrapper = styled.div`
   width: 100%;
@@ -41,18 +42,34 @@ interface ContentHeadProps {
 }
 
 const ContentHead = ({ title, date }: ContentHeadProps) => {
+  const copyToClipBoard = () => {
+    navigator.clipboard.writeText(window.location.href);
+  };
+
   return (
     <HeadWrapper>
       <Headline2>{title}</Headline2>
       <ToolBar>
         {/* FIXME: redirect to about page */}
-        <Link to="https://github.com/gparkkii">
+        <a
+          href="https://github.com/gparkkii"
+          target="_blank"
+          rel="noopener norefferer"
+        >
           <AuthorInfo author="gparkkii" date={date} />
-        </Link>
+        </a>
         <IconBox>
-          <IconButton size="xs" icon="share" onClick={() => alert('share!')} />
+          <Tooltip tip="준비중...">
+            <IconButton
+              size="xs"
+              icon="share"
+              onClick={() => alert('share!')}
+            />
+          </Tooltip>
           <Margin />
-          <IconButton size="xs" icon="link" onClick={() => alert('link!')} />
+          <Tooltip width={108} tip="클립보드로 복사">
+            <IconButton size="xs" icon="link" onClick={copyToClipBoard} />
+          </Tooltip>
         </IconBox>
       </ToolBar>
     </HeadWrapper>

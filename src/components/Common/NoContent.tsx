@@ -2,7 +2,7 @@ import React from 'react';
 import NoContentLottie from 'images/lotties/no-content.json';
 import { Animations } from './Animation';
 import styled from '@emotion/styled';
-import { useMediaQuery } from 'hooks/useMediaQuery';
+import { useResponsive } from 'hooks/useResponsive';
 import { theme, breakpoints } from 'theme/index';
 import { Heading2, Subtitle } from 'styles/typography';
 
@@ -24,7 +24,7 @@ const Margin = styled.div`
 `;
 
 const NoContent = () => {
-  const mobileSize = useMediaQuery(breakpoints.md);
+  const mobileSize = useResponsive(breakpoints.md);
   return (
     <FlexContainer>
       <Animations

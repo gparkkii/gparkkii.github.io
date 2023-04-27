@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import React from 'react';
-import { useMediaQuery } from 'hooks/useMediaQuery';
+import { useResponsive } from 'hooks/useResponsive';
 import { Animations } from 'components/Common/Animation';
 import { breakpoints, mediaQuery, theme } from 'theme/index';
 import NotFoundLottie from 'images/lotties/not-found.json';
@@ -41,7 +41,7 @@ const FlexBox = styled.div`
 `;
 
 const NotFound = () => {
-  const mobileSize = useMediaQuery(breakpoints.sm);
+  const mobileSize = useResponsive(breakpoints.sm);
   return (
     <BaseLayout path={PATH[404]}>
       <NotFoundWrapper>

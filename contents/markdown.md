@@ -1,7 +1,7 @@
 ---
 date: '2020-07-28 12:20'
 title: '마크다운 markdown 사용법 총정리'
-tags: ['Markdown', 'Readme', 'HTML']
+tags: ['markdown', 'github']
 summary: 'Git 사용자라면 필수로 이용하게 되는 마크다운. 테크 블로그에서도, 기타 문서 작성에도 자주 이용되는 마크다운 문법에 대해 정리해보자.'
 thumbnail: './assets/example.png'
 ---

@@ -7,10 +7,19 @@ import {
   faBars,
   faLink,
   faShareAlt,
+  faArrowRight,
 } from '@fortawesome/free-solid-svg-icons';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import { theme } from '../../theme';
 
-type IconType = 'cancel' | 'search' | 'menu' | 'github' | 'link' | 'share';
+type IconType =
+  | 'cancel'
+  | 'search'
+  | 'menu'
+  | 'github'
+  | 'link'
+  | 'share'
+  | 'right';
 
 const CustomIcon = {
   cancel: faXmark,
@@ -19,6 +28,7 @@ const CustomIcon = {
   github: faGithub,
   link: faLink,
   share: faShareAlt,
+  right: faArrowRight,
 } as const;
 
 type IconSizeType = 'xs' | 'sm' | 'md' | 'lg' | 'xl';
@@ -30,27 +40,33 @@ const IconSize = {
   xl: '48px',
 } as const;
 
-export interface IconProps {
+export interface IconProps extends IconStyleProps {
   size: IconSizeType;
   icon: IconType;
 }
 
-const IconBox = styled.div`
+interface IconStyleProps {
+  iconColor?: string;
+}
+
+const IconBox = styled.div<IconStyleProps>`
   display: flex;
   align-items: center;
   justify-content: center;
   object-fit: contain;
 
   svg > path {
-    fill: ${props => props.theme.colors.dark[50]};
+    fill: ${({ theme, iconColor }) =>
+      iconColor ? iconColor : theme.colors.dark[50]};
     stroke: #fff !important;
     stroke-width: 3.5% !important;
   }
 `;
 
-const Icon = ({ size, icon }: IconProps) => {
+const Icon = ({ size, icon, iconColor }: IconProps) => {
   return (
     <IconBox
+      iconColor={iconColor}
       style={{
         width: IconSize[size] ?? IconSize.sm,
         height: IconSize[size] ?? IconSize.sm,

@@ -52,31 +52,6 @@ const IndexPage = ({
     setMounted(true);
   }, []);
 
-  // const tagList = React.useMemo(
-  //   () =>
-  //     edges.reduce(
-  //       (
-  //         list: TagListProps['categories'],
-  //         {
-  //           node: {
-  //             frontmatter: { tags },
-  //           },
-  //         }: PostType,
-  //       ) => {
-  //         tags.forEach(tag => {
-  //           if (list[tag] === undefined) list[tag] = 1;
-  //           else list[tag]++;
-  //         });
-
-  //         list['All']++;
-
-  //         return list;
-  //       },
-  //       { All: 0 },
-  //     ),
-  //   [],
-  // );
-
   return (
     mounted && (
       <BaseLayout

@@ -52,7 +52,8 @@ export const Guidance1 = styled.h1<TypographyProps>`
   color: ${({ textColor, theme }) =>
     textColor ? textColor : theme.lightTheme.text.black};
   ${mediaQuery.sm} {
-    ${({ theme }) => theme.fonts.type.guidance1};
+    ${({ theme }) => theme.fonts.type.headline2Mobile};
+    font-weight: 500;
   }
 `;
 
@@ -62,7 +63,7 @@ export const Guidance2 = styled.h1<TypographyProps>`
   color: ${({ textColor, theme }) =>
     textColor ? textColor : theme.lightTheme.text.black};
   ${mediaQuery.sm} {
-    ${({ theme }) => theme.fonts.type.guidance2};
+    ${({ theme }) => theme.fonts.type.headline2Mobile};
   }
 `;
 

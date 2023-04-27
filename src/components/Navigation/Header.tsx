@@ -1,13 +1,14 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from '@emotion/styled';
 import { Link, navigate } from 'gatsby';
-import { mediaQuery } from 'theme/index';
+import { breakpoints, mediaQuery } from 'theme/index';
 import { PATH } from 'routes/path';
 import NavMenu from './NavMenu';
 import Drawer from './Drawer';
 import Logo from '../Common/Logo';
 import IconButton from '../Controls/IconButton';
 import Tooltip from '../Controls/Tooltip';
+import { useResponsive } from '../../hooks/useResponsive';
 
 const HeaderLayout = styled.header`
   position: fixed;
@@ -31,8 +32,7 @@ const HeaderLayout = styled.header`
 
   ${mediaQuery.sm} {
     height: 64px;
-    padding-left: 16px;
-    padding-right: 12px;
+    padding: 0px 12px;
   }
 `;
 
@@ -85,7 +85,7 @@ const DesktopMenu = ({ path }: { path: string }) => {
     <>
       <NavMenuBox>
         <Link to={PATH.index}>
-          <NavMenu title="Tech" active={true} />
+          <NavMenu title="Tech" active={path === PATH.index} />
         </Link>
         <Tooltip tip="준비중...">
           <NavMenu title="Story" disabled={true} active={false} />
@@ -127,17 +127,28 @@ const MobileMenu = ({
 );
 
 const Header = ({ path }: { path: string }) => {
+  const isMobileSize = useResponsive(breakpoints.sm);
   const [showDrawer, setShowDrawer] = useState(false);
+
   const handleDrawer = () => setShowDrawer(prev => !prev);
+
+  useEffect(() => {
+    if (!isMobileSize) {
+      setShowDrawer(false);
+    }
+  }, [isMobileSize]);
+
   return (
-    <HeaderLayout>
-      <Logo />
-      <NavWrapper>
-        <DesktopMenu path={path} />
-        <MobileMenu visible={showDrawer} onClick={handleDrawer} />
-      </NavWrapper>
-      <Drawer visible={showDrawer} />
-    </HeaderLayout>
+    <>
+      <HeaderLayout>
+        <Logo />
+        <NavWrapper>
+          <DesktopMenu path={path} />
+          <MobileMenu visible={showDrawer} onClick={handleDrawer} />
+        </NavWrapper>
+      </HeaderLayout>
+      {isMobileSize && <Drawer path={path} visible={showDrawer} />}
+    </>
   );
 };
 
