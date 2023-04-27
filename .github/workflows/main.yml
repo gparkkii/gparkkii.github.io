@@ -8,19 +8,24 @@ jobs:
     name: build
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v3
+
+      - name: Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 12.x
 
       - name: yarn install
         run: yarn install
 
       - name: gatsby build
         env:
-          GH_API_KEY: ${{ secrets.GITHUB }}
+          GH_API_KEY: ${{ secrets.GPARKKII }}
         run: yarn build
 
       - name: deploy
-        uses: maxheld83/ghpages@v0.2.1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GH_PAT: ${{ secrets.GITHUB }}
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          GITHUB_TOKEN: ${{ secrets.GPARKKII_TOKEN }}
+          GH_PAT: ${{ secrets.GPARKKII }}
           BUILD_DIR: 'public/'
