@@ -10,10 +10,14 @@ interface ContentBodyProps {
 
 const ImageWrapper = styled.div`
   margin: 0 auto;
-  margin-bottom: 60px;
+  margin-bottom: 40px;
   border-radius: 20px;
   overflow: hidden;
   isolation: isolate;
+
+  ${mediaQuery.sm} {
+    margin-bottom: 20px;
+  }
 `;
 
 const MarkdownRenderer = styled.div`
@@ -24,45 +28,65 @@ const MarkdownRenderer = styled.div`
   word-break: keep-all;
 
   // Markdown Style
-  line-height: 1.8;
+  line-height: 1.75;
   font-size: 16px;
   font-weight: 400;
   color: ${({ theme }) => theme.colors.bluegray[600]};
 
+  h1,
+  h2,
+  h3 {
+    margin-bottom: 16px;
+  }
+
+  * + h1 {
+    margin-top: 60px;
+  }
+  * + h2,
+  * + h3 {
+    margin-top: 40px;
+  }
+
+  h1 + h2,
+  h2 + h3 {
+    margin-top: 12px;
+  }
+
+  hr + h1,
+  hr + h2,
+  hr + h3 {
+    margin-top: 0;
+  }
+
   // Adjust Heading Element Style
   h1 {
-    margin-top: 40px;
-    margin-bottom: 20px;
-
     ${({ theme }) => theme.fonts.type.heading1};
     color: ${({ theme }) => theme.colors.bluegray[800]};
-
     ${mediaQuery.sm} {
       ${({ theme }) => theme.fonts.type.heading1mobile};
     }
   }
   h2 {
-    margin-top: 20px;
-    margin-bottom: 16px;
-
-    font-size: 25px;
+    font-size: 28px;
     font-weight: 700;
     color: ${({ theme }) => theme.colors.bluegray[800]};
-
     ${mediaQuery.sm} {
       font-size: 22px;
     }
   }
   h3 {
-    margin-top: 16px;
-    margin-bottom: 12px;
-    ${({ theme }) => theme.fonts.type.title};
+    font-size: 22px;
     color: ${({ theme }) => theme.colors.bluegray[800]};
     font-weight: 600;
+    ${mediaQuery.sm} {
+      ${({ theme }) => theme.fonts.type.title};
+      font-weight: 600;
+    }
   }
 
   // Apply Padding Attribute to All Elements
   p {
+    margin: 8px 0;
     font-weight: 400;
     color: ${({ theme }) => theme.colors.bluegray[600]};
   }
@@ -74,10 +98,10 @@ const MarkdownRenderer = styled.div`
   // Adjust List Element Style
   ol,
   ul {
+    margin-top: 10px;
     margin-left: 20px;
     padding-left: 16px;
     line-height: 2;
-    margin-bottom: 20px;
   }
   ol > li {
     color: ${({ theme }) => theme.colors.bluegray[700]};
@@ -105,6 +129,7 @@ const MarkdownRenderer = styled.div`
     border-left: 4px solid ${({ theme }) => theme.colors.bluegray[300]};
     background-color: ${({ theme }) => theme.colors.bluegray[50]};
     & p {
+      margin: 0;
       color: ${({ theme }) => theme.colors.bluegray[500]};
     }
   }

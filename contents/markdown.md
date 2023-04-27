@@ -1,123 +1,139 @@
 ---
 date: '2020-07-28 12:20'
-title: '자주 사용하는 마크다운 문법 정리'
+title: '마크다운 markdown 사용법 총정리'
 tags: ['Markdown', 'Readme', 'HTML']
-summary: '파일 확장자가 .md로 된 파일을 보셨나요? 웹 개발을 하면서 아마 README.md라는 이름의 파일을 한 번은 보셨을텐데요, 이 파일은 마크다운 문법으로 작성됩니다. Git 사용자라면 필수로 이용하게 되는 마크다운 문법에 대해 알아봅시다'
+summary: 'Git 사용자라면 필수로 이용하게 되는 마크다운. 테크 블로그에서도, 기타 문서 작성에도 자주 이용되는 마크다운 문법에 대해 정리해보자.'
 thumbnail: './assets/example.png'
 ---
 
-# [공통] 마크다운 markdown 작성법
-
-> 영어지만, 조금 더 상세하게 마크다운 사용법을 안내하고 있는
-> "Markdown Guide (<https://www.markdownguide.org/>)" 를 보시는 것을 추천합니다. ^^
-> 그리고 마크다운만으로 표현이 부족하다고 느끼신다면, HTML 태그를 활용하시는 것도 좋습니다.
+깃헙 이용자라면 Repository에 관한 정보를 기록하는 README.md 파일로 또는 대중적인 기록관리 소프트웨어 Notion, 개발자들을 위한 블로그 서비스 Velog 등을 통해 마크다운을 접해본 사용자들이 많을 것이다. 이렇게 자주 접하게 되는 마크다운이지만 기본적인 문법 외에 자세하게 알고있지는 못했다.
+테크 블로그를 개설한 기념으로 마크다운에 대해 알아보고 사용법에 대해 총정리 해보려한다.
 
 # 1. 마크다운에 관하여
 
 ## 1.1. 마크다운이란?
 
-[**Markdown**](https://www.markdownguide.org/getting-started/)은 텍스트 기반의 마크업언어로 2004년 존그루버에 의해 만들어졌으며 쉽게 쓰고 읽을 수 있으며 HTML로 변환이 가능하다. 특수기호와 문자를 이용한 매우 간단한 구조의 문법을 사용하여 웹에서도 보다 빠르게 컨텐츠를 작성하고 보다 직관적으로 인식할 수 있다.
-마크다운이 최근 각광받기 시작한 이유는 **깃헙**([https://github.com](https://github.com)) 덕분이다. 깃헙의 저장소Repository에 관한 정보를 기록하는 README.md는 깃헙을 사용하는 사람이라면 누구나 가장 먼저 접하게 되는 마크다운 문서였다. 마크다운을 통해서 설치방법, 소스코드 설명, 이슈 등을 간단하게 기록하고 가독성을 높일 수 있다는 강점이 부각되면서 점점 여러 곳으로 퍼져가게 된다.
+[**Markdown**](https://www.markdownguide.org/getting-started/)은 텍스트 기반의 마크업 언어로 문법이 쉽고 간단한 것이 특징이며 HTML과 리치 텍스트 등의 서식문서로 쉽게 변환이 가능하다. 특수기호와 문자 등을 이용한 문법으로 웹에서도 보다 빠르고 간단하게 컨텐츠를 작성할 수 있고 가독성이 좋다는 장점이 부각되면서 많은 곳에서 마크다운을 사용하고 있다.
 
 ## 1.2. 마크다운의 장-단점
 
 ### 1.2.1. 장점
 
- 1. 간결하다.
- 2. 별도의 도구없이 작성가능하다.
- 3. 다양한 형태로 변환이 가능하다.
- 4. 텍스트(Text)로 저장되기 때문에 용량이 적어 보관이 용이하다.
- 5. 텍스트파일이기 때문에 버전관리시스템을 이용하여 변경이력을 관리할 수 있다.
- 6. 지원하는 프로그램과 플랫폼이 다양하다.
+ 1. 간단하고 쉬운 문법.
+ 2. 확장성이 좋다. (다양한 형태로 변환이 가능하고 대부분의 환경에서 이동, 복사, 편집 등의 관리가 용이)
+ 3. 텍스트로 저장되기 때문에 용량이 적다.
+ 4. 텍스트로 저장되기 때문에 검색이 쉽다.
+ 5. 지원하는 프로그램과 플랫폼이 다양하다. (Github, Notion, Velog, Slack 등)
 
 ### 1.2.2. 단점
 
- 1. 표준이 없다.
- 2. 표준이 없기 때문에 도구에 따라서 변환방식이나 생성물이 다르다.
+ 1. 표준이 없고 도구에 따라서 변환방식이나 생성물이 다르다.
+ 2. 뷰어의 속도가 늘리다. (실시간 작업하며 확인하기에는 딜레이가 조금 있다.)
  3. 모든 HTML 마크업을 대신하지 못한다.
 
 ****
 
-# 2. 마크다운 사용법(문법)
+# 2. 마크다운 사용법(syntax)
+>
+> 마크다운만으로 표현이 부족한 부분은 HTML 태그를 활용 가능하다.
 
-## 2.1. 헤더Headers
+## 2.1. 제목(Header)
 
-* 큰제목: 문서 제목
+`<h1>` 부터 `<h6>` 까지 `#`을 이용하여 제목을 나타낼 수 있다.
 
-    ```
-    This is an H1
-    =============
-    ```
+### 2.1.1 제목 사용법
 
-This is an H1
-    =============
-
-* 작은제목: 문서 부제목
-
-    ```
-    This is an H2
-    -------------
-    ```
-
-This is an H2
-    -------------
-
-* 글머리: 1~6까지만 지원
-
-```
-# This is a H1
-## This is a H2
-### This is a H3
-#### This is a H4
-##### This is a H5
-###### This is a H6
+```txt
+# h1 제목 1
+## h2 제목 2
+### h3 제목 3
+#### h4 제목 4
+##### h5 제목 5
+###### h6 제목 6
 ```
 
-# This is a H1
+<h1 style="margin-top: 12px;margin-bottom:0">h1 제목 1</h1>
+<h2 style="margin:0">h2 제목 2</h2>
+<h3 style="margin:0">h3 제목 3</h3>
+<h4>h4 제목 4</h4>
+<h5>h5 제목 5</h5>
+<h6>h6 제목 6</h6>
 
-## This is a H2
+<br/>
 
-### This is a H3
+### 2.1.2 큰제목, 부제목
 
-#### This is a H4
+제목 1과 제목 2를 다음과 같이 사용할 수도 있다.
+<br/>
+<br/>
 
-##### This is a H5
+### ❏ 큰제목: 문서 제목
 
-###### This is a H6
+  ```txt
+  H1: 문서 제목
+  =============
+  ```
 
-####### This is a H7(지원하지 않음)
+  <h1 style="margin-top: 12px;">H1: 문서 제목</h1>
 
-## 2.2. BlockQuote
+<br/>
 
-이메일에서 사용하는 ```>``` 블럭인용문자를 이용한다.
+### ❏ 작은제목: 문서 부제목
+  
+  ```txt
+  H2: 문서 부제목
+  -------------
+  ```
 
+  <h2 style="margin-top:0">H2: 문서 부제목</h2>
+
+<br/>
+
+## 2.2. 인용문(BlockQuote)
+
+```>``` 블럭인용 문자를 사용한다.
+
+### 2.2.1 Single BlockQuote
+
+```txt
+> This is a single blockqute.
 ```
-> This is a first blockqute.
-> > This is a second blockqute.
-> > > This is a third blockqute.
+
+> This is a single blockqute.
+
+### 2.2.1 Nested BlockQuote
+
+```txt
+> This is nested blockqute.
+> > This is nested blockqute.
+> > > This is nested blockqute.
 ```
 
-> This is a first blockqute.
-> > This is a second blockqute.
-> > > This is a third blockqute.
+> This is nested blockqute.
+> > This is nested blockqute.
+> > > This is nested blockqute.
 
 이 안에서는 다른 마크다운 요소를 포함할 수 있다.
 
 > ### This is a H3
 >
-> * List
+> - List
 >
 > ```
 > code
 > ```
 
-## 2.3. 목록
+<br/>
 
-### ● 순서있는 목록(번호)
+## 2.3. 목록(List)
+
+`<ol>`, `<ul>` 태그를 나타낸다.
+
+### 2.3.1 순서있는 목록(ol)
 
 순서있는 목록은 숫자와 점을 사용한다.
 
-```
+```txt
 1. 첫번째
 2. 두번째
 3. 세번째
@@ -127,345 +143,286 @@ This is an H2
 2. 두번째
 3. 세번째
 
-**현재까지는 어떤 번호를 입력해도 순서는 내림차순으로 정의된다.**
+### 2.3.2  순서없는 목록(ul)
 
-```
-1. 첫번째
-3. 세번째
-2. 두번째
-```
+글머리 기호: `*`, `+`, `-` 를 지원한다.
 
-1. 첫번째
-3. 세번째
-2. 두번째
-
-딱히 개선될 것 같지는 않다. 존 그루버가 신경안쓰고 있다고...
-
-### ● 순서없는 목록(글머리 기호: `*`, `+`, `-` 지원)
-
-```
-* 빨강
-  * 녹색
-    * 파랑
-
-+ 빨강
-  + 녹색
-    + 파랑
-
-- 빨강
-  - 녹색
-    - 파랑
+```txt
+* 별표
+  + 더하기
+    - 빼기
 ```
 
-* 빨강
-  * 녹색
-    * 파랑
+- 별표
+  - 더하기
+    - 빼기
 
-* 빨강
-  * 녹색
-    * 파랑
+### 2.3.3 ol, ul 섞어쓰기
 
-* 빨강
-  * 녹색
-    * 파랑
+`ol` 안에 sub list를 사용하기 위해선 탭을 두번 눌러야한다.  
+`ul` 안에 sub list는 탭 한번으로 가능해보인다.
 
-혼합해서 사용하는 것도 가능하다(내가 선호하는 방식)
-
-```
-* 1단계
-  - 2단계
-    + 3단계
-      + 4단계
-```
-
-* 1단계
-  * 2단계
-    * 3단계
-      * 4단계
-
-## 2.4. 코드
-
-4개의 공백 또는 하나의 탭으로 들여쓰기를 만나면 변환되기 시작하여 들여쓰지 않은 행을 만날때까지 변환이 계속된다.
-
-### 2.4.1. 들여쓰기
-
-```
-This is a normal paragraph:
-
-    This is a code block.
-    
-end code block.
+```txt
+1. ordered list
+    - unordered list
+2. ordered list
+    1. sub ordered list
+    2. sub ordered list
+- 순서가 필요하지 않은 목록에 사용 가능한 기호
+  1. 숫자
+  * 별표
+    + 더하기
+      - 대쉬
 ```
 
-실제로 적용해보면,
+1. ordered list
+    - unordered list
+2. ordered list
+    1. sub ordered list
+    2. sub ordered list
 
-적용예:
+- 순서가 필요하지 않은 목록에 사용 가능한 기호
+  1. 숫자
+  - 별표
+    - 더하기
+      - 대쉬
 
-*****
-This is a normal paragraph:
+## 2.4. 강조(Emphasis)
 
-    This is a code block.
-
-end code block.
-*****
-
-> 한줄 띄어쓰지 않으면 인식이 제대로 안되는 문제가 발생합니다.
-
-```
-This is a normal paragraph:
-    This is a code block.
-end code block.
-```
-
-적용예:
-
-*****
-This is a normal paragraph:
-    This is a code block.
-end code block.
-*****
-
-### 2.4.1. 코드블럭
-
-코드블럭은 다음과 같이 2가지 방식을 사용할 수 있습니다:
-
-* `<pre><code>{code}</code></pre>` 이용방식
-
-```
-<pre>
-<code>
-public class BootSpringBootApplication {
-  public static void main(String[] args) {
-    System.out.println("Hello, Honeymon");
-  }
-
-}
-</code>
-</pre>
+```txt
+*Italic: single asterisks*
+_Italic: single underscores_
+**Bold: double asterisks**
+__Bold: double underscores__
+**Bold and _Italic_** and normal
+<u>Underline: use `u`</u>
+~~LineThrough: double wavy~~
 ```
 
-<pre>
-<code>
-public class BootSpringBootApplication {
-  public static void main(String[] args) {
-    System.out.println("Hello, Honeymon");
-  }
-}
-</code>
-</pre>
+- *Italic: single asterisks*
+- *Italic: single underscores*
+- **Bold: double asterisks**
+- **Bold: double underscores**
+- **Bold and *Italic*** and normal
+- <u>Underline: use `<u></u>`</u>
+- ~~LineThrough: double wavy~~
 
-* 코드블럭코드("\```") 을 이용하는 방법
+## 2.5. 링크(Link)
 
-<pre>
-<code>
-```
-public class BootSpringBootApplication {
-  public static void main(String[] args) {
-    System.out.println("Hello, Honeymon");
-  }
-}
-```
-</code>
-</pre>
+`<a>` 태그를 나타낸다.
 
-```
-public class BootSpringBootApplication {
-  public static void main(String[] args) {
-    System.out.println("Hello, Honeymon");
-  }
-}
+### 2.5.1 링크 기본 문법
+
+`[링크 설명](url)` 방식으로 표현하여 url을 `[Keyword]`로 표현 할 수 있다.
+
+```txt
+1. [GOOGLE](https://google.com)
+
+2. [NAVER](https://naver.com "여기에 쓰는 링크 설명은 사용자에게 보이지 않아요")
+
+3. [로컬 링크](../)
+
+4. [GitHub][1]
+
+[1]: https://github.com
 ```
 
-**깃헙**에서는 코드블럭코드("\```") 시작점에 사용하는 언어를 선언하여 [문법강조(Syntax highlighting)](https://docs.github.com/en/github/writing-on-github/creating-and-highlighting-code-blocks#syntax-highlighting)이 가능하다.
+1. [GOOGLE](https://google.com)
 
-<pre>
-<code>
-```java
-public class BootSpringBootApplication {
-  public static void main(String[] args) {
-    System.out.println("Hello, Honeymon");
-  }
-}
-```
-</code>
-</pre>
+2. [NAVER](https://naver.com "여기에 쓰는 링크 설명은 사용자에게 보이지 않아요")
 
-```java
-public class BootSpringBootApplication {
-  public static void main(String[] args) {
-    System.out.println("Hello, Honeymon");
-  }
-}
+3. [로컬 링크](../)
+
+4. [GitHub][1]
+
+[1]: https://github.com
+
+### 2.5.2 참조 링크
+
+```txt
+문서 안에 [참조 링크]를 사용할 수 있다.
+
+[참조 링크]: https://github.co
 ```
 
-## 2.5. 수평선 ```<hr/>```
+문서 안에 [참조 링크]를 사용할 수 있다.
 
-아래 줄은 모두 수평선을 만든다. 마크다운 문서를 미리보기로 출력할 때 *페이지 나누기* 용도로 많이 사용한다.
+[참조 링크]: https://github.co
 
-```
-* * *
+### 2.5.3 자동 연결
 
-***
+일반 URL 이나 이메일 주소, 또는 꺾쇠 괄호(`< >`, Angle Brackets)안의 URL은 자동으로 링크를 생성한다.
 
-*****
-
-- - -
-
----------------------------------------
-```
-
-* 적용예
-
-* * *
-
-***
-
-*****
-
-- - -
-
----------------------------------------
-
-## 2.6. 링크
-
-* 참조링크
-
-```
-[link keyword][id]
-
-[id]: URL "Optional Title here"
-
-// code
-Link: [Google][googlelink]
-
-[googlelink]: https://google.com "Go google"
-```
-
-Link: [Google][googlelink]
-
-[googlelink]: https://google.com "Go google"
-
-* 외부링크
-
-```
-사용문법: [Title](link)
-적용예: [Google](https://google.com, "google link")
-```
-
-Link: [Google](https://google.com, "google link")
-
-* 자동연결
-
-```
-일반적인 URL 혹은 이메일주소인 경우 적절한 형식으로 링크를 형성한다.
-
+```txt
+* 구글 홈페이지: https://google.com
 * 외부링크: <http://example.com/>
 * 이메일링크: <address@example.com>
 ```
 
-* 외부링크: <http://example.com/>
-* 이메일링크: <address@example.com>
+- 구글 홈페이지: <https://google.com>
+- 외부링크: <http://example.com/>
+- 이메일링크: <address@example.com>
 
-## 2.7. 강조
+## 2.6. 줄바꿈(Line-break)
 
-```
-*single asterisks*
-_single underscores_
-**double asterisks**
-__double underscores__
-~~cancelline~~
-```
-
-* *single asterisks*
-* *single underscores*
-* **double asterisks**
-* **double underscores**
-* ~~cancelline~~
-
-> ```문장 중간에 사용할 경우에는 **띄어쓰기** 를 사용하는 것이 좋다.```
-> 문장 중간에 사용할 경우에는 띄어쓰기를 사용하는 것이 좋다.
-
-## 2.8. 이미지
+마크다운에서는 엔터키 대신 띄어쓰기 두번을 사용해야한다.
 
 ```
-![Alt text](/path/to/img.jpg)
-![Alt text](/path/to/img.jpg "Optional title")
+글을 쓰다가 줄바꿈을 하고싶을 경우 
+엔터키로는 줄바꿈이 되지 않는다.
+
+줄바꿈 하고 싶은 문단의 마지막에  
+띄어쓰기 두번을 사용하고 엔터키를 누른다.
+
+뛰어쓰기로 사용되는 &nbsp;&nbsp;
+는 진짜 띄어쓰기만 된다.
+
+또는 쉽게 <br> 태그를 활용할 수 있다.
 ```
 
-![석촌호수 러버덕](http://cfile6.uf.tistory.com/image/2426E646543C9B4532C7B0)
-![석촌호수 러버덕](http://cfile6.uf.tistory.com/image/2426E646543C9B4532C7B0 "RubberDuck")
+글을 쓰다가 줄바꿈을 하고싶을 경우
+엔터키(\n)로는 줄바꿈이 되지 않는다.
 
-사이즈 조절 기능은 없기 때문에 ```<img width="" height=""></img>```를 이용한다.
+줄바꿈 하고 싶은 문단의 마지막에  
+띄어쓰기 두번을 사용하고 엔터키를 누른다.
 
-예
+뛰어쓰기로 사용되는 &nbsp;&nbsp;
+는 진짜 띄어쓰기만 된다.
+
+또는 쉽게 <br> 태그를 활용할 수 있다.
+
+## 2.7. 수평선 (Horizontal Rule)
+
+마크다운 문서 작성 시 페이지 나누기 용도로 많이 사용한다.
+`<hr/>` 태그를 아래와 같이 표현 할 수 있다.
+
+```txt
+(underscores x3) 
+___
+
+(dash x3) 
+---
+
+(asterisks x3) 
+***
+
+<hr/>
+```
+
+예시) ↓↓↓
+
+---
+
+## 2.8. 테이블(Table)
+<table> 태그로 변환되며 테이블 마크업 작성을 위해 아래와 같은 규칙을 따라야한다.  
+
+- `|` vertical bar로 테이블 열(Col)을 구분한다.  
+- 헤더 행을 구분하기 위해서는 `|` 사이 세개 이상의 dash`---`를 작성한다.
+- 헤더를 구분하면서 `-`와 함께 `:` 기호를 사용하여 열 안의 정렬을 정의할 수 있다. (아래 예시 참조)
+- 양 끝에 있는 `|` 기호는 생략 가능하다.
+
+```txt
+| 카테고리 | 마크업 | HTML |
+|:---|:---:|---:|
+| 우측정렬 | `:---` | text-align: right |
+| 가운데 정렬 | `:---:` | text-align: center |
+| 왼쪽 정렬 | `---:` | text-align: left |
+```
+
+| 카테고리 | 마크업 | HTML |
+|:---|:---:|---:|
+| 우측정렬 | `:---` | text-align: right |
+| 가운데 정렬 | `:---:` | text-align: center |
+| 왼쪽 정렬 | `---:` | text-align: left |
+
+## 2.9. 이미지(Image)
+이미지는 링크 마크업과 비슷하게 사용된다.
+
+```txt
+![Keyword](/path/to/img.jpg)
+![Keyword](/path/to/img.jpg "Optional title")
+```
+
+![지파키 제페토](https://avatars.githubusercontent.com/u/71811780?v=4)
+
+사이즈 조절 기능이 없기 때문에 사이즈 조절을 원한다면 ```<img width="" height=""></img>```를 이용한다.
+
+```txt
+<img src="/path/to/img.jpg" width="200px" height="200px" title="px(픽셀) 크기 설정" alt="Gparkkii's Zepeto"></img><br/>
+<img src="/path/to/img.jpg" width="30%" height="30%" title="px(픽셀) 크기 설정" alt="Gparkkii's Zepeto"></img>
+```
+
+<img src="https://avatars.githubusercontent.com/u/71811780?v=4" width="200px" height="200px" title="px(픽셀) 크기 설정" alt="Gparkkii's Zepeto"></img><br/>
+<img src="https://avatars.githubusercontent.com/u/71811780?v=4" width="30%" height="30%" title="px(픽셀) 크기 설정" alt="Gparkkii's Zepeto"></img>
+
+## 2.10. 코드(Code)
+
+`<pre>`, `<code>`로 변환된다.
+``` ` ```(Grave)를 사용하여 쉽게 코드블럭을 생성할 수 있다.
+
+### 2.8.1 인라인 코드 생성
+
+```txt
+`inline-code`는 grave를 사용해서 강조할 수 있어요. 
+grave를 강조하려면 ``` ` ``` 이렇게 사용해보세요.
+```
+
+`inline-code`는 grave 1개를 사용해서 강조할 수 있어요.  
+grave를 강조하려면 ``` ` ``` 이렇게 사용해보세요.
+
+### 2.8.2 코드 블럭 생성
+
+탭 들여쓰기를 두번 사용하거나 ``` ` ```를 세번 이상 입력하고 코드 종류도 적어줍니다.
+
+`````txt
+```html
+<a href="https://www.google.co.kr/" target="_blank">GOOGLE</a>
+```
+
+```css
+h3 {
+  font-size: 25px;
+  color: #757575;
+}
+```
+
+<!-- 또는  -->
+    2개의 탭 들여쓰기 사용
+
+`````
+
+```html
+<a href="https://www.google.co.kr/" target="_blank">GOOGLE</a>
+```
+
+```css
+h3 {
+  font-size: 25px;
+  color: #757575;
+}
+```
+
+    2개의 탭 들여쓰기 사용
+
+---
+
+# 3. 정리
+
+이미 알고있던 문법들이 대부분이었지만 각 잡고 정리하려다보니 꽤 쓸게 많았다. 마크다운이야 쓰다보면 금방 익숙해지고 손쉽게 사용 가능한 언어이니 한번쯤 이렇게 정리해두는 것도 좋은 선택이었던 것 같다. 다양한 플랫폼에서 지원하고 있기도하고 테크 블로그를 다시 제대로 해보려고 마음먹은 만큼 유용하게 써먹어야겠다. 
+
+<h3 style="color: skyblue">P.S)</h3>
+
+마크다운 문서를 조금 더 다채롭게 꾸미고 싶다면 HTML 문법을 그대로 사용할 수 있다.
 
 ```
-<img src="/path/to/img.jpg" width="450px" height="300px" title="px(픽셀) 크기 설정" alt="RubberDuck"></img><br/>
-<img src="/path/to/img.jpg" width="40%" height="30%" title="px(픽셀) 크기 설정" alt="RubberDuck"></img>
+예를 들어 갑자기 <span style="color: hotpink">폰트 색상</>을 바꾸고 싶다던지..
 ```
+예를 들어 갑자기 <span style="color: hotpink">폰트 색상</span>을 바꾸고 싶다던지..  
+하지만 간단하게 쓰는게 매력인만큼 html 문법을 자주 사용하지는 않을 것 같다.
 
-<img src="http://cfile6.uf.tistory.com/image/2426E646543C9B4532C7B0" width="450px" height="300px" title="px(픽셀) 크기 설정" alt="RubberDuck"></img><br/>
-<img src="http://cfile6.uf.tistory.com/image/2426E646543C9B4532C7B0" width="40%" height="30%" title="%(비율) 크기 설정" alt="RubberDuck"></img>
+---
 
-## 2.9. 줄바꿈
+## 참고문서
 
-3칸 이상 띄어쓰기(``)를 하면 줄이 바뀐다.
-
-```
-* 줄 바꿈을 하기 위해서는 문장 마지막에서 3칸이상을 띄어쓰기해야 한다. 
-이렇게
-
-* 줄 바꿈을 하기 위해서는 문장 마지막에서 3칸이상을 띄어쓰기해야 한다.___\\ 띄어쓰기
-이렇게
-```
-
-* 줄 바꿈을 하기 위해서는 문장 마지막에서 3칸이상을 띄어쓰기해야 한다. 이렇게
-
-* 줄 바꿈을 하기 위해서는 문장 마지막에서 3칸이상을 띄어쓰기해야 한다.    \
-이렇게
-
-****
-
-# 3. 마크다운 사용기
-
-## 3.1. 위지윅(WSYWIG) 에디터
-
-우리가 흔하게 접하는 웹에서 사용되는 에디터(네이버, 다음, 구글 등)이 대부분 위지윅 에디터에 속하며 기본적으로 HTML을 이용하여 스타일을 적용하여 문장을 꾸미는 형태를 취하게 된다. 그래서 하루패드와 같은 마크다운 에디터의 View 영역의 내용을 복사하여 붙여넣기를 하면 대체적으로 View영역에서 보이는 그대로 복사되는 편이다. 다만, 붙여넣기 이후에 문장들을 수정하려고 할 때 문제가 되는데, 이는 스타일이 포함된 태그가 수정과정에서 변형되면서 전체적인 영향을 끼치는 탓이다. 티스토리 블로그에서는 쉽지 않고... 워드프레스의 경우에는 마크다운으로 작성된 포스트를 HTML로 변환해주는 기능을 활용하는 것이 좋다.
-결론은, **복사해서 붙여넣기하면 가급적이면 본문은 수정하지 않는 것이 좋다.**
-
-## 3.2. 깃헙Github, 비트버킷Bitbucket과 요비Yobi 등
-
-최근 유행하는 협업개발플랫폼의 경우에는 마크다운을 변환하는 컨버터 기능을 기본탑재하고 있기 때문에 마크다운 문법으로 작성한 텍스트를 그대로 복사해서 붙여넣거나 업로드하는 것만으로 마크다운의 적용이 가능하다.
-
-## 3.3. MS워드 적용
-
-View 영역의 항목을 그대로 붙여넣거나 HTML 내보내기 등으로 생성한 파일을 불러오는 형태로 사용가능하다. 적용한 헤더를 워드가 읽어드리면서 목차에 적용하기 때문에 이를 활용하면 목차까지도 손쉽게 적용이 가능해진다.
-
-*****
-
-# 4. 정리
-
-마크다운은 기본문법만 알고있다면 일반 텍스트편집기에서도 손쉽게 작성이 가능한 마크업언어다. 현재 다양한 도구와 플랫폼에서 지원하고 있기 때문에 더욱 손쉽게 스타일적용된 문서를 작성할 수 있어 점점 널리 사용되고 있다.
-
-> 마크다운을 이해하고 사용하면서 쉽고 빠르게 스타일문서를 작성해보세요.
-
-저는 Dropbox 프로를 구매해서 집-랩탑-스마트폰이 각각 연동을 시켜서 사용하고 있습니다. 드랍박스에 저장된 마크다운 문서는 Dropbox 웹서비스 상에서 제공하기 때문에 웹상에서 바로 열람할 수도 있어 링크를 걸어서 다른 사람과 공유하는 형식으로 사용하고 있다.
-
-* 링크 예: [Markdown 설명](https://www.dropbox.com/s/mzp9tq4qtfjdlif/20141021_markdown_use_tip.md?dl=0)
-
-*****
-
-# P.S
-
-최근에는 여러 기능이 포함되며 무거워지는[Notion](https://www.notion.so/product) 을 대신해서 [옵시디언(Obsidian)](https://obsidian.md/) 조금씩 사용중이다. Notion 에서 작성한 문서는 Atom(<https://atom.io/>), Visual Studio Code(<https://code.visualstudio.com/>), Notepad++(<https://notepad-plus-plus.org/>)텍스트 편집기에 복붙(복사하고 붙여넣기)하면 마크다운문법으로 작성된 문장이 기입되고 이지윅 에디터를 제공하는 웹에디터에 붙여넣기 하면 거의 완벽한 형태로 복사된다. 그래서 애용중이다.
-
-## ○ 참고문서
-
-* [78 Tools for writing and previewing Markdown](http://mashable.com/2013/06/24/markdown-tools/)
-* [John gruber 마크다운 번역](http://nolboo.github.io/blog/2013/09/07/john-gruber-markdown/)
-* [깃허브 취향의 마크다운 번역](http://nolboo.github.io/blog/2014/03/25/github-flavored-markdown/)
-* [허니몬의 마크다운 작성법](http://www.slideshare.net/ihoneymon/ss-40575068)
-* Notion.so(<https://www.notion.so/product>)
-* Atom(<https://atom.io/>)
-* Visual Studio Code(<https://code.visualstudio.com/>)
-* Notepad++(<https://notepad-plus-plus.org/>)
+[HEROPY Tech : MarkDown 사용법 총정리](https://heropy.blog/2017/09/30/markdown/)  
+[ihoneymon : [공통] 마크다운 markdown 작성법](https://gist.github.com/ihoneymon/652be052a0727ad59601)

@@ -88,7 +88,7 @@ const DesktopMenu = ({ path }: { path: string }) => {
           <NavMenu title="Tech" active={true} />
         </Link>
         <Tooltip tip="준비중...">
-          <NavMenu title="Diary" disabled={true} active={false} />
+          <NavMenu title="Story" disabled={true} active={false} />
         </Tooltip>
         <Tooltip tip="준비중...">
           <NavMenu title="Project" disabled={true} active={false} />
