@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Sitemap: https://gparkkii.github.io/sitemap-index.xml
+Host: https://gparkkii.github.io

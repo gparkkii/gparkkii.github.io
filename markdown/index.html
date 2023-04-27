@@ -1,0 +1,1102 @@
+<!DOCTYPE html><html lang="ko"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta name="generator" content="Gatsby 5.9.0"/><meta data-react-helmet="true" name="description" content="Git 사용자라면 필수로 이용하게 되는 마크다운. 테크 블로그에서도, 기타 문서 작성에도 자주 이용되는 마크다운 문법에 대해 정리해보자."/><meta data-react-helmet="true" name="viewport" content="width=device-width, initial-scale=1.0"/><meta data-react-helmet="true" http-equiv="Content-Type" content="text/html;charset=UTF-8"/><meta data-react-helmet="true" property="og:type" content="website"/><meta data-react-helmet="true" property="og:title" content="마크다운 markdown 사용법 총정리"/><meta data-react-helmet="true" property="og:description" content="Git 사용자라면 필수로 이용하게 되는 마크다운. 테크 블로그에서도, 기타 문서 작성에도 자주 이용되는 마크다운 문법에 대해 정리해보자."/><meta data-react-helmet="true" property="og:image" content="/static/13d7dd7ec2dea11e79bf5c24d4b9c785/example.png"/><meta data-react-helmet="true" property="og:url" content="https://gparkkii.github.io/"/><meta data-react-helmet="true" property="og:site_name" content="마크다운 markdown 사용법 총정리"/><style data-href="/styles.9e907bc32054b7771552.css" data-identity="gatsby-global-css">code[class*=language-],pre[class*=language-]{word-wrap:normal;background:none;color:#ccc;font-family:Consolas,Monaco,Andale Mono,Ubuntu Mono,monospace;font-size:1em;-webkit-hyphens:none;hyphens:none;line-height:1.5;tab-size:4;text-align:left;white-space:pre;word-break:normal;word-spacing:normal}pre[class*=language-]{margin:.5em 0;overflow:auto;padding:1em}:not(pre)>code[class*=language-],pre[class*=language-]{background:#2d2d2d}:not(pre)>code[class*=language-]{border-radius:.3em;padding:.1em;white-space:normal}.token.block-comment,.token.cdata,.token.comment,.token.doctype,.token.prolog{color:#999}.token.punctuation{color:#ccc}.token.attr-name,.token.deleted,.token.namespace,.token.tag{color:#e2777a}.token.function-name{color:#6196cc}.token.boolean,.token.function,.token.number{color:#f08d49}.token.class-name,.token.constant,.token.property,.token.symbol{color:#f8c555}.token.atrule,.token.builtin,.token.important,.token.keyword,.token.selector{color:#cc99cd}.token.attr-value,.token.char,.token.regex,.token.string,.token.variable{color:#7ec699}.token.entity,.token.operator,.token.url{color:#67cdcc}.token.bold,.token.important{font-weight:700}.token.italic{font-style:italic}.token.entity{cursor:help}.token.inserted{color:green}</style><style type="text/css">:root, :host {
+  --fa-font-solid: normal 900 1em/1 "Font Awesome 6 Solid";
+  --fa-font-regular: normal 400 1em/1 "Font Awesome 6 Regular";
+  --fa-font-light: normal 300 1em/1 "Font Awesome 6 Light";
+  --fa-font-thin: normal 100 1em/1 "Font Awesome 6 Thin";
+  --fa-font-duotone: normal 900 1em/1 "Font Awesome 6 Duotone";
+  --fa-font-sharp-solid: normal 900 1em/1 "Font Awesome 6 Sharp";
+  --fa-font-sharp-regular: normal 400 1em/1 "Font Awesome 6 Sharp";
+  --fa-font-sharp-light: normal 300 1em/1 "Font Awesome 6 Sharp";
+  --fa-font-brands: normal 400 1em/1 "Font Awesome 6 Brands";
+}
+
+svg:not(:root).svg-inline--fa, svg:not(:host).svg-inline--fa {
+  overflow: visible;
+  box-sizing: content-box;
+}
+
+.svg-inline--fa {
+  display: var(--fa-display, inline-block);
+  height: 1em;
+  overflow: visible;
+  vertical-align: -0.125em;
+}
+.svg-inline--fa.fa-2xs {
+  vertical-align: 0.1em;
+}
+.svg-inline--fa.fa-xs {
+  vertical-align: 0em;
+}
+.svg-inline--fa.fa-sm {
+  vertical-align: -0.0714285705em;
+}
+.svg-inline--fa.fa-lg {
+  vertical-align: -0.2em;
+}
+.svg-inline--fa.fa-xl {
+  vertical-align: -0.25em;
+}
+.svg-inline--fa.fa-2xl {
+  vertical-align: -0.3125em;
+}
+.svg-inline--fa.fa-pull-left {
+  margin-right: var(--fa-pull-margin, 0.3em);
+  width: auto;
+}
+.svg-inline--fa.fa-pull-right {
+  margin-left: var(--fa-pull-margin, 0.3em);
+  width: auto;
+}
+.svg-inline--fa.fa-li {
+  width: var(--fa-li-width, 2em);
+  top: 0.25em;
+}
+.svg-inline--fa.fa-fw {
+  width: var(--fa-fw-width, 1.25em);
+}
+
+.fa-layers svg.svg-inline--fa {
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.fa-layers-counter, .fa-layers-text {
+  display: inline-block;
+  position: absolute;
+  text-align: center;
+}
+
+.fa-layers {
+  display: inline-block;
+  height: 1em;
+  position: relative;
+  text-align: center;
+  vertical-align: -0.125em;
+  width: 1em;
+}
+.fa-layers svg.svg-inline--fa {
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
+}
+
+.fa-layers-text {
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
+}
+
+.fa-layers-counter {
+  background-color: var(--fa-counter-background-color, #ff253a);
+  border-radius: var(--fa-counter-border-radius, 1em);
+  box-sizing: border-box;
+  color: var(--fa-inverse, #fff);
+  line-height: var(--fa-counter-line-height, 1);
+  max-width: var(--fa-counter-max-width, 5em);
+  min-width: var(--fa-counter-min-width, 1.5em);
+  overflow: hidden;
+  padding: var(--fa-counter-padding, 0.25em 0.5em);
+  right: var(--fa-right, 0);
+  text-overflow: ellipsis;
+  top: var(--fa-top, 0);
+  -webkit-transform: scale(var(--fa-counter-scale, 0.25));
+          transform: scale(var(--fa-counter-scale, 0.25));
+  -webkit-transform-origin: top right;
+          transform-origin: top right;
+}
+
+.fa-layers-bottom-right {
+  bottom: var(--fa-bottom, 0);
+  right: var(--fa-right, 0);
+  top: auto;
+  -webkit-transform: scale(var(--fa-layers-scale, 0.25));
+          transform: scale(var(--fa-layers-scale, 0.25));
+  -webkit-transform-origin: bottom right;
+          transform-origin: bottom right;
+}
+
+.fa-layers-bottom-left {
+  bottom: var(--fa-bottom, 0);
+  left: var(--fa-left, 0);
+  right: auto;
+  top: auto;
+  -webkit-transform: scale(var(--fa-layers-scale, 0.25));
+          transform: scale(var(--fa-layers-scale, 0.25));
+  -webkit-transform-origin: bottom left;
+          transform-origin: bottom left;
+}
+
+.fa-layers-top-right {
+  top: var(--fa-top, 0);
+  right: var(--fa-right, 0);
+  -webkit-transform: scale(var(--fa-layers-scale, 0.25));
+          transform: scale(var(--fa-layers-scale, 0.25));
+  -webkit-transform-origin: top right;
+          transform-origin: top right;
+}
+
+.fa-layers-top-left {
+  left: var(--fa-left, 0);
+  right: auto;
+  top: var(--fa-top, 0);
+  -webkit-transform: scale(var(--fa-layers-scale, 0.25));
+          transform: scale(var(--fa-layers-scale, 0.25));
+  -webkit-transform-origin: top left;
+          transform-origin: top left;
+}
+
+.fa-1x {
+  font-size: 1em;
+}
+
+.fa-2x {
+  font-size: 2em;
+}
+
+.fa-3x {
+  font-size: 3em;
+}
+
+.fa-4x {
+  font-size: 4em;
+}
+
+.fa-5x {
+  font-size: 5em;
+}
+
+.fa-6x {
+  font-size: 6em;
+}
+
+.fa-7x {
+  font-size: 7em;
+}
+
+.fa-8x {
+  font-size: 8em;
+}
+
+.fa-9x {
+  font-size: 9em;
+}
+
+.fa-10x {
+  font-size: 10em;
+}
+
+.fa-2xs {
+  font-size: 0.625em;
+  line-height: 0.1em;
+  vertical-align: 0.225em;
+}
+
+.fa-xs {
+  font-size: 0.75em;
+  line-height: 0.0833333337em;
+  vertical-align: 0.125em;
+}
+
+.fa-sm {
+  font-size: 0.875em;
+  line-height: 0.0714285718em;
+  vertical-align: 0.0535714295em;
+}
+
+.fa-lg {
+  font-size: 1.25em;
+  line-height: 0.05em;
+  vertical-align: -0.075em;
+}
+
+.fa-xl {
+  font-size: 1.5em;
+  line-height: 0.0416666682em;
+  vertical-align: -0.125em;
+}
+
+.fa-2xl {
+  font-size: 2em;
+  line-height: 0.03125em;
+  vertical-align: -0.1875em;
+}
+
+.fa-fw {
+  text-align: center;
+  width: 1.25em;
+}
+
+.fa-ul {
+  list-style-type: none;
+  margin-left: var(--fa-li-margin, 2.5em);
+  padding-left: 0;
+}
+.fa-ul > li {
+  position: relative;
+}
+
+.fa-li {
+  left: calc(var(--fa-li-width, 2em) * -1);
+  position: absolute;
+  text-align: center;
+  width: var(--fa-li-width, 2em);
+  line-height: inherit;
+}
+
+.fa-border {
+  border-color: var(--fa-border-color, #eee);
+  border-radius: var(--fa-border-radius, 0.1em);
+  border-style: var(--fa-border-style, solid);
+  border-width: var(--fa-border-width, 0.08em);
+  padding: var(--fa-border-padding, 0.2em 0.25em 0.15em);
+}
+
+.fa-pull-left {
+  float: left;
+  margin-right: var(--fa-pull-margin, 0.3em);
+}
+
+.fa-pull-right {
+  float: right;
+  margin-left: var(--fa-pull-margin, 0.3em);
+}
+
+.fa-beat {
+  -webkit-animation-name: fa-beat;
+          animation-name: fa-beat;
+  -webkit-animation-delay: var(--fa-animation-delay, 0s);
+          animation-delay: var(--fa-animation-delay, 0s);
+  -webkit-animation-direction: var(--fa-animation-direction, normal);
+          animation-direction: var(--fa-animation-direction, normal);
+  -webkit-animation-duration: var(--fa-animation-duration, 1s);
+          animation-duration: var(--fa-animation-duration, 1s);
+  -webkit-animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+          animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  -webkit-animation-timing-function: var(--fa-animation-timing, ease-in-out);
+          animation-timing-function: var(--fa-animation-timing, ease-in-out);
+}
+
+.fa-bounce {
+  -webkit-animation-name: fa-bounce;
+          animation-name: fa-bounce;
+  -webkit-animation-delay: var(--fa-animation-delay, 0s);
+          animation-delay: var(--fa-animation-delay, 0s);
+  -webkit-animation-direction: var(--fa-animation-direction, normal);
+          animation-direction: var(--fa-animation-direction, normal);
+  -webkit-animation-duration: var(--fa-animation-duration, 1s);
+          animation-duration: var(--fa-animation-duration, 1s);
+  -webkit-animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+          animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  -webkit-animation-timing-function: var(--fa-animation-timing, cubic-bezier(0.28, 0.84, 0.42, 1));
+          animation-timing-function: var(--fa-animation-timing, cubic-bezier(0.28, 0.84, 0.42, 1));
+}
+
+.fa-fade {
+  -webkit-animation-name: fa-fade;
+          animation-name: fa-fade;
+  -webkit-animation-delay: var(--fa-animation-delay, 0s);
+          animation-delay: var(--fa-animation-delay, 0s);
+  -webkit-animation-direction: var(--fa-animation-direction, normal);
+          animation-direction: var(--fa-animation-direction, normal);
+  -webkit-animation-duration: var(--fa-animation-duration, 1s);
+          animation-duration: var(--fa-animation-duration, 1s);
+  -webkit-animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+          animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  -webkit-animation-timing-function: var(--fa-animation-timing, cubic-bezier(0.4, 0, 0.6, 1));
+          animation-timing-function: var(--fa-animation-timing, cubic-bezier(0.4, 0, 0.6, 1));
+}
+
+.fa-beat-fade {
+  -webkit-animation-name: fa-beat-fade;
+          animation-name: fa-beat-fade;
+  -webkit-animation-delay: var(--fa-animation-delay, 0s);
+          animation-delay: var(--fa-animation-delay, 0s);
+  -webkit-animation-direction: var(--fa-animation-direction, normal);
+          animation-direction: var(--fa-animation-direction, normal);
+  -webkit-animation-duration: var(--fa-animation-duration, 1s);
+          animation-duration: var(--fa-animation-duration, 1s);
+  -webkit-animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+          animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  -webkit-animation-timing-function: var(--fa-animation-timing, cubic-bezier(0.4, 0, 0.6, 1));
+          animation-timing-function: var(--fa-animation-timing, cubic-bezier(0.4, 0, 0.6, 1));
+}
+
+.fa-flip {
+  -webkit-animation-name: fa-flip;
+          animation-name: fa-flip;
+  -webkit-animation-delay: var(--fa-animation-delay, 0s);
+          animation-delay: var(--fa-animation-delay, 0s);
+  -webkit-animation-direction: var(--fa-animation-direction, normal);
+          animation-direction: var(--fa-animation-direction, normal);
+  -webkit-animation-duration: var(--fa-animation-duration, 1s);
+          animation-duration: var(--fa-animation-duration, 1s);
+  -webkit-animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+          animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  -webkit-animation-timing-function: var(--fa-animation-timing, ease-in-out);
+          animation-timing-function: var(--fa-animation-timing, ease-in-out);
+}
+
+.fa-shake {
+  -webkit-animation-name: fa-shake;
+          animation-name: fa-shake;
+  -webkit-animation-delay: var(--fa-animation-delay, 0s);
+          animation-delay: var(--fa-animation-delay, 0s);
+  -webkit-animation-direction: var(--fa-animation-direction, normal);
+          animation-direction: var(--fa-animation-direction, normal);
+  -webkit-animation-duration: var(--fa-animation-duration, 1s);
+          animation-duration: var(--fa-animation-duration, 1s);
+  -webkit-animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+          animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  -webkit-animation-timing-function: var(--fa-animation-timing, linear);
+          animation-timing-function: var(--fa-animation-timing, linear);
+}
+
+.fa-spin {
+  -webkit-animation-name: fa-spin;
+          animation-name: fa-spin;
+  -webkit-animation-delay: var(--fa-animation-delay, 0s);
+          animation-delay: var(--fa-animation-delay, 0s);
+  -webkit-animation-direction: var(--fa-animation-direction, normal);
+          animation-direction: var(--fa-animation-direction, normal);
+  -webkit-animation-duration: var(--fa-animation-duration, 2s);
+          animation-duration: var(--fa-animation-duration, 2s);
+  -webkit-animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+          animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  -webkit-animation-timing-function: var(--fa-animation-timing, linear);
+          animation-timing-function: var(--fa-animation-timing, linear);
+}
+
+.fa-spin-reverse {
+  --fa-animation-direction: reverse;
+}
+
+.fa-pulse,
+.fa-spin-pulse {
+  -webkit-animation-name: fa-spin;
+          animation-name: fa-spin;
+  -webkit-animation-direction: var(--fa-animation-direction, normal);
+          animation-direction: var(--fa-animation-direction, normal);
+  -webkit-animation-duration: var(--fa-animation-duration, 1s);
+          animation-duration: var(--fa-animation-duration, 1s);
+  -webkit-animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+          animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  -webkit-animation-timing-function: var(--fa-animation-timing, steps(8));
+          animation-timing-function: var(--fa-animation-timing, steps(8));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fa-beat,
+.fa-bounce,
+.fa-fade,
+.fa-beat-fade,
+.fa-flip,
+.fa-pulse,
+.fa-shake,
+.fa-spin,
+.fa-spin-pulse {
+    -webkit-animation-delay: -1ms;
+            animation-delay: -1ms;
+    -webkit-animation-duration: 1ms;
+            animation-duration: 1ms;
+    -webkit-animation-iteration-count: 1;
+            animation-iteration-count: 1;
+    -webkit-transition-delay: 0s;
+            transition-delay: 0s;
+    -webkit-transition-duration: 0s;
+            transition-duration: 0s;
+  }
+}
+@-webkit-keyframes fa-beat {
+  0%, 90% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  45% {
+    -webkit-transform: scale(var(--fa-beat-scale, 1.25));
+            transform: scale(var(--fa-beat-scale, 1.25));
+  }
+}
+@keyframes fa-beat {
+  0%, 90% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  45% {
+    -webkit-transform: scale(var(--fa-beat-scale, 1.25));
+            transform: scale(var(--fa-beat-scale, 1.25));
+  }
+}
+@-webkit-keyframes fa-bounce {
+  0% {
+    -webkit-transform: scale(1, 1) translateY(0);
+            transform: scale(1, 1) translateY(0);
+  }
+  10% {
+    -webkit-transform: scale(var(--fa-bounce-start-scale-x, 1.1), var(--fa-bounce-start-scale-y, 0.9)) translateY(0);
+            transform: scale(var(--fa-bounce-start-scale-x, 1.1), var(--fa-bounce-start-scale-y, 0.9)) translateY(0);
+  }
+  30% {
+    -webkit-transform: scale(var(--fa-bounce-jump-scale-x, 0.9), var(--fa-bounce-jump-scale-y, 1.1)) translateY(var(--fa-bounce-height, -0.5em));
+            transform: scale(var(--fa-bounce-jump-scale-x, 0.9), var(--fa-bounce-jump-scale-y, 1.1)) translateY(var(--fa-bounce-height, -0.5em));
+  }
+  50% {
+    -webkit-transform: scale(var(--fa-bounce-land-scale-x, 1.05), var(--fa-bounce-land-scale-y, 0.95)) translateY(0);
+            transform: scale(var(--fa-bounce-land-scale-x, 1.05), var(--fa-bounce-land-scale-y, 0.95)) translateY(0);
+  }
+  57% {
+    -webkit-transform: scale(1, 1) translateY(var(--fa-bounce-rebound, -0.125em));
+            transform: scale(1, 1) translateY(var(--fa-bounce-rebound, -0.125em));
+  }
+  64% {
+    -webkit-transform: scale(1, 1) translateY(0);
+            transform: scale(1, 1) translateY(0);
+  }
+  100% {
+    -webkit-transform: scale(1, 1) translateY(0);
+            transform: scale(1, 1) translateY(0);
+  }
+}
+@keyframes fa-bounce {
+  0% {
+    -webkit-transform: scale(1, 1) translateY(0);
+            transform: scale(1, 1) translateY(0);
+  }
+  10% {
+    -webkit-transform: scale(var(--fa-bounce-start-scale-x, 1.1), var(--fa-bounce-start-scale-y, 0.9)) translateY(0);
+            transform: scale(var(--fa-bounce-start-scale-x, 1.1), var(--fa-bounce-start-scale-y, 0.9)) translateY(0);
+  }
+  30% {
+    -webkit-transform: scale(var(--fa-bounce-jump-scale-x, 0.9), var(--fa-bounce-jump-scale-y, 1.1)) translateY(var(--fa-bounce-height, -0.5em));
+            transform: scale(var(--fa-bounce-jump-scale-x, 0.9), var(--fa-bounce-jump-scale-y, 1.1)) translateY(var(--fa-bounce-height, -0.5em));
+  }
+  50% {
+    -webkit-transform: scale(var(--fa-bounce-land-scale-x, 1.05), var(--fa-bounce-land-scale-y, 0.95)) translateY(0);
+            transform: scale(var(--fa-bounce-land-scale-x, 1.05), var(--fa-bounce-land-scale-y, 0.95)) translateY(0);
+  }
+  57% {
+    -webkit-transform: scale(1, 1) translateY(var(--fa-bounce-rebound, -0.125em));
+            transform: scale(1, 1) translateY(var(--fa-bounce-rebound, -0.125em));
+  }
+  64% {
+    -webkit-transform: scale(1, 1) translateY(0);
+            transform: scale(1, 1) translateY(0);
+  }
+  100% {
+    -webkit-transform: scale(1, 1) translateY(0);
+            transform: scale(1, 1) translateY(0);
+  }
+}
+@-webkit-keyframes fa-fade {
+  50% {
+    opacity: var(--fa-fade-opacity, 0.4);
+  }
+}
+@keyframes fa-fade {
+  50% {
+    opacity: var(--fa-fade-opacity, 0.4);
+  }
+}
+@-webkit-keyframes fa-beat-fade {
+  0%, 100% {
+    opacity: var(--fa-beat-fade-opacity, 0.4);
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    -webkit-transform: scale(var(--fa-beat-fade-scale, 1.125));
+            transform: scale(var(--fa-beat-fade-scale, 1.125));
+  }
+}
+@keyframes fa-beat-fade {
+  0%, 100% {
+    opacity: var(--fa-beat-fade-opacity, 0.4);
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    -webkit-transform: scale(var(--fa-beat-fade-scale, 1.125));
+            transform: scale(var(--fa-beat-fade-scale, 1.125));
+  }
+}
+@-webkit-keyframes fa-flip {
+  50% {
+    -webkit-transform: rotate3d(var(--fa-flip-x, 0), var(--fa-flip-y, 1), var(--fa-flip-z, 0), var(--fa-flip-angle, -180deg));
+            transform: rotate3d(var(--fa-flip-x, 0), var(--fa-flip-y, 1), var(--fa-flip-z, 0), var(--fa-flip-angle, -180deg));
+  }
+}
+@keyframes fa-flip {
+  50% {
+    -webkit-transform: rotate3d(var(--fa-flip-x, 0), var(--fa-flip-y, 1), var(--fa-flip-z, 0), var(--fa-flip-angle, -180deg));
+            transform: rotate3d(var(--fa-flip-x, 0), var(--fa-flip-y, 1), var(--fa-flip-z, 0), var(--fa-flip-angle, -180deg));
+  }
+}
+@-webkit-keyframes fa-shake {
+  0% {
+    -webkit-transform: rotate(-15deg);
+            transform: rotate(-15deg);
+  }
+  4% {
+    -webkit-transform: rotate(15deg);
+            transform: rotate(15deg);
+  }
+  8%, 24% {
+    -webkit-transform: rotate(-18deg);
+            transform: rotate(-18deg);
+  }
+  12%, 28% {
+    -webkit-transform: rotate(18deg);
+            transform: rotate(18deg);
+  }
+  16% {
+    -webkit-transform: rotate(-22deg);
+            transform: rotate(-22deg);
+  }
+  20% {
+    -webkit-transform: rotate(22deg);
+            transform: rotate(22deg);
+  }
+  32% {
+    -webkit-transform: rotate(-12deg);
+            transform: rotate(-12deg);
+  }
+  36% {
+    -webkit-transform: rotate(12deg);
+            transform: rotate(12deg);
+  }
+  40%, 100% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+}
+@keyframes fa-shake {
+  0% {
+    -webkit-transform: rotate(-15deg);
+            transform: rotate(-15deg);
+  }
+  4% {
+    -webkit-transform: rotate(15deg);
+            transform: rotate(15deg);
+  }
+  8%, 24% {
+    -webkit-transform: rotate(-18deg);
+            transform: rotate(-18deg);
+  }
+  12%, 28% {
+    -webkit-transform: rotate(18deg);
+            transform: rotate(18deg);
+  }
+  16% {
+    -webkit-transform: rotate(-22deg);
+            transform: rotate(-22deg);
+  }
+  20% {
+    -webkit-transform: rotate(22deg);
+            transform: rotate(22deg);
+  }
+  32% {
+    -webkit-transform: rotate(-12deg);
+            transform: rotate(-12deg);
+  }
+  36% {
+    -webkit-transform: rotate(12deg);
+            transform: rotate(12deg);
+  }
+  40%, 100% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+}
+@-webkit-keyframes fa-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+@keyframes fa-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+.fa-rotate-90 {
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+
+.fa-rotate-180 {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.fa-rotate-270 {
+  -webkit-transform: rotate(270deg);
+          transform: rotate(270deg);
+}
+
+.fa-flip-horizontal {
+  -webkit-transform: scale(-1, 1);
+          transform: scale(-1, 1);
+}
+
+.fa-flip-vertical {
+  -webkit-transform: scale(1, -1);
+          transform: scale(1, -1);
+}
+
+.fa-flip-both,
+.fa-flip-horizontal.fa-flip-vertical {
+  -webkit-transform: scale(-1, -1);
+          transform: scale(-1, -1);
+}
+
+.fa-rotate-by {
+  -webkit-transform: rotate(var(--fa-rotate-angle, none));
+          transform: rotate(var(--fa-rotate-angle, none));
+}
+
+.fa-stack {
+  display: inline-block;
+  vertical-align: middle;
+  height: 2em;
+  position: relative;
+  width: 2.5em;
+}
+
+.fa-stack-1x,
+.fa-stack-2x {
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: var(--fa-stack-z-index, auto);
+}
+
+.svg-inline--fa.fa-stack-1x {
+  height: 1em;
+  width: 1.25em;
+}
+.svg-inline--fa.fa-stack-2x {
+  height: 2em;
+  width: 2.5em;
+}
+
+.fa-inverse {
+  color: var(--fa-inverse, #fff);
+}
+
+.sr-only,
+.fa-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.sr-only-focusable:not(:focus),
+.fa-sr-only-focusable:not(:focus) {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.svg-inline--fa .fa-primary {
+  fill: var(--fa-primary-color, currentColor);
+  opacity: var(--fa-primary-opacity, 1);
+}
+
+.svg-inline--fa .fa-secondary {
+  fill: var(--fa-secondary-color, currentColor);
+  opacity: var(--fa-secondary-opacity, 0.4);
+}
+
+.svg-inline--fa.fa-swap-opacity .fa-primary {
+  opacity: var(--fa-secondary-opacity, 0.4);
+}
+
+.svg-inline--fa.fa-swap-opacity .fa-secondary {
+  opacity: var(--fa-primary-opacity, 1);
+}
+
+.svg-inline--fa mask .fa-primary,
+.svg-inline--fa mask .fa-secondary {
+  fill: black;
+}
+
+.fad.fa-inverse,
+.fa-duotone.fa-inverse {
+  color: var(--fa-inverse, #fff);
+}</style><style>.gatsby-image-wrapper{position:relative;overflow:hidden}.gatsby-image-wrapper picture.object-fit-polyfill{position:static!important}.gatsby-image-wrapper img{bottom:0;height:100%;left:0;margin:0;max-width:none;padding:0;position:absolute;right:0;top:0;width:100%;object-fit:cover}.gatsby-image-wrapper [data-main-image]{opacity:0;transform:translateZ(0);transition:opacity .25s linear;will-change:opacity}.gatsby-image-wrapper-constrained{display:inline-block;vertical-align:top}</style><noscript><style>.gatsby-image-wrapper noscript [data-main-image]{opacity:1!important}.gatsby-image-wrapper [data-placeholder-image]{opacity:0!important}</style></noscript><script type="module">const e="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;e&&document.body.addEventListener("load",(function(e){const t=e.target;if(void 0===t.dataset.mainImage)return;if(void 0===t.dataset.gatsbyImageSsr)return;let a=null,n=t;for(;null===a&&n;)void 0!==n.parentNode.dataset.gatsbyImageWrapper&&(a=n.parentNode),n=n.parentNode;const o=a.querySelector("[data-placeholder-image]"),r=new Image;r.src=t.currentSrc,r.decode().catch((()=>{})).then((()=>{t.style.opacity=1,o&&(o.style.opacity=0,o.style.transition="opacity 500ms linear")}))}),!0);</script><link rel="sitemap" type="application/xml" href="/sitemap-index.xml"/><title data-react-helmet="true">마크다운 markdown 사용법 총정리</title><link rel="preconnect" href="https://fonts.googleapis.com" crossorigin="true"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="true"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800&amp;display=swap"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard-dynamic-subset.css"/><link rel="canonical" href="null//null%3Chttps://gparkkii.github.io//%3E/markdown/"/></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><style data-emotion="css-global zkg0by">*{margin:0;padding:0;box-sizing:border-box;font-family:Pretendard,-apple-system,BlinkMacSystemFont,'Noto Sans','Segoe UI',Roboto,Oxygen,Ubuntu,Cantarell,'Helvetica Neue',sans-serif;font-weight:400;color:#000;word-break:keep-all;word-wrap:break-word;box-sizing:border-box;}*,::after,::before{box-sizing:border-box;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;}a{padding:0;-webkit-text-decoration:none;text-decoration:none;box-shadow:none;outline:none;}ul,li{list-style:none;}img{border:0;}button{background-color:transparent;-webkit-text-decoration:none;text-decoration:none;border:none;outline:none;cursor:pointer;font:inherit;}input{-webkit-text-decoration:none;text-decoration:none;background-color:none;outline:none;}input::-webkit-outer-spin-button,input::-webkit-inner-spin-button{-webkit-appearance:none;margin:0;}input:-webkit-autofill,input:-webkit-autofill:hover,input:-webkit-autofill:focus,input:-webkit-autofill:active{box-shadow:0 0 0px 1000px transparent inset;-webkit-transition:background-color 9999s ease-out;-webkit-transition:background-color 5000s ease-in-out 0s;transition:background-color 5000s ease-in-out 0s;}textarea{resize:none;border:none;outline:none;}select{background:none;outline:none;border-radius:0;cursor:pointer;-moz-appearance:none;-webkit-appearance:none;}.typography-ellipsis-2line{overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;line-height:1.6em;height:3.2em;}</style><style data-emotion="css kjssnp">.css-kjssnp{position:fixed;z-index:99999;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:justify;-webkit-justify-content:space-between;justify-content:space-between;width:100%;height:72px;background-color:#ffffff;box-shadow:0px 2px 4px 2px rgba(225, 225, 225, 0.15);margin:0 auto;padding-left:40px;padding-right:32px;-webkit-transition:all 0.5s ease;transition:all 0.5s ease;}@media (max-width: 768px){.css-kjssnp{height:64px;padding:0px 12px;}}</style><header class="css-kjssnp e1pbt6sg4"><a href="/"><div data-gatsby-image-wrapper="" style="width:40px;height:40px;object-fit:contain" class="gatsby-image-wrapper gatsby-image-wrapper-constrained"><div style="max-width:192px;display:block"><img alt="" role="presentation" aria-hidden="true" src="data:image/svg+xml;charset=utf-8,%3Csvg%20height=&#x27;192&#x27;%20width=&#x27;192&#x27;%20xmlns=&#x27;http://www.w3.org/2000/svg&#x27;%20version=&#x27;1.1&#x27;%3E%3C/svg%3E" style="max-width:100%;display:block;position:static"/></div><img aria-hidden="true" data-placeholder-image="" style="opacity:1;transition:opacity 500ms linear" decoding="async" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAACxLAAAsSwGlPZapAAABVklEQVR42sWUv0sDMRTHP7nU1aFgoYjCqS0OTa5uCnaSLk52dCr4Axy7CIqO/h11FSeXUkdXN539CxzdHNpG7njB41DIddAHj5CX3CfvffMu8F/mrPWunLVaxiw2jykg6i0uRi5JmBmTgWbGqLJAJZ7ZWbXKZ6tlp8bcOGv3BBqVgWUWQbygVAdYcUly76x1E2MGE2NSoC4DqwHjVELvS1qPXhqN2HW72g2HwRp64KOABsAacCvzw3qlQk1r7drtYNiqfPyUW+ulMQ2XMtfjOA4G1oEZ8AasAw3gVQ7Z+pY3zLzQV3n9gClwUhbmM0zVfgD2gV2gk4NEZXpP/3AhfcnsCGgW2yoU2C+U6/0D2AzN1J/aAp6BY8AAOxK7E+hp4fBfrSKj77dmYX0k8e3QDP2Gg1yJ7+J+fl5WQ79xQy7iGrhI/w5ged7nTwVUMRdUF1z9+dP+BfhRXMaTIuYeAAAAAElFTkSuQmCC" alt=""/><picture><source type="image/webp" data-srcset="/static/cfc101a3a34cce548fe1499d76d6c129/54fc7/g_logo.webp 48w,/static/cfc101a3a34cce548fe1499d76d6c129/a1864/g_logo.webp 96w,/static/cfc101a3a34cce548fe1499d76d6c129/ae15a/g_logo.webp 192w" sizes="(min-width: 192px) 192px, 100vw"/><img data-gatsby-image-ssr="" data-main-image="" style="opacity:0" sizes="(min-width: 192px) 192px, 100vw" decoding="async" loading="lazy" data-src="/static/cfc101a3a34cce548fe1499d76d6c129/23bc0/g_logo.png" data-srcset="/static/cfc101a3a34cce548fe1499d76d6c129/7c3a2/g_logo.png 48w,/static/cfc101a3a34cce548fe1499d76d6c129/9ca7a/g_logo.png 96w,/static/cfc101a3a34cce548fe1499d76d6c129/23bc0/g_logo.png 192w" alt="logo"/></picture><noscript><picture><source type="image/webp" srcSet="/static/cfc101a3a34cce548fe1499d76d6c129/54fc7/g_logo.webp 48w,/static/cfc101a3a34cce548fe1499d76d6c129/a1864/g_logo.webp 96w,/static/cfc101a3a34cce548fe1499d76d6c129/ae15a/g_logo.webp 192w" sizes="(min-width: 192px) 192px, 100vw"/><img data-gatsby-image-ssr="" data-main-image="" style="opacity:0" sizes="(min-width: 192px) 192px, 100vw" decoding="async" loading="lazy" src="/static/cfc101a3a34cce548fe1499d76d6c129/23bc0/g_logo.png" srcSet="/static/cfc101a3a34cce548fe1499d76d6c129/7c3a2/g_logo.png 48w,/static/cfc101a3a34cce548fe1499d76d6c129/9ca7a/g_logo.png 96w,/static/cfc101a3a34cce548fe1499d76d6c129/23bc0/g_logo.png 192w" alt="logo"/></picture></noscript><script type="module">const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1,e.parentNode.parentNode.querySelector("[data-placeholder-image]").style.opacity=0)}}</script></div></a><style data-emotion="css rrlyql">.css-rrlyql{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:end;-ms-flex-pack:end;-webkit-justify-content:flex-end;justify-content:flex-end;}</style><div class="css-rrlyql e1pbt6sg3"><style data-emotion="css uiv6qo">.css-uiv6qo{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:end;-ms-flex-pack:end;-webkit-justify-content:flex-end;justify-content:flex-end;}@media (max-width: 768px){.css-uiv6qo{visibility:hidden;opacity:0;position:absolute;top:-10000;right:84px;}}</style><div class="css-uiv6qo e1pbt6sg2"><a href="/"><style data-emotion="css 1kgnvky">.css-1kgnvky{padding:0px 16px;cursor:pointer;}.css-1kgnvky p{color:#000000;font-weight:500;}.css-1kgnvky:hover p{color:#666666;}</style><div class="css-1kgnvky e18nxucp0"><style data-emotion="css f5x3cp">.css-f5x3cp{font-family:Inter,Pretendard,Noto Sans;font-size:16px;font-weight:600;line-height:23px;color:#000000;}</style><p class="css-f5x3cp e4lwi5m12">Tech</p></div></a><style data-emotion="css 1182kuh">.css-1182kuh{position:relative;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;}.css-1182kuh:hover .tooltip{visibility:visible;}</style><div class="css-1182kuh e13yk80h1"><style data-emotion="css ijbtoo">.css-ijbtoo{padding:0px 16px;cursor:pointer;}.css-ijbtoo p{color:#ccc;font-weight:500;}.css-ijbtoo:hover p{color:#666666;}</style><div disabled="" class="css-ijbtoo e18nxucp0"><p class="css-f5x3cp e4lwi5m12">Story</p></div><style data-emotion="css 1uzq6vu">.css-1uzq6vu{visibility:hidden;position:absolute;bottom:-36px;padding:4px 10px;border-radius:6px;background-color:rgba(113, 119, 132, 0.2);color:#717784;font-size:13px;font-weight:400;line-height:20px;text-align:center;}</style><div class="tooltip css-1uzq6vu e13yk80h0">준비중...</div></div><div class="css-1182kuh e13yk80h1"><div disabled="" class="css-ijbtoo e18nxucp0"><p class="css-f5x3cp e4lwi5m12">Project</p></div><div class="tooltip css-1uzq6vu e13yk80h0">준비중...</div></div><div class="css-1182kuh e13yk80h1"><div disabled="" class="css-ijbtoo e18nxucp0"><p class="css-f5x3cp e4lwi5m12">About</p></div><div class="tooltip css-1uzq6vu e13yk80h0">준비중...</div></div></div><style data-emotion="css 10hepnt">.css-10hepnt{margin-left:8px;}@media (max-width: 768px){.css-10hepnt{visibility:hidden;opacity:0;position:absolute;top:-10000;}}</style><div class="css-10hepnt e1pbt6sg0"><a href="/search/"><style data-emotion="css 1mijm5n">.css-1mijm5n{padding:10px;}.css-1mijm5n:hover{background-color:#f5f5f5;border-radius:8px;}</style><button class="css-1mijm5n e1ig6khi0"><style data-emotion="css 13tvgi6">.css-13tvgi6{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;object-fit:contain;}.css-13tvgi6 svg>path{fill:#353535;stroke:#fff!important;stroke-width:3.5%!important;}</style><div style="width:20px;height:20px" class="css-13tvgi6 e1fmfdvt0"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="magnifying-glass" class="svg-inline--fa fa-magnifying-glass " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" font-size="20px"><path fill="currentColor" d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"></path></svg></div></button></a></div><style data-emotion="css 1xqhshw">.css-1xqhshw{visibility:hidden;opacity:0;position:absolute;top:-10000;}@media (max-width: 768px){.css-1xqhshw{position:relative;visibility:visible;opacity:100;}}</style><div class="css-1xqhshw e1pbt6sg1"><button class="css-1mijm5n e1ig6khi0"><div style="width:20px;height:20px" class="css-13tvgi6 e1fmfdvt0"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="bars" class="svg-inline--fa fa-bars " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" font-size="20px"><path fill="currentColor" d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"></path></svg></div></button></div></div></header><style data-emotion="css 1ket5v3">.css-1ket5v3{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;-webkit-align-items:flex-start;-webkit-box-align:flex-start;-ms-flex-align:flex-start;align-items:flex-start;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;max-width:1200px;width:100%;min-height:calc(100vh - 80px);height:100%;padding:0px 40px;padding-top:72px;margin:0 auto;background-color:#ffffff;-webkit-transition:all 0.5s ease-in-out;transition:all 0.5s ease-in-out;}@media (max-width: 768px){.css-1ket5v3{padding:40px 0px;padding-top:72px;}}</style><main class="css-1ket5v3 eh65hpm0"><style data-emotion="css lycah7">.css-lycah7{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-align-items:flex-start;-webkit-box-align:flex-start;-ms-flex-align:flex-start;align-items:flex-start;-webkit-box-pack:start;-ms-flex-pack:start;-webkit-justify-content:flex-start;justify-content:flex-start;max-width:960px;width:100%;height:100%;padding:80px 0px;-webkit-transition:all 0.5s ease-in-out;transition:all 0.5s ease-in-out;}@media (max-width: 768px){.css-lycah7{padding:40px 24px;padding-bottom:60px;}}</style><div class="css-lycah7 e1vlnn8j0"><style data-emotion="css 1czvc59">.css-1czvc59{width:100%;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-align-items:flex-start;-webkit-box-align:flex-start;-ms-flex-align:flex-start;align-items:flex-start;-webkit-box-pack:start;-ms-flex-pack:start;-webkit-justify-content:flex-start;justify-content:flex-start;padding-bottom:20px;margin-bottom:20px;}</style><div class="css-1czvc59 e156b45h3"><style data-emotion="css 1dp5ti2">.css-1dp5ti2{word-break:keep-all;font-family:Pretendard,Noto Sans;font-size:44px;font-weight:700;line-height:64px;color:#000000;}@media (max-width: 768px){.css-1dp5ti2{font-family:Pretendard,Noto Sans;font-size:28px;font-weight:700;line-height:36px;}}</style><h1 class="css-1dp5ti2 e4lwi5m14">마크다운 markdown 사용법 총정리</h1><style data-emotion="css 1skwdyn">.css-1skwdyn{width:100%;margin-top:20px;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:justify;-webkit-justify-content:space-between;justify-content:space-between;}</style><div class="css-1skwdyn e156b45h2"><a href="https://github.com/gparkkii" target="_blank" rel="noopener norefferer"><style data-emotion="css frpnj0">.css-frpnj0{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:start;-ms-flex-pack:start;-webkit-justify-content:flex-start;justify-content:flex-start;}</style><div class="css-frpnj0 e10hxk021"><style data-emotion="css 3e1rtp">.css-3e1rtp{border-radius:100px;overflow:hidden;isolation:isolate;}</style><div class="css-3e1rtp e1hfyjdv0"><div data-gatsby-image-wrapper="" style="width:40px;height:40px;border-radius:100px;object-fit:contain" class="gatsby-image-wrapper gatsby-image-wrapper-constrained"><div style="max-width:492px;display:block"><img alt="" role="presentation" aria-hidden="true" src="data:image/svg+xml;charset=utf-8,%3Csvg%20height=&#x27;492&#x27;%20width=&#x27;492&#x27;%20xmlns=&#x27;http://www.w3.org/2000/svg&#x27;%20version=&#x27;1.1&#x27;%3E%3C/svg%3E" style="max-width:100%;display:block;position:static"/></div><img aria-hidden="true" data-placeholder-image="" style="opacity:1;transition:opacity 500ms linear" decoding="async" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAAsTAAALEwEAmpwYAAAEGElEQVR42nWUi09TVxyA/UOWLNnMlmlmVCwgjwDiQHAiTmEhAwcCEkkJaqbTNeAQZqU8+qYUKIIvIk9deAuiRWEENTrtcNB7pUJpdWxGlM24Zd/SQimv3eTknsc93/1+v/NYo9SLeEqpXqBUJ8zVda661V1cbZXhGSrDxPyYddE3ruKZL7LGCxOXwQTUxilUhkl3n7xwgDNnB1Dqn6Iut6+ArgAq9V6Yu11m49R3dUj3HyY9Lpm0neGkRIWTsieRU7ltaIx2SrXWJXOWGi7oW91WsuxSMqMDke4KJSFEQtD6j9kdICEhVEJskB/f53XNmc5DVzGcy42q3E5BXhvJnwVwaFcEh2OjkKUn0X3ZSMXp48SHBRPps47d2/e4AQuGulUNrajLJzn89RGiJOtJjgpnb6CEtvMG+NvJjMVM5r5d7PDzwX/dWmQ5i0JfDHStkvsvZeOUqh7xVWQkn2/dTFzIVmKC/RlqqeFJTwOvH/WhzznC7tBANn74HtLMMnSVTkq0Y8sNvbmTn+kjPsSPPYESov230KjM41n3RZ60VPDqXgeD1UUYj6YSF7yZtNRi9FXPVwLdhtoxNEYHsmO1fBnmR3Z8DB0VCmZ+vkVTlY6L+Uf559d+xporkB/aT0pEIJmZhv8zFN2duqrfyDxwmoMxYThvNOI0N/HuST+zj81MD7XyduQOk111WBqMFKR8QUaG1muoX2I4H3L5FN+knSRpmy8nEvfRJD/BrLmR6e46pjtrme66zIhJwYt6HcaMeNJSFeirXqwWsjeH0qRs0iKDSAwPIcJnA8PGAiauqJi8amRCm8eI4jhDShnSqGCk6WfQVj53p0vpYiwBasfcg1np+cT6fkRCeABb1r5PtGQDD0xyHO21TF0z0ZufxcGIAHZs/IDs9Hw0lZ5F8QB13n2oMtiQK+6yd2cyYb5hSD7ZxLbNmxC7LjHeUs65Y1lE+W8n4FNfYkKiOZ3fh9ow4T3Xc4ae20KgSCNSaRIYaB/GZLrJ9ev3sJh7+GO4A2uTgaHzRm5du01ObhXy4j60FVMrj54H5nqrywQm7t9H6Kyh/3or/PsXbxwCEz91Yu+9wrS5gVlLD4rCYqyilbZOO4VKK6oy0RuyB6jQiNTUjvKso4bBS0au/djKq9+dvHTasN3txX6zHkudhp7menLPGnA4pnhsmaJIPbZwWy0BusKtMI3yy0UlzZpivs1T8HxSxDrygId3+xHu32HYpEBsu8DJnB+wiiKC4ECpH11I2TLDcS6ce4TlkoqHg7fp6OrkzcwMs69nePf2T1zPy8mnCM3l9FUreeGwI447UZctA7oqKr1AocZGb6OZ0UYtd271E7E3jbgDx8k6Ucix3BKOyhQkSXMpzZHhaK9m/EYTtqc29JVWSrRe4H//MnNrDjxc3QAAAABJRU5ErkJggg==" alt=""/><picture><source type="image/webp" data-srcset="/static/76831b7860dbfc05737ac98ed4f8eaef/65a9c/g_avatar.webp 123w,/static/76831b7860dbfc05737ac98ed4f8eaef/381f6/g_avatar.webp 246w,/static/76831b7860dbfc05737ac98ed4f8eaef/86e99/g_avatar.webp 492w" sizes="(min-width: 492px) 492px, 100vw"/><img data-gatsby-image-ssr="" data-main-image="" style="opacity:0" sizes="(min-width: 492px) 492px, 100vw" decoding="async" loading="lazy" data-src="/static/76831b7860dbfc05737ac98ed4f8eaef/90328/g_avatar.png" data-srcset="/static/76831b7860dbfc05737ac98ed4f8eaef/e8d06/g_avatar.png 123w,/static/76831b7860dbfc05737ac98ed4f8eaef/4d76c/g_avatar.png 246w,/static/76831b7860dbfc05737ac98ed4f8eaef/90328/g_avatar.png 492w" alt="avatar"/></picture><noscript><picture><source type="image/webp" srcSet="/static/76831b7860dbfc05737ac98ed4f8eaef/65a9c/g_avatar.webp 123w,/static/76831b7860dbfc05737ac98ed4f8eaef/381f6/g_avatar.webp 246w,/static/76831b7860dbfc05737ac98ed4f8eaef/86e99/g_avatar.webp 492w" sizes="(min-width: 492px) 492px, 100vw"/><img data-gatsby-image-ssr="" data-main-image="" style="opacity:0" sizes="(min-width: 492px) 492px, 100vw" decoding="async" loading="lazy" src="/static/76831b7860dbfc05737ac98ed4f8eaef/90328/g_avatar.png" srcSet="/static/76831b7860dbfc05737ac98ed4f8eaef/e8d06/g_avatar.png 123w,/static/76831b7860dbfc05737ac98ed4f8eaef/4d76c/g_avatar.png 246w,/static/76831b7860dbfc05737ac98ed4f8eaef/90328/g_avatar.png 492w" alt="avatar"/></picture></noscript><script type="module">const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1,e.parentNode.parentNode.querySelector("[data-placeholder-image]").style.opacity=0)}}</script></div></div><style data-emotion="css e1bhir">.css-e1bhir{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-align-items:flex-start;-webkit-box-align:flex-start;-ms-flex-align:flex-start;align-items:flex-start;-webkit-box-pack:start;-ms-flex-pack:start;-webkit-justify-content:flex-start;justify-content:flex-start;margin-left:12px;}</style><div class="css-e1bhir e10hxk020"><style data-emotion="css 4kn464">.css-4kn464{font-size:14px;font-weight:500;line-height:20px;color:#454545;}</style><p style="margin-bottom:2px" class="css-4kn464 e4lwi5m5">gparkkii</p><style data-emotion="css 1o98d3a">.css-1o98d3a{font-size:12px;font-weight:400;line-height:20px;color:#b5b5b5;}@media (max-width: 768px){.css-1o98d3a{font-size:12px;font-weight:400;line-height:17px;}}</style><p class="css-1o98d3a e4lwi5m1">2020년 07월 28일 12:20</p></div></div></a><style data-emotion="css rrlyql">.css-rrlyql{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:end;-ms-flex-pack:end;-webkit-justify-content:flex-end;justify-content:flex-end;}</style><div class="css-rrlyql e156b45h1"><style data-emotion="css 1182kuh">.css-1182kuh{position:relative;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;}.css-1182kuh:hover .tooltip{visibility:visible;}</style><div class="css-1182kuh e13yk80h1"><style data-emotion="css 1mijm5n">.css-1mijm5n{padding:10px;}.css-1mijm5n:hover{background-color:#f5f5f5;border-radius:8px;}</style><button class="css-1mijm5n e1ig6khi0"><style data-emotion="css 13tvgi6">.css-13tvgi6{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;object-fit:contain;}.css-13tvgi6 svg>path{fill:#353535;stroke:#fff!important;stroke-width:3.5%!important;}</style><div style="width:20px;height:20px" class="css-13tvgi6 e1fmfdvt0"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="share-nodes" class="svg-inline--fa fa-share-nodes " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" font-size="20px"><path fill="currentColor" d="M352 224c53 0 96-43 96-96s-43-96-96-96s-96 43-96 96c0 4 .2 8 .7 11.9l-94.1 47C145.4 170.2 121.9 160 96 160c-53 0-96 43-96 96s43 96 96 96c25.9 0 49.4-10.2 66.6-26.9l94.1 47c-.5 3.9-.7 7.8-.7 11.9c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-25.9 0-49.4 10.2-66.6 26.9l-94.1-47c.5-3.9 .7-7.8 .7-11.9s-.2-8-.7-11.9l94.1-47C302.6 213.8 326.1 224 352 224z"></path></svg></div></button><style data-emotion="css 1uzq6vu">.css-1uzq6vu{visibility:hidden;position:absolute;bottom:-36px;padding:4px 10px;border-radius:6px;background-color:rgba(113, 119, 132, 0.2);color:#717784;font-size:13px;font-weight:400;line-height:20px;text-align:center;}</style><div class="tooltip css-1uzq6vu e13yk80h0">준비중...</div></div><style data-emotion="css 1oaeivz">.css-1oaeivz{margin-right:8px;}</style><div class="css-1oaeivz e156b45h0"></div><div class="css-1182kuh e13yk80h1"><button class="css-1mijm5n e1ig6khi0"><div style="width:20px;height:20px" class="css-13tvgi6 e1fmfdvt0"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="link" class="svg-inline--fa fa-link " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" font-size="20px"><path fill="currentColor" d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"></path></svg></div></button><div style="width:108px" class="tooltip css-1uzq6vu e13yk80h0">클립보드로 복사</div></div></div></div></div><style data-emotion="css ojx4kf">.css-ojx4kf{margin:0 auto;margin-bottom:40px;border-radius:20px;overflow:hidden;isolation:isolate;}@media (max-width: 768px){.css-ojx4kf{margin-bottom:20px;}}</style><div class="css-ojx4kf e1n6ksnt1"><div data-gatsby-image-wrapper="" style="height:348px;object-fit:contain;border-radius:20px" class="gatsby-image-wrapper gatsby-image-wrapper-constrained"><div style="max-width:1200px;display:block"><img alt="" role="presentation" aria-hidden="true" src="data:image/svg+xml;charset=utf-8,%3Csvg%20height=&#x27;600&#x27;%20width=&#x27;1200&#x27;%20xmlns=&#x27;http://www.w3.org/2000/svg&#x27;%20version=&#x27;1.1&#x27;%3E%3C/svg%3E" style="max-width:100%;display:block;position:static"/></div><img aria-hidden="true" data-placeholder-image="" style="opacity:1;transition:opacity 500ms linear" decoding="async" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAIAAAA7N+mxAAAACXBIWXMAAAsTAAALEwEAmpwYAAABRklEQVR42oXQ7UvCQBzAcf9Z2QLpRVQ0DSwfwqeKmZ7bbpu6zM3dpfUmMAjq31FLm7bNuxNircQ0Cb4vjh/34XdcxIY0rKNQUyL/Zsl0SSKr2JJXLinEhr8mP5hsxWG2SpqiJ2WnxpVnyaQDyQ0IagNiSX/h5cvbgBiXpJb8yPCjFD9IcYNK/P3Bot0GQdqWzTakSGV3zUUfUfOcKMK8euADwS/sODVh9miy5y5rlbxWZY7UDYw1ppdcOePca94Tpi891r+mMOErCQIO/Xx0crE/PuNHesHFGrOVVawEWMu5udjbaXSY5obi0RgcT8Q9Rxbm5V2vwE3AyTTHv0rJGa6v4XC5zpBKzSrR81457mS5UTE27tSYUSQw7WKd9YwF1r/lOg6nSKO4zrqNBVKDe0ilSKe3DRb8qEyXcvPDvoJBAQsP2/sE1cK3WOvlitIAAAAASUVORK5CYII=" alt=""/><picture><source type="image/webp" data-srcset="/static/13d7dd7ec2dea11e79bf5c24d4b9c785/77dc5/example.webp 300w,/static/13d7dd7ec2dea11e79bf5c24d4b9c785/2cb69/example.webp 600w,/static/13d7dd7ec2dea11e79bf5c24d4b9c785/724b0/example.webp 1200w" sizes="(min-width: 1200px) 1200px, 100vw"/><img data-gatsby-image-ssr="" data-main-image="" style="opacity:0" sizes="(min-width: 1200px) 1200px, 100vw" decoding="async" loading="lazy" data-src="/static/13d7dd7ec2dea11e79bf5c24d4b9c785/0ca3c/example.png" data-srcset="/static/13d7dd7ec2dea11e79bf5c24d4b9c785/42407/example.png 300w,/static/13d7dd7ec2dea11e79bf5c24d4b9c785/fab82/example.png 600w,/static/13d7dd7ec2dea11e79bf5c24d4b9c785/0ca3c/example.png 1200w" alt="thumbnail"/></picture><noscript><picture><source type="image/webp" srcSet="/static/13d7dd7ec2dea11e79bf5c24d4b9c785/77dc5/example.webp 300w,/static/13d7dd7ec2dea11e79bf5c24d4b9c785/2cb69/example.webp 600w,/static/13d7dd7ec2dea11e79bf5c24d4b9c785/724b0/example.webp 1200w" sizes="(min-width: 1200px) 1200px, 100vw"/><img data-gatsby-image-ssr="" data-main-image="" style="opacity:0" sizes="(min-width: 1200px) 1200px, 100vw" decoding="async" loading="lazy" src="/static/13d7dd7ec2dea11e79bf5c24d4b9c785/0ca3c/example.png" srcSet="/static/13d7dd7ec2dea11e79bf5c24d4b9c785/42407/example.png 300w,/static/13d7dd7ec2dea11e79bf5c24d4b9c785/fab82/example.png 600w,/static/13d7dd7ec2dea11e79bf5c24d4b9c785/0ca3c/example.png 1200w" alt="thumbnail"/></picture></noscript><script type="module">const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1,e.parentNode.parentNode.querySelector("[data-placeholder-image]").style.opacity=0)}}</script></div></div><style data-emotion="css 1xww2t1">.css-1xww2t1{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;width:100%;word-break:keep-all;line-height:1.75;font-size:16px;font-weight:400;color:#3F4758;}.css-1xww2t1 h1,.css-1xww2t1 h2,.css-1xww2t1 h3{margin-bottom:16px;}.css-1xww2t1 *+h1{margin-top:60px;}.css-1xww2t1 *+h2,.css-1xww2t1 *+h3{margin-top:40px;}.css-1xww2t1 h1+h2,.css-1xww2t1 h2+h3{margin-top:12px;}.css-1xww2t1 hr+h1,.css-1xww2t1 hr+h2,.css-1xww2t1 hr+h3{margin-top:0;}.css-1xww2t1 h1{font-size:32px;font-weight:700;line-height:44px;color:#2A2E36;}@media (max-width: 768px){.css-1xww2t1 h1{font-size:24px;font-weight:700;line-height:29px;}}.css-1xww2t1 h2{font-size:28px;font-weight:700;color:#2A2E36;}@media (max-width: 768px){.css-1xww2t1 h2{font-size:22px;}}.css-1xww2t1 h3{font-size:22px;color:#2A2E36;font-weight:600;}@media (max-width: 768px){.css-1xww2t1 h3{font-size:20px;font-weight:800;line-height:26px;font-weight:600;}}.css-1xww2t1 p{margin:8px 0;font-weight:400;color:#3F4758;}.css-1xww2t1 strong{font-weight:600;color:#2A2E36;}.css-1xww2t1 ol,.css-1xww2t1 ul{margin-top:10px;margin-left:20px;padding-left:16px;line-height:2;}.css-1xww2t1 ol>li{color:#3B424F;list-style:decimal;padding-left:2px;}.css-1xww2t1 ul>li{color:#3B424F;list-style:disc;}.css-1xww2t1 ul>li ul>li{list-style:circle;}.css-1xww2t1 ul>li ul>li ul>li{list-style:square;}.css-1xww2t1 ul>li ul>li ul>li ul>li{list-style:outside;}.css-1xww2t1 blockquote{margin:16px 0;padding:20px;border-left:4px solid #CCCED9;background-color:#F6F8FC;}.css-1xww2t1 blockquote p{margin:0;color:#717784;}.css-1xww2t1 hr{border:1px dashed #E5E9F2;margin:60px 0;}.css-1xww2t1 a{color:#5E9BF8;font-weight:500;}.css-1xww2t1 a strong{color:#5E9BF8;}.css-1xww2t1 a:hover{-webkit-text-decoration:underline;text-decoration:underline;text-decoration-style:double;color:#4087F2;}.css-1xww2t1 summary{margin:16px 0px;}.css-1xww2t1 summary::marker{color:#FF5F4D;}.css-1xww2t1 summary strong{padding:2px;}.css-1xww2t1 summary strong:hover{-webkit-text-decoration:underline;text-decoration:underline;text-decoration-style:wavy;text-decoration-color:#FF5F4D;}.css-1xww2t1 table{margin:20px 0px;border-collapse:separate;border-spacing:0;border:1px solid #CCCED9;}.css-1xww2t1 thead{background-color:#E5E9F2;}.css-1xww2t1 thead th{border-right:1px solid #CCCED9;border-bottom:1px solid #CCCED9;padding:16px;font-weight:500;color:#2A2E36;}.css-1xww2t1 td{border-bottom:1px solid #CCCED9;border-right:1px solid #CCCED9;padding:16px;font-weight:400;color:#2A2E36;}.css-1xww2t1 tr:last-child td{border-bottom:0px;}.css-1xww2t1 td:last-child,.css-1xww2t1 th:last-child{border-right:0px;}.css-1xww2t1 pre[class*='language-']{margin:20px 0;padding:16px 20px;font-size:15px;border-radius:8px;}.css-1xww2t1 pre[class*='language-']::-webkit-scrollbar-thumb{background:rgba(255, 255, 255, 0.5);border-radius:3px;}.css-1xww2t1 code[class*='language-'],.css-1xww2t1 pre[class*='language-']{tab-size:2;}.css-1xww2t1 code[class*='language-text']{background-color:#FFECEA;color:#FF5F4D;border:1.5px dashed #FF5F4D;padding:2px 4px;margin:0px 4px;font-size:14px;}.css-1xww2t1 pre>code[class*='language-text']{background-color:#2d2d2d;border:0px;font-size:15px;color:#ddd;}</style><div class="css-1xww2t1 e1n6ksnt0"><p>깃헙 이용자라면 Repository에 관한 정보를 기록하는 README.md 파일로 또는 대중적인 기록관리 소프트웨어 Notion, 개발자들을 위한 블로그 서비스 Velog 등을 통해 마크다운을 접해본 사용자들이 많을 것이다. 이렇게 자주 접하게 되는 마크다운이지만 기본적인 문법 외에 자세하게 알고있지는 못했다.
+테크 블로그를 개설한 기념으로 마크다운에 대해 알아보고 사용법에 대해 총정리 해보려한다.</p>
+<h1>1. 마크다운에 관하여</h1>
+<h2>1.1. 마크다운이란?</h2>
+<p><a href="https://www.markdownguide.org/getting-started/" target="_blank" rel="nofollow"><strong>Markdown</strong></a>은 텍스트 기반의 마크업 언어로 문법이 쉽고 간단한 것이 특징이며 HTML과 리치 텍스트 등의 서식문서로 쉽게 변환이 가능하다. 특수기호와 문자 등을 이용한 문법으로 웹에서도 보다 빠르고 간단하게 컨텐츠를 작성할 수 있고 가독성이 좋다는 장점이 부각되면서 많은 곳에서 마크다운을 사용하고 있다.</p>
+<h2>1.2. 마크다운의 장-단점</h2>
+<h3>1.2.1. 장점</h3>
+<ol>
+<li>간단하고 쉬운 문법.</li>
+<li>확장성이 좋다. (다양한 형태로 변환이 가능하고 대부분의 환경에서 이동, 복사, 편집 등의 관리가 용이)</li>
+<li>텍스트로 저장되기 때문에 용량이 적다.</li>
+<li>텍스트로 저장되기 때문에 검색이 쉽다.</li>
+<li>지원하는 프로그램과 플랫폼이 다양하다. (Github, Notion, Velog, Slack 등)</li>
+</ol>
+<h3>1.2.2. 단점</h3>
+<ol>
+<li>표준이 없고 도구에 따라서 변환방식이나 생성물이 다르다.</li>
+<li>뷰어의 속도가 늘리다. (실시간 작업하며 확인하기에는 딜레이가 조금 있다.)</li>
+<li>모든 HTML 마크업을 대신하지 못한다.</li>
+</ol>
+<hr>
+<h1>2. 마크다운 사용법(syntax)</h1>
+<blockquote>
+<p>마크다운만으로 표현이 부족한 부분은 HTML 태그를 활용 가능하다.</p>
+</blockquote>
+<h2>2.1. 제목(Header)</h2>
+<p><code class="language-text">&lt;h1></code> 부터 <code class="language-text">&lt;h6></code> 까지 <code class="language-text">#</code>을 이용하여 제목을 나타낼 수 있다.</p>
+<h3>2.1.1 제목 사용법</h3>
+<div class="gatsby-highlight" data-language="txt"><pre class="language-txt"><code class="language-txt"># h1 제목 1
+## h2 제목 2
+### h3 제목 3
+#### h4 제목 4
+##### h5 제목 5
+###### h6 제목 6</code></pre></div>
+<h1 style="margin-top: 12px;margin-bottom:0">h1 제목 1</h1>
+<h2 style="margin:0">h2 제목 2</h2>
+<h3 style="margin:0">h3 제목 3</h3>
+<h4>h4 제목 4</h4>
+<h5>h5 제목 5</h5>
+<h6>h6 제목 6</h6>
+<br/>
+<h3>2.1.2 큰제목, 부제목</h3>
+<p>제목 1과 제목 2를 다음과 같이 사용할 수도 있다.
+<br/>
+<br/></p>
+<h3>❏ 큰제목: 문서 제목</h3>
+<div class="gatsby-highlight" data-language="txt"><pre class="language-txt"><code class="language-txt">H1: 문서 제목
+=============</code></pre></div>
+  <h1 style="margin-top: 12px;">H1: 문서 제목</h1>
+<br/>
+<h3>❏ 작은제목: 문서 부제목</h3>
+<div class="gatsby-highlight" data-language="txt"><pre class="language-txt"><code class="language-txt">H2: 문서 부제목
+-------------</code></pre></div>
+  <h2 style="margin-top:0">H2: 문서 부제목</h2>
+<br/>
+<h2>2.2. 인용문(BlockQuote)</h2>
+<p><code class="language-text">></code> 블럭인용 문자를 사용한다.</p>
+<h3>2.2.1 Single BlockQuote</h3>
+<div class="gatsby-highlight" data-language="txt"><pre class="language-txt"><code class="language-txt">> This is a single blockqute.</code></pre></div>
+<blockquote>
+<p>This is a single blockqute.</p>
+</blockquote>
+<h3>2.2.1 Nested BlockQuote</h3>
+<div class="gatsby-highlight" data-language="txt"><pre class="language-txt"><code class="language-txt">> This is nested blockqute.
+> > This is nested blockqute.
+> > > This is nested blockqute.</code></pre></div>
+<blockquote>
+<p>This is nested blockqute.</p>
+<blockquote>
+<p>This is nested blockqute.</p>
+<blockquote>
+<p>This is nested blockqute.</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>이 안에서는 다른 마크다운 요소를 포함할 수 있다.</p>
+<blockquote>
+<h3>This is a H3</h3>
+<ul>
+<li>List</li>
+</ul>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">code</code></pre></div>
+</blockquote>
+<br/>
+<h2>2.3. 목록(List)</h2>
+<p><code class="language-text">&lt;ol></code>, <code class="language-text">&lt;ul></code> 태그를 나타낸다.</p>
+<h3>2.3.1 순서있는 목록(ol)</h3>
+<p>순서있는 목록은 숫자와 점을 사용한다.</p>
+<div class="gatsby-highlight" data-language="txt"><pre class="language-txt"><code class="language-txt">1. 첫번째
+2. 두번째
+3. 세번째</code></pre></div>
+<ol>
+<li>첫번째</li>
+<li>두번째</li>
+<li>세번째</li>
+</ol>
+<h3>2.3.2  순서없는 목록(ul)</h3>
+<p>글머리 기호: <code class="language-text">*</code>, <code class="language-text">+</code>, <code class="language-text">-</code> 를 지원한다.</p>
+<div class="gatsby-highlight" data-language="txt"><pre class="language-txt"><code class="language-txt">* 별표
+  + 더하기
+    - 빼기</code></pre></div>
+<ul>
+<li>별표
+<ul>
+<li>더하기
+<ul>
+<li>빼기</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>2.3.3 ol, ul 섞어쓰기</h3>
+<p><code class="language-text">ol</code> 안에 sub list를 사용하기 위해선 탭을 두번 눌러야한다.<br>
+<code class="language-text">ul</code> 안에 sub list는 탭 한번으로 가능해보인다.</p>
+<div class="gatsby-highlight" data-language="txt"><pre class="language-txt"><code class="language-txt">1. ordered list
+    - unordered list
+2. ordered list
+    1. sub ordered list
+    2. sub ordered list
+- 순서가 필요하지 않은 목록에 사용 가능한 기호
+  1. 숫자
+  * 별표
+    + 더하기
+      - 대쉬</code></pre></div>
+<ol>
+<li>ordered list
+<ul>
+<li>unordered list</li>
+</ul>
+</li>
+<li>ordered list
+<ol>
+<li>sub ordered list</li>
+<li>sub ordered list</li>
+</ol>
+</li>
+</ol>
+<ul>
+<li>순서가 필요하지 않은 목록에 사용 가능한 기호
+<ol>
+<li>숫자</li>
+</ol>
+<ul>
+<li>별표
+<ul>
+<li>더하기
+<ul>
+<li>대쉬</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2>2.4. 강조(Emphasis)</h2>
+<div class="gatsby-highlight" data-language="txt"><pre class="language-txt"><code class="language-txt">*Italic: single asterisks*
+_Italic: single underscores_
+**Bold: double asterisks**
+__Bold: double underscores__
+**Bold and _Italic_** and normal
+&lt;u>Underline: use `u`&lt;/u>
+~~LineThrough: double wavy~~</code></pre></div>
+<ul>
+<li><em>Italic: single asterisks</em></li>
+<li><em>Italic: single underscores</em></li>
+<li><strong>Bold: double asterisks</strong></li>
+<li><strong>Bold: double underscores</strong></li>
+<li><strong>Bold and <em>Italic</em></strong> and normal</li>
+<li><u>Underline: use <code class="language-text">&lt;u>&lt;/u></code></u></li>
+<li><del>LineThrough: double wavy</del></li>
+</ul>
+<h2>2.5. 링크(Link)</h2>
+<p><code class="language-text">&lt;a></code> 태그를 나타낸다.</p>
+<h3>2.5.1 링크 기본 문법</h3>
+<p><code class="language-text">[링크 설명](url)</code> 방식으로 표현하여 url을 <code class="language-text">[Keyword]</code>로 표현 할 수 있다.</p>
+<div class="gatsby-highlight" data-language="txt"><pre class="language-txt"><code class="language-txt">1. [GOOGLE](https://google.com)
+
+2. [NAVER](https://naver.com "여기에 쓰는 링크 설명은 사용자에게 보이지 않아요")
+
+3. [로컬 링크](../)
+
+4. [GitHub][1]
+
+[1]: https://github.com</code></pre></div>
+<ol>
+<li>
+<p><a href="https://google.com" target="_blank" rel="nofollow">GOOGLE</a></p>
+</li>
+<li>
+<p><a href="https://naver.com" title="여기에 쓰는 링크 설명은 사용자에게 보이지 않아요" target="_blank" rel="nofollow">NAVER</a></p>
+</li>
+<li>
+<p><a href="../">로컬 링크</a></p>
+</li>
+<li>
+<p><a href="https://github.com" target="_blank" rel="nofollow">GitHub</a></p>
+</li>
+</ol>
+<h3>2.5.2 참조 링크</h3>
+<div class="gatsby-highlight" data-language="txt"><pre class="language-txt"><code class="language-txt">문서 안에 [참조 링크]를 사용할 수 있다.
+
+[참조 링크]: https://github.co</code></pre></div>
+<p>문서 안에 <a href="https://github.co" target="_blank" rel="nofollow">참조 링크</a>를 사용할 수 있다.</p>
+<h3>2.5.3 자동 연결</h3>
+<p>일반 URL 이나 이메일 주소, 또는 꺾쇠 괄호(<code class="language-text">&lt; ></code>, Angle Brackets)안의 URL은 자동으로 링크를 생성한다.</p>
+<div class="gatsby-highlight" data-language="txt"><pre class="language-txt"><code class="language-txt">* 구글 홈페이지: https://google.com
+* 외부링크: &lt;http://example.com/>
+* 이메일링크: &lt;address@example.com></code></pre></div>
+<ul>
+<li>구글 홈페이지: <a href="https://google.com" target="_blank" rel="nofollow">https://google.com</a></li>
+<li>외부링크: <a href="http://example.com/" target="_blank" rel="nofollow">http://example.com/</a></li>
+<li>이메일링크: <a href="mailto:address@example.com" target="_blank" rel="nofollow">address@example.com</a></li>
+</ul>
+<h2>2.6. 줄바꿈(Line-break)</h2>
+<p>마크다운에서는 엔터키 대신 띄어쓰기 두번을 사용해야한다.</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">글을 쓰다가 줄바꿈을 하고싶을 경우 
+엔터키로는 줄바꿈이 되지 않는다.
+
+줄바꿈 하고 싶은 문단의 마지막에  
+띄어쓰기 두번을 사용하고 엔터키를 누른다.
+
+뛰어쓰기로 사용되는 &amp;nbsp;&amp;nbsp;
+는 진짜 띄어쓰기만 된다.
+
+또는 쉽게 &lt;br> 태그를 활용할 수 있다.</code></pre></div>
+<p>글을 쓰다가 줄바꿈을 하고싶을 경우
+엔터키(\n)로는 줄바꿈이 되지 않는다.</p>
+<p>줄바꿈 하고 싶은 문단의 마지막에<br>
+띄어쓰기 두번을 사용하고 엔터키를 누른다.</p>
+<p>뛰어쓰기로 사용되는   
+는 진짜 띄어쓰기만 된다.</p>
+<p>또는 쉽게 <br> 태그를 활용할 수 있다.</p>
+<h2>2.7. 수평선 (Horizontal Rule)</h2>
+<p>마크다운 문서 작성 시 페이지 나누기 용도로 많이 사용한다.
+<code class="language-text">&lt;hr/></code> 태그를 아래와 같이 표현 할 수 있다.</p>
+<div class="gatsby-highlight" data-language="txt"><pre class="language-txt"><code class="language-txt">(underscores x3) 
+___
+
+(dash x3) 
+---
+
+(asterisks x3) 
+***
+
+&lt;hr/></code></pre></div>
+<p>예시) ↓↓↓</p>
+<hr>
+<h2>2.8. 테이블(Table)</h2>
+<table> 태그로 변환되며 테이블 마크업 작성을 위해 아래와 같은 규칙을 따라야한다.  
+<ul>
+<li><code class="language-text">|</code> vertical bar로 테이블 열(Col)을 구분한다.</li>
+<li>헤더 행을 구분하기 위해서는 <code class="language-text">|</code> 사이 세개 이상의 dash<code class="language-text">---</code>를 작성한다.</li>
+<li>헤더를 구분하면서 <code class="language-text">-</code>와 함께 <code class="language-text">:</code> 기호를 사용하여 열 안의 정렬을 정의할 수 있다. (아래 예시 참조)</li>
+<li>양 끝에 있는 <code class="language-text">|</code> 기호는 생략 가능하다.</li>
+</ul>
+<div class="gatsby-highlight" data-language="txt"><pre class="language-txt"><code class="language-txt">| 카테고리 | 마크업 | HTML |
+|:---|:---:|---:|
+| 우측정렬 | `:---` | text-align: right |
+| 가운데 정렬 | `:---:` | text-align: center |
+| 왼쪽 정렬 | `---:` | text-align: left |</code></pre></div>
+<table>
+<thead>
+<tr>
+<th align="left">카테고리</th>
+<th align="center">마크업</th>
+<th align="right">HTML</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">우측정렬</td>
+<td align="center"><code class="language-text">:---</code></td>
+<td align="right">text-align: right</td>
+</tr>
+<tr>
+<td align="left">가운데 정렬</td>
+<td align="center"><code class="language-text">:---:</code></td>
+<td align="right">text-align: center</td>
+</tr>
+<tr>
+<td align="left">왼쪽 정렬</td>
+<td align="center"><code class="language-text">---:</code></td>
+<td align="right">text-align: left</td>
+</tr>
+</tbody>
+</table>
+<h2>2.9. 이미지(Image)</h2>
+<p>이미지는 링크 마크업과 비슷하게 사용된다.</p>
+<div class="gatsby-highlight" data-language="txt"><pre class="language-txt"><code class="language-txt">![Keyword](/path/to/img.jpg)
+![Keyword](/path/to/img.jpg "Optional title")</code></pre></div>
+<p><img src="https://avatars.githubusercontent.com/u/71811780?v=4" alt="지파키 제페토"></p>
+<p>사이즈 조절 기능이 없기 때문에 사이즈 조절을 원한다면 <code class="language-text">&lt;img width="" height="">&lt;/img></code>를 이용한다.</p>
+<div class="gatsby-highlight" data-language="txt"><pre class="language-txt"><code class="language-txt">&lt;img src="/path/to/img.jpg" width="200px" height="200px" title="px(픽셀) 크기 설정" alt="Gparkkii's Zepeto">&lt;/img>&lt;br/>
+&lt;img src="/path/to/img.jpg" width="30%" height="30%" title="px(픽셀) 크기 설정" alt="Gparkkii's Zepeto">&lt;/img></code></pre></div>
+<p><img src="https://avatars.githubusercontent.com/u/71811780?v=4" width="200px" height="200px" title="px(픽셀) 크기 설정" alt="Gparkkii's Zepeto"></img><br/>
+<img src="https://avatars.githubusercontent.com/u/71811780?v=4" width="30%" height="30%" title="px(픽셀) 크기 설정" alt="Gparkkii's Zepeto"></img></p>
+<h2>2.10. 코드(Code)</h2>
+<p><code class="language-text">&lt;pre></code>, <code class="language-text">&lt;code></code>로 변환된다.
+<code class="language-text">`</code>(Grave)를 사용하여 쉽게 코드블럭을 생성할 수 있다.</p>
+<h3>2.8.1 인라인 코드 생성</h3>
+<div class="gatsby-highlight" data-language="txt"><pre class="language-txt"><code class="language-txt">`inline-code`는 grave를 사용해서 강조할 수 있어요. 
+grave를 강조하려면 ``` ` ``` 이렇게 사용해보세요.</code></pre></div>
+<p><code class="language-text">inline-code</code>는 grave 1개를 사용해서 강조할 수 있어요.<br>
+grave를 강조하려면 <code class="language-text">`</code> 이렇게 사용해보세요.</p>
+<h3>2.8.2 코드 블럭 생성</h3>
+<p>탭 들여쓰기를 두번 사용하거나 <code class="language-text">`</code>를 세번 이상 입력하고 코드 종류도 적어줍니다.</p>
+<div class="gatsby-highlight" data-language="txt"><pre class="language-txt"><code class="language-txt">```html
+&lt;a href="https://www.google.co.kr/" target="_blank">GOOGLE&lt;/a>
+```
+
+```css
+h3 {
+  font-size: 25px;
+  color: #757575;
+}
+```
+
+&lt;!-- 또는  -->
+    2개의 탭 들여쓰기 사용
+</code></pre></div>
+<div class="gatsby-highlight" data-language="html"><pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://www.google.co.kr/<span class="token punctuation">"</span></span> <span class="token attr-name">target</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>_blank<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>GOOGLE<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span></code></pre></div>
+<div class="gatsby-highlight" data-language="css"><pre class="language-css"><code class="language-css"><span class="token selector">h3</span> <span class="token punctuation">{</span>
+  <span class="token property">font-size</span><span class="token punctuation">:</span> 25px<span class="token punctuation">;</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> #757575<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre></div>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">2개의 탭 들여쓰기 사용</code></pre></div>
+<hr>
+<h1>3. 정리</h1>
+<p>이미 알고있던 문법들이 대부분이었지만 각 잡고 정리하려다보니 꽤 쓸게 많았다. 마크다운이야 쓰다보면 금방 익숙해지고 손쉽게 사용 가능한 언어이니 한번쯤 이렇게 정리해두는 것도 좋은 선택이었던 것 같다. 다양한 플랫폼에서 지원하고 있기도하고 테크 블로그를 다시 제대로 해보려고 마음먹은 만큼 유용하게 써먹어야겠다.</p>
+<h3 style="color: skyblue">P.S)</h3>
+<p>마크다운 문서를 조금 더 다채롭게 꾸미고 싶다면 HTML 문법을 그대로 사용할 수 있다.</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">예를 들어 갑자기 &lt;span style="color: hotpink">폰트 색상&lt;/>을 바꾸고 싶다던지..</code></pre></div>
+<p>예를 들어 갑자기 <span style="color: hotpink">폰트 색상</span>을 바꾸고 싶다던지..<br>
+하지만 간단하게 쓰는게 매력인만큼 html 문법을 자주 사용하지는 않을 것 같다.</p>
+<hr>
+<h2>참고문서</h2>
+<p><a href="https://heropy.blog/2017/09/30/markdown/" target="_blank" rel="nofollow">HEROPY Tech : MarkDown 사용법 총정리</a><br>
+<a href="https://gist.github.com/ihoneymon/652be052a0727ad59601" target="_blank" rel="nofollow">ihoneymon : [공통] 마크다운 markdown 작성법</a></p></div><style data-emotion="css 1poy73w">.css-1poy73w{width:100%;margin-top:60px;border-top:2px solid #CCCED9;padding-top:60px;}.css-1poy73w .utterances{max-width:960px;width:100%;}</style><div class="css-1poy73w e1l8kmtx0"></div></div></main><style data-emotion="css rd2sj">.css-rd2sj{width:100%;padding:20px 16px;height:80px;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:justify;-webkit-justify-content:space-between;justify-content:space-between;background-color:#fafafa;}</style><footer class="css-rd2sj em2kgs21"><div><style data-emotion="css 1g5fyw6">.css-1g5fyw6{font-size:12px;font-weight:400;line-height:20px;color:#505050;}@media (max-width: 768px){.css-1g5fyw6{font-size:12px;font-weight:400;line-height:17px;}}</style><p style="margin-bottom:2px" class="css-1g5fyw6 e4lwi5m1">Copyright ©gparkkii All rights reserved.</p><style data-emotion="css 1fi90lw">.css-1fi90lw{font-size:12px;font-weight:400;line-height:20px;color:#757575;}@media (max-width: 768px){.css-1fi90lw{font-size:12px;font-weight:400;line-height:17px;}}</style><p class="css-1fi90lw e4lwi5m1">2023 | built with gatsby | Developed by gparkkii</p></div><a href="https://github.com/gparkkii" target="_blank" rel="noopener norefferer"><style data-emotion="css tcsx9g">.css-tcsx9g{opacity:0.25;}.css-tcsx9g:hover{opacity:1;}</style><div class="css-tcsx9g em2kgs20"><style data-emotion="css 13tvgi6">.css-13tvgi6{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;object-fit:contain;}.css-13tvgi6 svg>path{fill:#353535;stroke:#fff!important;stroke-width:3.5%!important;}</style><div style="width:32px;height:32px" class="css-13tvgi6 e1fmfdvt0"><svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="github" class="svg-inline--fa fa-github " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" font-size="32px"><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg></div></div></a></footer></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/markdown/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
+          <script
+            id="gatsby-chunk-mapping"
+          >
+            window.___chunkMapping="{\"app\":[\"/app-6931dc2527a8a1af5c35.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-1ef771dfb6ae4cffa097.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-03bf8d341f56e2775acb.js\"],\"component---src-pages-search-tsx\":[\"/component---src-pages-search-tsx-a5ab9bf21940dda561b2.js\"],\"component---src-templates-post-template-tsx\":[\"/component---src-templates-post-template-tsx-b2b7c4f7c2b03aacdc3c.js\"]}";
+          </script>
+        <script>window.___webpackCompilationHash="9ad3adeadaf9f9f27973";</script><script src="/webpack-runtime-c6b00d08f8562edd202e.js" async></script><script src="/framework-934970064493ef69fe96.js" async></script><script src="/app-6931dc2527a8a1af5c35.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
