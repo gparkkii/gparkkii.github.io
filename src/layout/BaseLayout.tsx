@@ -53,25 +53,31 @@ const BaseLayout = ({ path, children, meta }: BaseLayoutProps) => {
     <ThemeProvider theme={theme}>
       <Helmet>
         <html lang="ko" />
-        <title>{meta?.title ?? INITIAL_META.title}</title>
+        <title>{meta ? meta.title : INITIAL_META.title}</title>
         <meta
           name="description"
-          content={meta?.description ?? INITIAL_META.description}
+          content={meta ? meta.description : INITIAL_META.description}
         />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta httpEquiv="Content-Type" content="text/html;charset=UTF-8" />
 
         <meta property="og:type" content="website" />
-        <meta property="og:title" content={meta?.title ?? INITIAL_META.title} />
+        <meta
+          property="og:title"
+          content={meta ? meta.title : INITIAL_META.title}
+        />
         <meta
           property="og:description"
-          content={meta?.description ?? INITIAL_META.description}
+          content={meta ? meta.description : INITIAL_META.description}
         />
-        <meta property="og:image" content={meta?.image ?? INITIAL_META.image} />
-        <meta property="og:url" content={meta?.url ?? INITIAL_META.url} />
+        <meta
+          property="og:image"
+          content={meta ? meta.image : INITIAL_META.image}
+        />
+        <meta property="og:url" content={meta ? meta.url : INITIAL_META.url} />
         <meta
           property="og:site_name"
-          content={meta?.title ?? INITIAL_META.title}
+          content={meta ? meta.title : INITIAL_META.title}
         />
         <meta
           name="google-site-verification"
