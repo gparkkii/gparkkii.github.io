@@ -75,7 +75,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-canonical-urls',
       options: {
-        siteUrl: '<https://gparkkii.github.io//>',
+        siteUrl: 'https://gparkkii.github.io/',
         stripQueryString: true,
       },
     },

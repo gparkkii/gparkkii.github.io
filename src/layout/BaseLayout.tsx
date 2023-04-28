@@ -49,8 +49,6 @@ const INITIAL_META = {
 };
 
 const BaseLayout = ({ path, children, meta }: BaseLayoutProps) => {
-  console.log(meta ? meta.image : INITIAL_META.image);
-
   return (
     <ThemeProvider theme={theme}>
       <Helmet>
