@@ -12,8 +12,7 @@ const Logo = () => {
           height: '40px',
           objectFit: 'contain',
         }}
-        loading="lazy"
-        src="../../images/g_logo.png"
+        src="../../images/g_logo.svg"
         alt="logo"
       />
     </Link>

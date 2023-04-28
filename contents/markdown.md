@@ -3,7 +3,7 @@ date: '2022-04-28 16:20'
 title: '마크다운 markdown 사용법 총정리'
 tags: ['markdown', 'github']
 summary: 'Git 사용자라면 필수로 이용하게 되는 마크다운. 테크 블로그에서도, 기타 문서 작성에도 자주 이용되는 마크다운 문법에 대해 정리해보자.'
-thumbnail: './assets/example.png'
+thumbnail: './assets/markdown.png'
 ---
 
 깃헙 이용자라면 Repository에 관한 정보를 기록하는 README.md 파일로 또는 대중적인 기록관리 소프트웨어 Notion, 개발자들을 위한 블로그 서비스 Velog 등을 통해 마크다운을 접해본 사용자들이 많을 것이다. 이렇게 자주 접하게 되는 마크다운이지만 기본적인 문법 외에 자세하게 알고있지는 못했다.
@@ -314,6 +314,7 @@ ___
 ---
 
 ## 2.8. 테이블(Table)
+
 <table> 태그로 변환되며 테이블 마크업 작성을 위해 아래와 같은 규칙을 따라야한다.  
 
 - `|` vertical bar로 테이블 열(Col)을 구분한다.  
@@ -336,6 +337,7 @@ ___
 | 왼쪽 정렬 | `---:` | text-align: left |
 
 ## 2.9. 이미지(Image)
+
 이미지는 링크 마크업과 비슷하게 사용된다.
 
 ```txt
@@ -343,7 +345,7 @@ ___
 ![Keyword](/path/to/img.jpg "Optional title")
 ```
 
-![지파키 제페토](https://avatars.githubusercontent.com/u/71811780?v=4)
+<img src="https://avatars.githubusercontent.com/u/71811780?v=4" width="300px" height="300px" title="px(픽셀) 크기 설정" alt="Gparkkii's Zepeto"></img>
 
 사이즈 조절 기능이 없기 때문에 사이즈 조절을 원한다면 ```<img width="" height=""></img>```를 이용한다.
 
@@ -352,8 +354,9 @@ ___
 <img src="/path/to/img.jpg" width="30%" height="30%" title="px(픽셀) 크기 설정" alt="Gparkkii's Zepeto"></img>
 ```
 
-<img src="https://avatars.githubusercontent.com/u/71811780?v=4" width="200px" height="200px" title="px(픽셀) 크기 설정" alt="Gparkkii's Zepeto"></img><br/>
-<img src="https://avatars.githubusercontent.com/u/71811780?v=4" width="30%" height="30%" title="px(픽셀) 크기 설정" alt="Gparkkii's Zepeto"></img>
+<img src="https://avatars.githubusercontent.com/u/71811780?v=4" width="200px" height="200px" title="px(픽셀) 크기 설정" alt="Gparkkii's Zepeto"></img>
+<br/>
+<img src="https://avatars.githubusercontent.com/u/71811780?v=4" width="20%" height="20%" title="px(픽셀) 크기 설정" alt="Gparkkii's Zepeto"></img>
 
 ## 2.10. 코드(Code)
 
@@ -408,15 +411,16 @@ h3 {
 
 # 3. 정리
 
-이미 알고있던 문법들이 대부분이었지만 각 잡고 정리하려다보니 꽤 쓸게 많았다. 마크다운이야 쓰다보면 금방 익숙해지고 손쉽게 사용 가능한 언어이니 한번쯤 이렇게 정리해두는 것도 좋은 선택이었던 것 같다. 다양한 플랫폼에서 지원하고 있기도하고 테크 블로그를 다시 제대로 해보려고 마음먹은 만큼 유용하게 써먹어야겠다. 
+이미 알고있던 문법들이 대부분이었지만 각 잡고 정리하려다보니 꽤 쓸게 많았다. 마크다운이야 쓰다보면 금방 익숙해지고 손쉽게 사용 가능한 언어이니 한번쯤 이렇게 정리해두는 것도 좋은 선택이었던 것 같다. 다양한 플랫폼에서 지원하고 있기도하고 테크 블로그를 다시 제대로 해보려고 마음먹은 만큼 유용하게 써먹어야겠다.
 
-<h3 style="color: skyblue">P.S)</h3>
+<h3>P.S)</h3>
 
 마크다운 문서를 조금 더 다채롭게 꾸미고 싶다면 HTML 문법을 그대로 사용할 수 있다.
 
 ```
 예를 들어 갑자기 <span style="color: hotpink">폰트 색상</>을 바꾸고 싶다던지..
 ```
+
 예를 들어 갑자기 <span style="color: hotpink">폰트 색상</span>을 바꾸고 싶다던지..  
 하지만 간단하게 쓰는게 매력인만큼 html 문법을 자주 사용하지는 않을 것 같다.
 
