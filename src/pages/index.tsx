@@ -45,22 +45,14 @@ const IndexPage = ({
   const parsed: ParsedQuery<string> = queryString.parse(search);
   const selectedTag = typeof parsed.tag === 'string' ? parsed.tag : 'All';
 
-  const [mounted, setMounted] = React.useState<boolean>(false);
-
-  React.useEffect(() => {
-    setMounted(true);
-  }, []);
-
   return (
-    mounted && (
-      <BaseLayout
-        path={PATH.index}
-        meta={{ title, description, url: siteUrl, image: publicURL }}
-      >
-        {/* Blog */}
-        <Blog posts={edges} selectedTag={selectedTag} />
-      </BaseLayout>
-    )
+    <BaseLayout
+      path={PATH.index}
+      meta={{ title, description, url: siteUrl, image: publicURL }}
+    >
+      {/* Blog */}
+      <Blog posts={edges} selectedTag={selectedTag} />
+    </BaseLayout>
   );
 };
 

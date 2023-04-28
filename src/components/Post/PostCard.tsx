@@ -127,7 +127,7 @@ interface PostCardProps {
 const PostCard = ({ slug, postData }: PostCardProps) => {
   const { title, date, summary, thumbnail, tags } = postData;
   return (
-    <Link to={slug}>
+    <Link role="button" to={slug}>
       <PostCardBox>
         <ThumbnailBox className="postcard-thumbnail">
           <ThumbnailImage

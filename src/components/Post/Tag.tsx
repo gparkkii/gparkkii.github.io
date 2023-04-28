@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import { Link } from 'gatsby';
+import { Link, navigate } from 'gatsby';
 import { theme } from 'theme/index';
 import { Tag as TagTypo } from 'styles/typography';
 
-const TagBox = styled(Link)`
+const TagBox = styled.button`
   display: inline-block;
   margin-right: 12px;
   border-radius: 1000px;
@@ -34,7 +34,7 @@ interface TagProps {
 
 const Tag = ({ tag }: TagProps) => {
   return (
-    <TagBox to={`/?tag=${tag}`}>
+    <TagBox onClick={() => navigate(`/?tag=${tag}`)}>
       <LineAnimation>
         <TagTypo textColor={theme.colors.primary.default}>#{tag}</TagTypo>
       </LineAnimation>
