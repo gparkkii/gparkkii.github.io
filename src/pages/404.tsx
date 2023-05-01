@@ -3,7 +3,7 @@ import React from 'react';
 import { useResponsive } from 'hooks/useResponsive';
 import { Animations } from 'components/Common/Animation';
 import { breakpoints, mediaQuery, theme } from 'theme/index';
-import NotFoundLottie from 'images/lotties/not-found.json';
+import NotFoundLottie from 'assets/lotties/not-found.json';
 import BaseLayout from 'layout/BaseLayout';
 import { PATH } from 'routes/path';
 import { Heading1, Title } from 'styles/typography';

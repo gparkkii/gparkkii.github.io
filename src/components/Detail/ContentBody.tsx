@@ -249,12 +249,12 @@ const ContentBody = ({ thumbnail, html }: ContentBodyProps) => {
     <>
       <ImageWrapper>
         <GatsbyImage
-          loading="lazy"
           style={{
             height: '348px',
             objectFit: 'contain',
             borderRadius: '20px',
           }}
+          loading="lazy"
           image={thumbnail}
           alt="thumbnail"
         />

@@ -1,5 +1,5 @@
 import React from 'react';
-import NoContentLottie from 'images/lotties/no-content.json';
+import NoContentLottie from 'assets/lotties/no-content.json';
 import { Animations } from './Animation';
 import styled from '@emotion/styled';
 import { useResponsive } from 'hooks/useResponsive';

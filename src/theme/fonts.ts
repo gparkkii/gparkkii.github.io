@@ -14,8 +14,8 @@ export const size = {
 } as const;
 
 export const lineHeight = {
-  '6xl': '64px',
-  '5xl': '58px',
+  '6xl': '60px',
+  '5xl': '56px',
   '4xl': '50px',
   '3xl': '44px',
   '2xl': '36px',

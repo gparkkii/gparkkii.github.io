@@ -20,7 +20,7 @@ exports.onCreateWebpackConfig = ({getConfig, actions}) => {
         types: path.resolve(__dirname, 'src/@types'),
         components: path.resolve(__dirname, 'src/components'),
         hooks: path.resolve(__dirname, 'src/hooks'),
-        images: path.resolve(__dirname, 'src/images'),
+        assets: path.resolve(__dirname, 'src/assets'),
         layout: path.resolve(__dirname, 'src/layout'),
         pages: path.resolve(__dirname, 'src/pages'),
         routes: path.resolve(__dirname, 'src/routes'),

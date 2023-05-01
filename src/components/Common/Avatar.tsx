@@ -19,7 +19,7 @@ const Avatar = () => {
           objectFit: 'contain',
         }}
         loading="lazy"
-        src="../../images/g_avatar.png"
+        src="../../assets/images/g_avatar.png"
         alt="avatar"
       />
     </Rounded>

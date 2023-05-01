@@ -5,10 +5,10 @@ import { breakpoints, mediaQuery } from 'theme/index';
 import { PATH } from 'routes/path';
 import NavMenu from './NavMenu';
 import Drawer from './Drawer';
-import Logo from '../Common/Logo';
 import IconButton from '../Controls/IconButton';
 import Tooltip from '../Controls/Tooltip';
-import { useResponsive } from '../../hooks/useResponsive';
+import { useResponsive } from 'hooks/useResponsive';
+import logo from 'assets/images/g-logo.png';
 
 const HeaderLayout = styled.header`
   position: fixed;
@@ -80,6 +80,17 @@ const IconWrapper = styled.div`
   }
 `;
 
+const Logo = styled.div`
+  width: 40px;
+  height: 40px;
+  background: url(${logo});
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: left top;
+  display: flex;
+  align-items: center;
+`;
+
 const DesktopMenu = ({ path }: { path: string }) => {
   return (
     <>
@@ -126,7 +137,11 @@ const MobileMenu = ({
   </MobileMenuBox>
 );
 
-const Header = ({ path }: { path: string }) => {
+interface HeaderProps {
+  path: string;
+}
+
+const Header = ({ path }: HeaderProps) => {
   const isMobileSize = useResponsive(breakpoints.sm);
   const [showDrawer, setShowDrawer] = useState(false);
 
@@ -141,7 +156,9 @@ const Header = ({ path }: { path: string }) => {
   return (
     <>
       <HeaderLayout>
-        <Logo />
+        <Link to={PATH.index}>
+          <Logo />
+        </Link>
         <NavWrapper>
           <DesktopMenu path={path} />
           <MobileMenu visible={showDrawer} onClick={handleDrawer} />

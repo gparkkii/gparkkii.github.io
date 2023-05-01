@@ -29,7 +29,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        icon: 'src/images/g_favicon.png',
+        icon: 'static/g_favicon.png',
       },
     },
     {
@@ -69,6 +69,8 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
+        host: 'https://gparkkii.github.io/',
+        sitemap: 'https://gparkkii.github.io/sitemap-index.xml',
         policy: [{ userAgent: '*', allow: '/' }],
       },
     },
@@ -89,7 +91,7 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `images`,
+        name: `assets`,
         path: `${__dirname}/static`,
       },
     },
