@@ -11,9 +11,8 @@ const PostWrapper = styled.div`
   width: 100%;
   height: 100%;
   padding: 80px 0px;
-  transition: all 0.5s ease-in-out;
   ${mediaQuery.sm} {
-    padding: 40px 24px;
+    padding: 40px 16px;
     padding-bottom: 60px;
   }
 `;

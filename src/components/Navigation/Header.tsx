@@ -32,7 +32,7 @@ const HeaderLayout = styled.header`
 
   ${mediaQuery.sm} {
     height: 64px;
-    padding: 0px 12px;
+    padding: 0px 8px;
   }
 `;
 

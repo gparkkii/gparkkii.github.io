@@ -66,7 +66,7 @@ const ContentHead = ({ title, date }: ContentHeadProps) => {
             />
           </Tooltip>
           <Margin />
-          <Tooltip width={108} tip="클립보드로 복사">
+          <Tooltip tip="클립보드로 복사">
             <IconButton size="xs" icon="link" onClick={copyToClipBoard} />
           </Tooltip>
         </IconBox>

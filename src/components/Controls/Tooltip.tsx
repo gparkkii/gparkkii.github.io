@@ -2,8 +2,8 @@ import styled from '@emotion/styled';
 import React from 'react';
 
 const TooltipWrapper = styled.div`
-  position: relative;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   :hover {
@@ -13,15 +13,28 @@ const TooltipWrapper = styled.div`
   }
 `;
 
+const TooltipBorder = styled.div`
+  position: relative;
+  height: 1px;
+  margin-top: -1px;
+`;
+
 const TooltipBox = styled.div`
   visibility: hidden;
   position: absolute;
-  bottom: -36px;
+  top: 10px;
+  right: -24px;
+  z-index: 999;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
 
   padding: 4px 10px;
   border-radius: 6px;
-  background-color: rgba(113, 119, 132, 0.2);
-  color: ${({ theme }) => theme.colors.bluegray[500]};
+  background-color: rgba(0, 0, 0, 0.5);
+  color: ${({ theme }) => theme.colors.light.default};
   ${({ theme }) => theme.fonts.type.caption2};
   text-align: center;
 `;
@@ -36,9 +49,11 @@ const Tooltip = ({ width, children, tip }: TooltipProps) => {
   return (
     <TooltipWrapper>
       {children}
-      <TooltipBox style={{ width }} className="tooltip">
-        {tip}
-      </TooltipBox>
+      <TooltipBorder>
+        <TooltipBox style={{ width }} className="tooltip">
+          {tip}
+        </TooltipBox>
+      </TooltipBorder>
     </TooltipWrapper>
   );
 };

@@ -28,7 +28,7 @@ const MarkdownRenderer = styled.div`
   word-break: keep-all;
 
   // Markdown Style
-  line-height: 1.75;
+  line-height: 1.8;
   font-size: 16px;
   font-weight: 400;
   color: ${({ theme }) => theme.colors.bluegray[600]};
