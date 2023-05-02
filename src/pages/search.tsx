@@ -90,7 +90,6 @@ const SearchPage = ({
   return (
     <SearchLayout path={PATH.search}>
       <Container>
-        <Guidance1>안녕하세요,</Guidance1>
         <Guidance2>무엇을 찾으시나요?</Guidance2>
         <KeywordWrapper>
           <Subtitle medium textColor={theme.colors.primary.default}>

@@ -46,7 +46,8 @@ export default DiaryPage;
 export const diaryContent = graphql`
   query diaryContent {
     allMarkdownRemark(
-      filter: { frontmatter: { tags: { eq: null }, update: { eq: false } } }
+      sort: [{ frontmatter: { date: DESC } }, { frontmatter: { title: ASC } }]
+      filter: { frontmatter: { tags: { eq: null }, update: { eq: true } } }
     ) {
       edges {
         node {
@@ -58,7 +59,7 @@ export const diaryContent = graphql`
             update
             title
             summary
-            date(formatString: "YYYY.MM.DD")
+            date
           }
         }
       }

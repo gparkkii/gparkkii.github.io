@@ -55,6 +55,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
             order: DESC
             fields: [frontmatter___date, frontmatter___title]
           }
+          filter: { frontmatter: { tags: { ne: null }, update: { eq: true } } }
         ) {
           edges {
             node {

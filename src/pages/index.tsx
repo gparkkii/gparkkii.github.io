@@ -69,7 +69,7 @@ export const postContentQuery = graphql`
     }
     allMarkdownRemark(
       sort: [{ frontmatter: { date: DESC } }, { frontmatter: { title: ASC } }]
-      filter: { frontmatter: { tags: { ne: null }, update: { eq: false } } }
+      filter: { frontmatter: { tags: { ne: null }, update: { eq: true } } }
     ) {
       edges {
         node {

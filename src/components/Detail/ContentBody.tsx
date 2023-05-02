@@ -27,7 +27,7 @@ const ContentBody = ({ thumbnail, html }: ContentBodyProps) => {
       <ImageWrapper>
         <GatsbyImage
           style={{
-            height: '348px',
+            height: '328px',
             objectFit: 'contain',
             borderRadius: '20px',
           }}

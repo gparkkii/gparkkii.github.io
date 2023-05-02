@@ -16,34 +16,18 @@ const PostCardBox = styled.article`
   width: 100%;
   padding: 16px 0px;
   border-radius: 12px;
-  /* & h1::after {
-    display: block;
-    content: '';
-    width: 0;
-    height: 32px;
-    margin-top: -32px;
-    background-color: ${props => props.theme.colors.primary[100]};
-    transition: width 0.3s;
-  }
-  &:hover {
-    & h1::after {
-      width: 100%;
-    }
-  } */
-
-  &:hover {
-    /* transform: translateY(-6px); */
-    /* & h1 {
-      color: ${props => props.theme.colors.dark[200]};
-    } */
-    .postcard-thumbnail {
-      opacity: 0.75;
-    }
-  }
 
   ${mediaQuery.sm} {
     padding: 16px 24px;
     border-radius: 0px;
+  }
+
+  .navigate-to-post {
+    :hover {
+      h1 {
+        color: ${({ theme }) => theme.colors.dark[100]};
+      }
+    }
   }
 `;
 
@@ -72,6 +56,10 @@ const ThumbnailBox = styled.div`
     position: absolute;
     left: 40px;
     opacity: 0;
+  }
+
+  &:hover {
+    opacity: 0.75;
   }
 `;
 
@@ -106,7 +94,7 @@ const Date = styled.div`
 
 const Margin = styled.div`
   margin-top: 10px;
-  margin-bottom: 20px;
+  margin-bottom: 28px;
   & p {
     color: ${({ theme }) => theme.lightTheme.text.dark[150]};
   }
@@ -127,23 +115,27 @@ interface PostCardProps {
 const PostCard = ({ slug, postData }: PostCardProps) => {
   const { title, date, summary, thumbnail, tags } = postData;
   return (
-    <Link role="button" to={slug}>
+    <>
       <PostCardBox>
-        <ThumbnailBox className="postcard-thumbnail">
-          <ThumbnailImage
-            loading="lazy"
-            image={thumbnail.childImageSharp.gatsbyImageData}
-            alt={`${title}_thumbnail`}
-          />
-        </ThumbnailBox>
+        <Link role="button" to={slug}>
+          <ThumbnailBox>
+            <ThumbnailImage
+              loading="lazy"
+              image={thumbnail.childImageSharp.gatsbyImageData}
+              alt={`${title}_thumbnail`}
+            />
+          </ThumbnailBox>
+        </Link>
         <PostCardTextBox>
-          <Date>
-            <Caption2>{date}</Caption2>
-          </Date>
-          <Heading2>{title}</Heading2>
-          <Margin>
-            <Summary className="typography-ellipsis-2line">{summary}</Summary>
-          </Margin>
+          <Link className="navigate-to-post" to={slug}>
+            <Date>
+              <Caption2>{date}</Caption2>
+            </Date>
+            <Heading2>{title}</Heading2>
+            <Margin>
+              <Summary className="typography-ellipsis-2line">{summary}</Summary>
+            </Margin>
+          </Link>
           <TagBox>
             {tags.map((tag, index) => (
               <Tag key={`${tag}_${index}`} tag={tag} />
@@ -152,7 +144,7 @@ const PostCard = ({ slug, postData }: PostCardProps) => {
         </PostCardTextBox>
       </PostCardBox>
       <PostCardDivider />
-    </Link>
+    </>
   );
 };
 
