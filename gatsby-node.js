@@ -51,16 +51,17 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     `
       {
         allMarkdownRemark(
-          sort: {
-            order: DESC
-            fields: [frontmatter___date, frontmatter___title]
-          }
-          filter: { frontmatter: { tags: { ne: null }, update: { eq: true } } }
+          sort: [{frontmatter: {date: DESC}}, {frontmatter: {title: ASC}}]
         ) {
           edges {
             node {
               fields {
                 slug
+              }
+              frontmatter {
+                title
+                tags
+                update
               }
             }
           }
@@ -86,31 +87,20 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     node: {
       fields: { slug },
     },
-  }) => {
+  }, index) => {
+    const previous = index === posts.length - 1 ? null : posts[index + 1].node
+    const next = index === 0 ? null : posts[index - 1].node
     const pageOptions = {
       path: slug,
       component: PostTemplateComponent,
-      context: { slug },
+      context: { slug, previous, next },
     };
 
     createPage(pageOptions);
   };
 
+  const posts = queryAllMarkdownData.data.allMarkdownRemark.edges.filter(({node}) => node.frontmatter.update && node.frontmatter.tags !== null)
+
   // Generate Post Page And Passing Slug Props for Query
-  queryAllMarkdownData.data.allMarkdownRemark.edges.forEach(generatePostPage);
+  posts.forEach(generatePostPage);
 };
-
-
-// /**
-//  * @type {import('gatsby').GatsbyNode['createPages']}
-//  */
-// exports.createPages = async ({ actions }) => {
-//   const { createPage } = actions
-//   createPage({
-//     path: "/using-dsg",
-//     component: require.resolve("./src/templates/using-dsg.js"),
-//     context: {},
-//     defer: true,
-//   })
-// }
-

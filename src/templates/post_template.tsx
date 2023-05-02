@@ -13,6 +13,7 @@ type PostTemplateProps = {
       edges: PostPageItemType[];
     };
   };
+  pageContext: unknown;
   location: {
     href: string;
   };
@@ -21,6 +22,7 @@ type PostTemplateProps = {
 const PostTemplate: FunctionComponent<PostTemplateProps> = function ({
   path,
   data,
+  pageContext,
   location,
 }: PostTemplateProps) {
   const {
@@ -38,6 +40,8 @@ const PostTemplate: FunctionComponent<PostTemplateProps> = function ({
       },
     },
   } = data.allMarkdownRemark.edges[0];
+
+  console.log(pageContext);
 
   return (
     <BaseLayout
@@ -62,15 +66,7 @@ export default PostTemplate;
 
 export const queryMarkdownDataBySlug = graphql`
   query queryMarkdownDataBySlug($slug: String) {
-    allMarkdownRemark(
-      filter: {
-        fields: {
-          tags: { ne: null }
-          update: { eq: true }
-          slug: { eq: $slug }
-        }
-      }
-    ) {
+    allMarkdownRemark(filter: { fields: { slug: { eq: $slug } } }) {
       edges {
         node {
           html

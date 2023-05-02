@@ -117,7 +117,7 @@ const PostCard = ({ slug, postData }: PostCardProps) => {
   return (
     <>
       <PostCardBox>
-        <Link role="button" to={slug}>
+        <Link to={slug}>
           <ThumbnailBox>
             <ThumbnailImage
               loading="lazy"
