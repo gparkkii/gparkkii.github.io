@@ -63,6 +63,10 @@ module.exports = {
             name: `Pretendard`,
             file: `https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard-dynamic-subset.css`,
           },
+          {
+            name: `Fira Code`,
+            file: `https://fonts.googleapis.com/css2?family=Fira+Code:wght@500&display=swap`
+          }
         ],
       },
     },
@@ -119,6 +123,7 @@ module.exports = {
             resolve: 'gatsby-remark-prismjs',
             options: {
               classPrefix: 'language-',
+              inlineCodeMarker: '%'
             },
           },
           {

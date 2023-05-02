@@ -3,7 +3,8 @@ date: '2022-04-28 16:20'
 title: '마크다운 markdown 사용법 총정리'
 tags: ['markdown', 'github']
 summary: 'Git 사용자라면 필수로 이용하게 되는 마크다운. 테크 블로그에서도, 기타 문서 작성에도 자주 이용되는 마크다운 문법에 대해 정리해보자.'
-thumbnail: './assets/markdown.png'
+thumbnail: '../assets/markdown.png'
+update: false
 ---
 
 깃헙 이용자라면 Repository에 관한 정보를 기록하는 README.md 파일로 또는 대중적인 기록관리 소프트웨어 Notion, 개발자들을 위한 블로그 서비스 Velog 등을 통해 마크다운을 접해본 사용자들이 많을 것이다. 이렇게 자주 접하게 되는 마크다운이지만 기본적인 문법 외에 자세하게 알고있지는 못했다.
@@ -267,7 +268,7 @@ __Bold: double underscores__
 
 마크다운에서는 엔터키 대신 띄어쓰기 두번을 사용해야한다.
 
-```
+```txt
 글을 쓰다가 줄바꿈을 하고싶을 경우 
 엔터키로는 줄바꿈이 되지 않는다.
 
@@ -396,6 +397,8 @@ h3 {
 
 ```html
 <a href="https://www.google.co.kr/" target="_blank">GOOGLE</a>
+
+gparkkii === happy coder
 ```
 
 ```css
