@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import { mediaQuery } from 'theme/index';
+import CodeBlock from '../../../assets/code-block.png';
 
 export const MarkdownRenderer = styled.div`
   // Renderer Style
@@ -192,15 +193,6 @@ export const MarkdownRenderer = styled.div`
   }
 
   // Adjust Code Style
-  .gatsby-highlight {
-    /* background-color: hsla(207, 95%, 15%, 1);
-    display: block;
-    margin-right: -1.2em;
-    margin-left: -1.2em;
-    padding-right: 1em;
-    padding-left: 0.75em;
-    border-left: 0.35em solid #0687f0; */
-  }
   code[class*='language-'],
   pre[class*='language-'] {
     font-family: 'Fira Code', 'Consolas', 'Monaco', 'Andale Mono', 'Ubuntu Mono',
@@ -212,7 +204,7 @@ export const MarkdownRenderer = styled.div`
     word-spacing: normal;
     word-break: normal;
     word-wrap: normal;
-    line-height: 1.6;
+    line-height: 1.75;
 
     -moz-tab-size: 2;
     -o-tab-size: 2;
@@ -241,15 +233,37 @@ export const MarkdownRenderer = styled.div`
   }
 
   pre[class*='language-']::-webkit-scrollbar {
-    display: none; // Safari and Chrome
+    background-color: none; // Safari and Chrome
   }
 
   /* Code blocks */
-  pre[class*='language-'] {
-    padding: 1.2em;
+  .gatsby-highlight::after {
+    content: '';
+    position: absolute;
+    width: 6em;
+    height: 2em;
+    top: -2.25em;
+    left: 0.5em;
+    background: url(${CodeBlock});
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: left top;
+    border-top-left-radius: 0.6em;
+  }
+  .gatsby-highlight {
+    position: relative;
+    display: block;
     margin: 1.5em 0;
+    border-top: 2.5em solid #1e1e1e;
+    border-top-left-radius: 0.6em;
+    border-top-right-radius: 0.6em;
+  }
+  pre[class*='language-'] {
+    margin: 0;
+    padding: 1.4em 1.6em;
     overflow: auto;
-    border-radius: 0.6em;
+    border-bottom-left-radius: 0.6em;
+    border-bottom-right-radius: 0.6em;
   }
 
   pre > code[class*='language-'],
