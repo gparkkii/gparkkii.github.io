@@ -28,11 +28,7 @@ const AuthorInfo = ({ date, author }: AuthorInfoProps) => {
     <AuthorBox>
       <Avatar />
       <Info>
-        <Body
-          medium
-          textColor={theme.colors.dark[100]}
-          style={{ marginBottom: 2 }}
-        >
+        <Body medium textColor={theme.colors.dark[100]}>
           {author}
         </Body>
         <Caption textColor={theme.colors.light[500]}>{date}</Caption>

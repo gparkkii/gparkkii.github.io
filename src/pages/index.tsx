@@ -69,6 +69,7 @@ export const postContentQuery = graphql`
     }
     allMarkdownRemark(
       sort: [{ frontmatter: { date: DESC } }, { frontmatter: { title: ASC } }]
+      filter: { frontmatter: { tags: { ne: null }, update: { eq: false } } }
     ) {
       edges {
         node {
@@ -77,6 +78,7 @@ export const postContentQuery = graphql`
             slug
           }
           frontmatter {
+            update
             title
             summary
             date(formatString: "YYYY.MM.DD")

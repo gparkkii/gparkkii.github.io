@@ -34,11 +34,11 @@ const NoContent = () => {
       />
       <Margin>
         <Heading2 textColor={theme.colors.bluegray[600]}>
-          피드가 텅! 비었어요
+          피드가 '텅' 비었어요
         </Heading2>
       </Margin>
       <Subtitle textColor={theme.colors.primary[200]}>
-        곧 새로운 소식이 올라올지도 몰라요
+        곧 새로운 소식이 올라올지도 몰라요!
       </Subtitle>
     </FlexContainer>
   );

@@ -58,7 +58,7 @@ type SearchPageProps = {
   };
 };
 
-const search = ({
+const SearchPage = ({
   data: {
     allMarkdownRemark: { edges },
   },
@@ -113,12 +113,13 @@ const search = ({
   );
 };
 
-export default search;
+export default SearchPage;
 
 export const searchContentQuery = graphql`
   query searchContentQuery {
     allMarkdownRemark(
       sort: [{ frontmatter: { date: DESC } }, { frontmatter: { title: ASC } }]
+      filter: { frontmatter: { tags: { ne: null }, update: { eq: false } } }
     ) {
       edges {
         node {
