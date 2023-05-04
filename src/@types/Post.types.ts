@@ -22,3 +22,20 @@ export type PostFrontMatterType = {
     publicURL: string;
   };
 };
+
+export type DiaryType = {
+  node: {
+    id: string;
+    fields: {
+      slug: string;
+    };
+    frontmatter: DiaryFrontMatterType;
+  };
+};
+
+export type DiaryFrontMatterType = {
+  title: string;
+  date: string;
+  index: number;
+  summary: string;
+};

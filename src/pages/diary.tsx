@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import BaseLayout from '../layout/BaseLayout';
 import { PATH } from '../routes/path';
 import { Guidance2, Summary } from '../styles/typography';
@@ -6,6 +6,8 @@ import styled from '@emotion/styled';
 import { theme } from '../theme';
 import { graphql } from 'gatsby';
 import NoContent from '../components/Common/NoContent';
+import DiaryCard from '../components/Diary/DiaryCard';
+import { DiaryType } from '../@types/Post.types';
 
 const DiaryWrapper = styled.div`
   width: 100%;
@@ -16,14 +18,25 @@ const DiaryWrapper = styled.div`
 const DiaryHead = styled.div`
   width: 100%;
   padding: 0px 16px;
-  padding-bottom: 32px;
-  border-bottom: 2px solid;
+  padding-bottom: 40px;
+  border-bottom: 2px solid ${({ theme }) => theme.colors.dark[50]};
+  margin-bottom: 40px;
 `;
 const Margin = styled.div`
-  margin-top: 8px;
+  margin-top: 4px;
 `;
 
-const DiaryPage = () => {
+type DiaryPageProps = {
+  data: {
+    allMarkdownRemark: {
+      edges: DiaryType[];
+    };
+  };
+};
+
+const DiaryPage = ({ data }: DiaryPageProps) => {
+  const DiaryPostList = useMemo(() => data.allMarkdownRemark.edges, [data]);
+  console.log(data.allMarkdownRemark.edges);
   return (
     <BaseLayout path={PATH.diary}>
       <DiaryWrapper>
@@ -34,8 +47,19 @@ const DiaryPage = () => {
             끄적끄적 내맘대로 적는 일상과 회고록
           </Summary>
         </DiaryHead>
-
-        <NoContent />
+        {DiaryPostList.length > 0 ? (
+          data.allMarkdownRemark.edges.map(
+            ({ node: { fields, frontmatter } }, index) => (
+              <DiaryCard
+                key={`${index}_${frontmatter.title}`}
+                slug={fields.slug}
+                content={frontmatter}
+              />
+            ),
+          )
+        ) : (
+          <NoContent />
+        )}
       </DiaryWrapper>
     </BaseLayout>
   );
@@ -58,8 +82,9 @@ export const diaryContent = graphql`
           frontmatter {
             update
             title
+            index
             summary
-            date
+            date(formatString: "YYYY.MM.DD")
           }
         }
       }

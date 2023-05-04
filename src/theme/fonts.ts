@@ -112,7 +112,7 @@ export const type = {
   },
   title: {
     fontSize: size.lg,
-    fontWeight: weight.black,
+    fontWeight: weight.bold,
     lineHeight: lineHeight.lg,
   },
   subtitle: {

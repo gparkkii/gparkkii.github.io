@@ -16,24 +16,6 @@ const TagBox = styled(Link)`
   }
 `;
 
-const LineAnimation = styled.div`
-  & p::after {
-    display: block;
-    content: '';
-    width: 0;
-    height: 2px;
-    margin-bottom: 2px;
-    margin-top: -4px;
-    background-color: ${props => props.theme.colors.primary[300]};
-    transition: width 0.3s;
-  }
-  &:hover {
-    & p::after {
-      width: 100%;
-    }
-  }
-`;
-
 interface TagProps {
   tag: string;
 }
