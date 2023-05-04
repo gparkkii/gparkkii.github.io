@@ -1,7 +1,7 @@
 import React from 'react';
 import { PATH } from '../routes/path';
 import SearchLayout from '../layout/SearchLayout';
-import { Body, Guidance1, Guidance2, Subtitle } from '../styles/typography';
+import { Body, Guidance2, Subtitle } from '../styles/typography';
 import styled from '@emotion/styled';
 import { mediaQuery, theme } from '../theme';
 import { TagListProps } from '../components/Post/TagMenu';
@@ -118,7 +118,7 @@ export const searchContentQuery = graphql`
   query searchContentQuery {
     allMarkdownRemark(
       sort: [{ frontmatter: { date: DESC } }, { frontmatter: { title: ASC } }]
-      filter: { frontmatter: { tags: { ne: null }, update: { eq: false } } }
+      filter: { frontmatter: { tags: { ne: null }, update: { eq: true } } }
     ) {
       edges {
         node {
