@@ -1,5 +1,8 @@
 import React, { FunctionComponent } from 'react';
 import BaseLayout from 'layout/BaseLayout';
+import PostLayout from 'layout/PostLayout';
+import ContentHead from 'components/Detail/ContentHead';
+import { MarkdownRenderer } from 'components/Detail/styles/code.styles';
 import { DiaryPageItemType } from 'types/Post.types';
 import { graphql } from 'gatsby';
 
@@ -39,7 +42,10 @@ const DiaryTemplate: FunctionComponent<DiaryTemplateProps> = function ({
         image: '',
       }}
     >
-      Diary Page
+      <PostLayout>
+        <ContentHead title={title} date={date} />
+        <MarkdownRenderer dangerouslySetInnerHTML={{ __html: html }} />
+      </PostLayout>
     </BaseLayout>
   );
 };
