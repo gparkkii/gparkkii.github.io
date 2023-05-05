@@ -17,7 +17,7 @@ const Container = styled.div`
 `;
 
 const KeywordWrapper = styled.div`
-  padding: 40px 0px;
+  padding: 20px 0px;
 `;
 
 const KeywordBox = styled.div`
@@ -90,11 +90,11 @@ const SearchPage = ({
   return (
     <SearchLayout path={PATH.search}>
       <Container>
-        <Guidance2>무엇을 찾으시나요?</Guidance2>
+        <Guidance2>Tags</Guidance2>
         <KeywordWrapper>
-          <Subtitle medium textColor={theme.colors.primary.default}>
+          {/* <Subtitle medium textColor={theme.colors.primary.default}>
             추천 키워드
-          </Subtitle>
+          </Subtitle> */}
           <KeywordBox>
             {Object.entries(tagList).map(([key, value]) => (
               <Link to={`/?tag=${key}`} key={key}>
