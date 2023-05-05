@@ -10,11 +10,19 @@ export type PostType = {
   };
 };
 
+export type PostPageItemType = {
+  node: {
+    html: string;
+    frontmatter: PostFrontMatterType;
+  };
+};
+
 export type PostFrontMatterType = {
   title: string;
   summary: string;
   date: string;
   tags: string[];
+  update: boolean;
   thumbnail: {
     childImageSharp: {
       gatsbyImageData: IGatsbyImageData;
@@ -33,9 +41,17 @@ export type DiaryType = {
   };
 };
 
+export type DiaryPageItemType = {
+  node: {
+    html: string;
+    frontmatter: DiaryFrontMatterType;
+  };
+};
+
 export type DiaryFrontMatterType = {
   title: string;
   date: string;
   index: number;
   summary: string;
+  update: boolean;
 };

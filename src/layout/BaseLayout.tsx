@@ -36,7 +36,7 @@ type BaseLayoutProps = {
   meta?: {
     title: string;
     description: string;
-    image: string;
+    image?: string;
     url: string;
   };
 };
@@ -76,7 +76,7 @@ const BaseLayout = ({ path, children, meta }: BaseLayoutProps) => {
         />
         <meta
           property="og:image"
-          content={meta ? meta.image : INITIAL_META.image}
+          content={meta?.image ? meta?.image : INITIAL_META.image}
         />
         <meta property="og:url" content={meta ? meta.url : INITIAL_META.url} />
         <meta

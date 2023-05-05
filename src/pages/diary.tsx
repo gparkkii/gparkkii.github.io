@@ -36,7 +36,6 @@ type DiaryPageProps = {
 
 const DiaryPage = ({ data }: DiaryPageProps) => {
   const DiaryPostList = useMemo(() => data.allMarkdownRemark.edges, [data]);
-  console.log(data.allMarkdownRemark.edges);
   return (
     <BaseLayout path={PATH.diary}>
       <DiaryWrapper>

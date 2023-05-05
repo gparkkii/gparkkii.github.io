@@ -47,40 +47,34 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions;
 
   // Get All Markdown File For Paging
-  const queryAllMarkdownData = await graphql(
+  const queryPostMarkdownData = await graphql(
     `
-      {
-        allMarkdownRemark(
-          sort: [{frontmatter: {date: DESC}}, {frontmatter: {title: ASC}}]
-        ) {
-          edges {
-            node {
-              fields {
-                slug
-              }
-              frontmatter {
-                title
-                tags
-                update
-              }
+    {
+      allMarkdownRemark(
+        sort: [{frontmatter: {date: DESC}}, {frontmatter: {title: ASC}}]
+      ) {
+        edges {
+          node {
+            fields {
+              slug
+            }
+            frontmatter {
+              tags
+              update
             }
           }
         }
       }
+    }
     `,
-  );
-
-  // Handling GraphQL Query Error
-  if (queryAllMarkdownData.errors) {
-    reporter.panicOnBuild(`Error while running query`);
-    return;
-  }
-
-  // Import Post Template Component
+  ).then((result) => {
+     // Import Post Template Component
   const PostTemplateComponent = path.resolve(
     __dirname,
     'src/templates/post_template.tsx',
   );
+
+  const posts = result.data.allMarkdownRemark.edges.filter(({node}) => node.frontmatter.update && node.frontmatter.tags !== null);
 
   // Page Generating Function
   const generatePostPage = ({
@@ -99,8 +93,70 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     createPage(pageOptions);
   };
 
-  const posts = queryAllMarkdownData.data.allMarkdownRemark.edges.filter(({node}) => node.frontmatter.update && node.frontmatter.tags !== null)
-
   // Generate Post Page And Passing Slug Props for Query
   posts.forEach(generatePostPage);
+
+  }).catch((error) => {
+    reporter.panicOnBuild(`Error while running create post page query`);
+    return;
+  });
+
+  const queryDiaryMarkdownData = await graphql(
+    `
+    {
+      allMarkdownRemark(
+        sort: [{frontmatter: {date: DESC}}, {frontmatter: {title: ASC}}]
+      ) {
+        edges {
+          node {
+            fields {
+              slug
+            }
+            frontmatter {
+              index
+              update
+            }
+          }
+        }
+      }
+    }
+    `,
+  ).then((result) => {
+     // Import Post Template Component
+  const DiaryTemplateComponent = path.resolve(
+    __dirname,
+    'src/templates/diary_template.tsx',
+  );
+
+
+  const diaryPosts = result.data.allMarkdownRemark.edges.filter(({node}) => node.frontmatter.update && node.frontmatter.index !== null);
+
+
+  // Page Generating Function
+  const generateDiaryPage = ({
+    node: {
+      fields: { slug },
+    },
+  }, index) => {
+    const previous = index === diaryPosts.length - 1 ? null : diaryPosts[index + 1].node
+    const next = index === 0 ? null : diaryPosts[index - 1].node
+    const pageOptions = {
+      path: slug,
+      component: DiaryTemplateComponent,
+      context: { slug, previous, next },
+    };
+
+    createPage(pageOptions);
+  };
+
+  // Generate Diary Page And Passing Slug Props for Query
+  diaryPosts.forEach(generateDiaryPage);
+
+  }).catch((error) => {
+    reporter.panicOnBuild(`Error while running create diary page query`);
+    return;
+  });
+
+  return Promise.all([queryPostMarkdownData, queryDiaryMarkdownData]);
 };
+
