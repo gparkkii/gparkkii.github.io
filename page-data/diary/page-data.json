@@ -1,1 +1,1 @@
-{"componentChunkName":"component---src-pages-diary-tsx","path":"/diary/","result":{"data":{"allMarkdownRemark":{"edges":[]}},"pageContext":{}},"staticQueryHashes":[],"slicesMap":{}}
+{"componentChunkName":"component---src-pages-diary-tsx","path":"/diary/","result":{"data":{"allMarkdownRemark":{"edges":[{"node":{"id":"b47d53dd-44c7-5a75-b3b1-5cf7a8b90e59","fields":{"slug":"/diary/01/"},"frontmatter":{"update":true,"title":"테크 블로그 개발 회고록","index":0,"summary":"꼭 해보고 싶었던 나만의 테크 블로그 만들기","date":"2022.05.04"}}}]}},"pageContext":{}},"staticQueryHashes":[],"slicesMap":{}}
