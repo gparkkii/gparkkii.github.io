@@ -40,7 +40,6 @@ const DiaryTemplate: FunctionComponent<DiaryTemplateProps> = function ({
         title,
         description: summary,
         url: location.href,
-        image: '',
       }}
     >
       <PostLayout>
