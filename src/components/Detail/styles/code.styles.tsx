@@ -15,6 +15,10 @@ export const MarkdownRenderer = styled.div`
   font-weight: 400;
   color: ${({ theme }) => theme.colors.bluegray[600]};
 
+  .responsive-image {
+    width: 100%;
+  }
+
   h1,
   h2,
   h3 {
@@ -24,7 +28,9 @@ export const MarkdownRenderer = styled.div`
   * + h1 {
     margin-top: 60px;
   }
-  * + h2,
+  * + h2 {
+    margin-top: 48px;
+  }
   * + h3 {
     margin-top: 40px;
   }
@@ -80,7 +86,7 @@ export const MarkdownRenderer = styled.div`
   // Adjust List Element Style
   ol,
   ul {
-    margin-top: 10px;
+    margin: 10px 0px;
     margin-left: 20px;
     padding-left: 16px;
     line-height: 2;
@@ -102,6 +108,10 @@ export const MarkdownRenderer = styled.div`
         }
       }
     }
+  }
+
+  li {
+    padding: 2px 0px;
   }
 
   // Adjust Quotation Element Style
@@ -190,6 +200,14 @@ export const MarkdownRenderer = styled.div`
   td:last-child,
   th:last-child {
     border-right: 0px;
+  }
+
+  figcaption {
+    text-align: right;
+    font-size: 13px;
+    color: #757575;
+    margin-top: -2px;
+    margin-bottom: 20px;
   }
 
   // Adjust Code Style
