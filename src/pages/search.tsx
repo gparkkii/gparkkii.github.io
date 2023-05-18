@@ -122,20 +122,8 @@ export const searchContentQuery = graphql`
     ) {
       edges {
         node {
-          id
-          fields {
-            slug
-          }
           frontmatter {
-            title
-            summary
-            date(formatString: "YYYY.MM.DD")
             tags
-            thumbnail {
-              childImageSharp {
-                gatsbyImageData(width: 700)
-              }
-            }
           }
         }
       }
