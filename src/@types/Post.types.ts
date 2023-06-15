@@ -1,5 +1,10 @@
 import { IGatsbyImageData } from 'gatsby-plugin-image';
 
+export type PageContextType = {
+  fields: { slug: string };
+  frontmatter: { title: string; tags: string[]; update: boolean };
+};
+
 export type PostType = {
   node: {
     id: string;

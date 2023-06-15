@@ -4,8 +4,9 @@ import PostLayout from 'layout/PostLayout';
 import ContentHead from 'components/Detail/ContentHead';
 import ContentBody from 'components/Detail/ContentBody';
 import CommentWidget from 'components/Detail/CommentWidget';
+import ContentNav from 'components/Detail/ContentNav';
 import TableOfContents from 'components/Detail/TableOfContents';
-import { PostPageItemType } from 'types/Post.types';
+import { PostPageItemType, PageContextType } from 'types/Post.types';
 import { graphql } from 'gatsby';
 
 type PostTemplateProps = {
@@ -15,7 +16,11 @@ type PostTemplateProps = {
       edges: PostPageItemType[];
     };
   };
-  pageContext: unknown;
+  pageContext: {
+    slug: string;
+    previous: PageContextType | null;
+    next: PageContextType | null;
+  };
   location: {
     href: string;
   };
@@ -27,6 +32,7 @@ const PostTemplate: FunctionComponent<PostTemplateProps> = function ({
   pageContext,
   location,
 }: PostTemplateProps) {
+  const { previous, next } = pageContext;
   const {
     node: {
       html,
@@ -57,6 +63,7 @@ const PostTemplate: FunctionComponent<PostTemplateProps> = function ({
       <PostLayout>
         <ContentHead title={title} date={date} />
         <ContentBody html={html} thumbnail={gatsbyImageData} />
+        <ContentNav previous={previous} next={next} />
         <CommentWidget />
       </PostLayout>
     </BaseLayout>

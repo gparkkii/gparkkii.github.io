@@ -10,7 +10,6 @@ import {
   faArrowRight,
 } from '@fortawesome/free-solid-svg-icons';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
-import { theme } from '../../theme';
 
 type IconType =
   | 'cancel'
