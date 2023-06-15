@@ -15,6 +15,7 @@ export const globalStyle = css`
     word-break: keep-all;
     word-wrap: break-word;
     box-sizing: border-box;
+    scroll-margin-top: 120px;
   }
 
   /* CSS RESET */
