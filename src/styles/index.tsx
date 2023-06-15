@@ -25,10 +25,6 @@ export const globalStyle = css`
     box-sizing: border-box;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
   }
 
   a {
@@ -89,6 +85,36 @@ export const globalStyle = css`
     cursor: pointer;
     -moz-appearance: none;
     -webkit-appearance: none;
+  }
+
+  /* CLIPBOARD TOASTER */
+  .gatsby-code-button-toaster {
+    position: fixed;
+    top: 120px;
+    z-index: 999;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 40px;
+  }
+
+  .gatsby-code-button-toaster-text {
+    border-radius: 100px;
+    background: #fafafa;
+    box-shadow: 4px 8px 12px rgba(0, 0, 0, 0.1);
+    border: 1px solid #f4f5f6;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 180px;
+    height: 40px;
+    font-size: 15px;
+    font-family: Pretendard;
+    color: #212121;
   }
 
   /* POST CARD WORD BREAK */

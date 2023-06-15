@@ -255,13 +255,43 @@ export const MarkdownRenderer = styled.div`
   }
 
   /* Code blocks */
-  .gatsby-highlight::after {
+  .gatsby-code-button-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 2em;
+    background-color: #1e1e1e;
+    border-top-left-radius: 0.6em;
+    border-top-right-radius: 0.6em;
+  }
+  .gatsby-code-button {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    gap: 4px;
+    padding-top: 0.2em;
+    padding-right: 1.5em;
+    font-size: 13px;
+    font-weight: 400;
+    color: #909090;
+    & svg {
+      stroke: #909090;
+    }
+    :hover {
+      color: #ccc;
+      & svg {
+        stroke: #ccc;
+      }
+    }
+  }
+
+  .gatsby-code-button-container::after {
     content: '';
     position: absolute;
     width: 6em;
-    height: 2em;
-    top: -2.25em;
-    left: 0.5em;
+    height: 1.75em;
+    top: 0.2em;
+    left: 0.4em;
     background: url(${CodeBlock});
     background-size: contain;
     background-repeat: no-repeat;
@@ -271,11 +301,34 @@ export const MarkdownRenderer = styled.div`
   .gatsby-highlight {
     position: relative;
     display: block;
-    margin: 1.5em 0;
-    border-top: 2.5em solid #1e1e1e;
+    border-top: 2em solid #1e1e1e;
     border-top-left-radius: 0.6em;
     border-top-right-radius: 0.6em;
   }
+  .gatsby-highlight-code-line {
+    display: block;
+    background-color: #353b46;
+    border-left: 3px solid #aaa;
+    font-family: 'Fira Code';
+    color: inherit;
+  }
+
+  .gatsby-remark-code-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 2.5em;
+    margin-bottom: -4.5em;
+
+    font-family: 'Fira Code';
+    font-size: 13px;
+    color: #aaa;
+    z-index: 999;
+  }
+
   pre[class*='language-'] {
     margin: 0;
     padding: 1.4em 1.6em;

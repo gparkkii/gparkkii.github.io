@@ -166,7 +166,7 @@ h3 {
     2개의 탭 들여쓰기 사용
 
 ## 2.13. 코드 하이라이팅
-
+코드 하이라이팅을 위해서는 [`Prism`](https://prismjs.com/) 라이브러리 등을 다운받아야한다. 라이브러리 설치 후 적용 시 아래와 같이 하이라이팅 적용이 가능하다.
 일반적으로는 색상 강조를 위해 코드 블록에 해당하는 언어를 지정해야 한다. 여러 가지 언어를 지원하며, 대표적으로 JavaScript, Python, Java, C++ 등이 있다.
 
 ````txt
@@ -188,6 +188,47 @@ print("Hello, " + name + "!")
 greet("World")
 ```
 
+### 2.13.1 추가/삭제 라인 하이라이팅
+코드 타입을 diff로 작성하고 추가 및 삭제된 라인 앞에 `+`, `-` 를 작성해주면 라인이 하이라이팅 된다.
+
+````txt
+```diff
+const App = () => {
+-	return <div>This line was removed</div>;
++	return <div>This line was added</div>;
+}
+```
+````
+
+```diff
+const App = () => {
+-	return <div>This line was removed</div>;
++	return <div>This line was added</div>;
+}
+```
+
+### 2.13.2 인라인 하이라이팅
+
+코드 블록 내에서도 강조하고 싶은 라인에 인라인 하이라이팅을 적용시켜준다. 코드 타입 옆에 하이라이트할 숫자를 적거나 하이라이트 하고 싶은 라인에 highlight-line을 주석처리해준다.
+
+````txt
+```javascript{2}
+const App = () => {
+    console.log('highlight line')
+    return <div>This line won't be highlighted</div>;
+    
+}
+```
+````
+
+```javascript{2}
+const App = () => {
+    console.log('highlight line')
+    return <div>This line won't be highlighted</div>;
+    
+}
+```
+
 # 3. 정리
 
 이미 알고있던 문법들이 대부분이었지만 각 잡고 정리하려다보니 꽤 쓸게 많았다. 마크다운이야 쓰다보면 금방 익숙해지고 손쉽게 사용 가능한 언어이니 한번쯤 이렇게 정리해두는 것도 좋은 선택이었던 것 같다. 다양한 플랫폼에서 지원하고 있기도하고 테크 블로그를 다시 제대로 해보려고 마음먹은 만큼 유용하게 써먹어야겠다.
@@ -198,7 +239,7 @@ greet("World")
 
 마크다운 문서를 조금 더 다채롭게 꾸미고 싶다면 HTML 문법을 그대로 사용할 수 있다.
 
-```
+```txt
 예를 들어 갑자기 <span style="color: hotpink">폰트 색상</>을 바꾸고 싶다던지..
 ```
 
@@ -210,7 +251,7 @@ greet("World")
 
 각주를 쓰고 싶을 땐 아래와 같은 방법을 이용한다.
 
-```
+```txt
 이것은 각주를 사용한 문장입니다.[^각주]
 
 [^각주]: 각주 내용입니다. 여기에 추가적인 설명이나 참고 자료를 작성할 수 있습니다.

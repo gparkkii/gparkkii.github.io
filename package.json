@@ -37,6 +37,7 @@
     "gatsby-plugin-sitemap": "^6.9.0",
     "gatsby-plugin-typescript": "^5.4.0",
     "gatsby-remark-autolink-headers": "^6.9.0",
+    "gatsby-remark-code-buttons": "^2.0.7",
     "gatsby-remark-copy-linked-files": "^6.4.0",
     "gatsby-remark-external-links": "^0.0.4",
     "gatsby-remark-images": "^7.4.0",
@@ -55,6 +56,7 @@
     "react-responsive": "^9.0.2"
   },
   "devDependencies": {
+    "gatsby-remark-code-titles": "^1.1.0",
     "gh-pages": "^5.0.0",
     "prettier": "^2.8.1",
     "typescript": "^4.9.4"
