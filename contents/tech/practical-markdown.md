@@ -99,6 +99,21 @@ Markdown에서 이스케이프 문자를 사용하여 Markdown 문법의 특수 
 <br/>
 <img src="https://avatars.githubusercontent.com/u/71811780?v=4" width="20%" height="20%" title="px(픽셀) 크기 설정" alt="Gparkkii's Zepeto"></img>
 
+### 2.11.1 이미지 캡션 추가
+`figure`를 통해 이미지 align을 정하고, `figcaption`을 통해 이미지에 캡션을 추가 할 수 있다.
+
+```html
+<figure align="center">
+<img src="https://avatars.githubusercontent.com/u/71811780?v=4" alt="Gparkkii's Zepeto"></img>
+<figcaption>Gparkkii's Zepeto</figcaption>
+</figure>
+```
+
+<figure align="center">
+<img width="200px" height="200px" src="https://avatars.githubusercontent.com/u/71811780?v=4" alt="Gparkkii's Zepeto"></img>
+<figcaption style="text-align: center">Gparkkii's Zepeto</figcaption>
+</figure>
+
 ## 2.12. 코드(Code)
 
 `<pre>`, `<code>`로 변환된다.
