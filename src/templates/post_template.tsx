@@ -55,7 +55,6 @@ const PostTemplate: FunctionComponent<PostTemplateProps> = function ({
       }}
     >
       <PostLayout>
-        <TableOfContents contents={tableOfContents} />
         <ContentHead title={title} date={date} />
         <ContentBody html={html} thumbnail={gatsbyImageData} />
         <CommentWidget />
