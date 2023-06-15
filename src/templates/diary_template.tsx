@@ -13,6 +13,12 @@ type DiaryTemplateProps = {
     allMarkdownRemark: {
       edges: DiaryPageItemType[];
     };
+    file: {
+      childImageSharp: {
+        gatsbyImageData: IGatsbyImageData;
+      };
+      publicURL: string;
+    };
   };
   pageContext: unknown;
   location: {
@@ -39,6 +45,7 @@ const DiaryTemplate: FunctionComponent<DiaryTemplateProps> = function ({
       meta={{
         title,
         description: summary,
+        image: data.file.publicURL,
         url: location.href,
       }}
     >
@@ -68,6 +75,12 @@ export const queryMarkdownDataBySlug = graphql`
           }
         }
       }
+    }
+    file(name: { eq: "profile-image" }) {
+      childImageSharp {
+        gatsbyImageData(width: 120, height: 120)
+      }
+      publicURL
     }
   }
 `;

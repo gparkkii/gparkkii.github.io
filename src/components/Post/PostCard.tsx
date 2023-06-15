@@ -25,7 +25,7 @@ const PostCardBox = styled.article`
   .navigate-to-post {
     :hover {
       h1 {
-        color: ${({ theme }) => theme.colors.dark[100]};
+        color: ${({ theme }) => theme.colors.dark[150]};
       }
     }
   }

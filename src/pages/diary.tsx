@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 import BaseLayout from '../layout/BaseLayout';
 import { PATH } from '../routes/path';
 import { Guidance2, Summary } from '../styles/typography';
@@ -8,6 +8,7 @@ import { graphql } from 'gatsby';
 import NoContent from '../components/Common/NoContent';
 import DiaryCard from '../components/Diary/DiaryCard';
 import { DiaryType } from '../@types/Post.types';
+import { IGatsbyImageData } from 'gatsby-plugin-image';
 
 const DiaryWrapper = styled.div`
   width: 100%;
@@ -28,16 +29,44 @@ const Margin = styled.div`
 
 type DiaryPageProps = {
   data: {
+    site: {
+      siteMetadata: {
+        title: string;
+        description: string;
+        siteUrl: string;
+      };
+    };
     allMarkdownRemark: {
       edges: DiaryType[];
+    };
+    file: {
+      childImageSharp: {
+        gatsbyImageData: IGatsbyImageData;
+      };
+      publicURL: string;
     };
   };
 };
 
-const DiaryPage = ({ data }: DiaryPageProps) => {
-  const DiaryPostList = useMemo(() => data.allMarkdownRemark.edges, [data]);
+const DiaryPage = ({
+  data: {
+    site: {
+      siteMetadata: { title, description, siteUrl },
+    },
+    allMarkdownRemark: { edges },
+    file: { publicURL },
+  },
+}: DiaryPageProps) => {
   return (
-    <BaseLayout path={PATH.diary}>
+    <BaseLayout
+      path={PATH.diary}
+      meta={{
+        title,
+        description,
+        url: siteUrl,
+        image: publicURL,
+      }}
+    >
       <DiaryWrapper>
         <DiaryHead>
           <Guidance2>Short Diary</Guidance2>
@@ -46,16 +75,14 @@ const DiaryPage = ({ data }: DiaryPageProps) => {
             끄적끄적 내맘대로 적는 일상과 회고록
           </Summary>
         </DiaryHead>
-        {DiaryPostList.length > 0 ? (
-          data.allMarkdownRemark.edges.map(
-            ({ node: { fields, frontmatter } }, index) => (
-              <DiaryCard
-                key={`${index}_${frontmatter.title}`}
-                slug={fields.slug}
-                content={frontmatter}
-              />
-            ),
-          )
+        {edges.length > 0 ? (
+          edges.map(({ node: { fields, frontmatter } }, index) => (
+            <DiaryCard
+              key={`${index}_${frontmatter.title}`}
+              slug={fields.slug}
+              content={frontmatter}
+            />
+          ))
         ) : (
           <NoContent />
         )}
@@ -68,6 +95,13 @@ export default DiaryPage;
 
 export const diaryContent = graphql`
   query diaryContent {
+    site {
+      siteMetadata {
+        title
+        description
+        siteUrl
+      }
+    }
     allMarkdownRemark(
       sort: [{ frontmatter: { date: DESC } }, { frontmatter: { title: ASC } }]
       filter: { frontmatter: { tags: { eq: null }, update: { eq: true } } }
@@ -87,6 +121,12 @@ export const diaryContent = graphql`
           }
         }
       }
+    }
+    file(name: { eq: "profile-image" }) {
+      childImageSharp {
+        gatsbyImageData(width: 120, height: 120)
+      }
+      publicURL
     }
   }
 `;

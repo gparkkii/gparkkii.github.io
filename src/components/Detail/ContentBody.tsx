@@ -11,13 +11,13 @@ interface ContentBodyProps {
 
 const ImageWrapper = styled.div`
   margin: 0 auto;
-  margin-bottom: 40px;
+  margin-bottom: 60px;
   border-radius: 20px;
   overflow: hidden;
   isolation: isolate;
 
   ${mediaQuery.sm} {
-    margin-bottom: 20px;
+    margin-bottom: 40px;
   }
 `;
 
