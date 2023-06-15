@@ -3,9 +3,7 @@ import React, { createRef, FunctionComponent, useEffect } from 'react';
 
 const UtteranceBox = styled.div`
   width: 100%;
-  margin-top: 60px;
-  border-top: 2px solid ${({ theme }) => theme.colors.bluegray[300]};
-  padding-top: 60px;
+  margin-top: 128px;
   .utterances {
     max-width: 960px;
     width: 100%;

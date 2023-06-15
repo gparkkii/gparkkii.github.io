@@ -4,7 +4,7 @@ import PostLayout from 'layout/PostLayout';
 import ContentHead from 'components/Detail/ContentHead';
 import ContentBody from 'components/Detail/ContentBody';
 import CommentWidget from 'components/Detail/CommentWidget';
-import ContentNav from 'components/Detail/ContentNav';
+import ContentFooter from 'components/Detail/ContentFooter';
 import TableOfContents from 'components/Detail/TableOfContents';
 import { PostPageItemType, PageContextType } from 'types/Post.types';
 import { graphql } from 'gatsby';
@@ -63,7 +63,7 @@ const PostTemplate: FunctionComponent<PostTemplateProps> = function ({
       <PostLayout>
         <ContentHead title={title} date={date} />
         <ContentBody html={html} thumbnail={gatsbyImageData} />
-        <ContentNav previous={previous} next={next} />
+        <ContentFooter previous={previous} next={next} tags={tags} />
         <CommentWidget />
       </PostLayout>
     </BaseLayout>
