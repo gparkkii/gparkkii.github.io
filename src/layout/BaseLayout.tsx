@@ -54,6 +54,11 @@ const BaseLayout = ({ path, children, meta }: BaseLayoutProps) => {
       <Helmet>
         <html lang="ko" />
         <title>{meta ? meta.title : INITIAL_META.title}</title>
+        <script
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXX"
+          crossOrigin="anonymous"
+          async
+        />
         <meta
           name="google-site-verification"
           content="i1k9fAJNvByDpCtfnvLiC1aCfhuag46Ftm5CVnntwrI"

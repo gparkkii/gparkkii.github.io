@@ -79,6 +79,12 @@ module.exports = {
       },
     },
     {
+      resolve: 'gatsby-plugin-google-adsense',
+      options: {
+        publisherId: 'ca-pub-2027013404980781',
+      },
+    },
+    {
       resolve: 'gatsby-plugin-canonical-urls',
       options: {
         siteUrl: 'https://gparkkii.github.io/',
