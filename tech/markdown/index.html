@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="ko"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta name="generator" content="Gatsby 5.9.1"/><meta data-react-helmet="true" name="google-site-verification" content="i1k9fAJNvByDpCtfnvLiC1aCfhuag46Ftm5CVnntwrI"/><meta data-react-helmet="true" name="description" content="Git 사용자라면 필수로 이용하게 되는 마크다운. 테크 블로그에서도, 기타 문서 작성에도 자주 이용되는 마크다운 문법에 대해 정리해보자."/><meta data-react-helmet="true" name="viewport" content="width=device-width, initial-scale=1.0"/><meta data-react-helmet="true" http-equiv="Content-Type" content="text/html;charset=UTF-8"/><meta data-react-helmet="true" property="og:type" content="website"/><meta data-react-helmet="true" property="og:title" content="마크다운 markdown 사용법 총정리 - 기본편"/><meta data-react-helmet="true" property="og:description" content="Git 사용자라면 필수로 이용하게 되는 마크다운. 테크 블로그에서도, 기타 문서 작성에도 자주 이용되는 마크다운 문법에 대해 정리해보자."/><meta data-react-helmet="true" property="og:image" content="/static/53f2005a49bc6341f76a3d8c9bf09219/markdown.png"/><meta data-react-helmet="true" property="og:url"/><meta data-react-helmet="true" property="og:site_name" content="마크다운 markdown 사용법 총정리 - 기본편"/><style data-href="/styles.03e4a39d999a2f5373eb.css" data-identity="gatsby-global-css">.gatsby-code-button-container{display:flex;justify-content:flex-end;pointer-events:none;position:relative;top:28px;touch-action:none;z-index:100}.gatsby-code-button{cursor:pointer;pointer-events:auto}.gatsby-code-button:after{background-color:#000;color:#fff;content:attr(data-tooltip);display:none;font-size:16px;padding:5px;position:absolute;visibility:hidden;white-space:nowrap}.gatsby-code-button[data-tooltip]:after{right:0;top:26px}.gatsby-code-button[data-tooltip]:focus:after,.gatsby-code-button[data-tooltip]:hover:after{display:block;visibility:visible;z-index:200}.gatsby-code-button-toaster{align-items:center;bottom:0;display:flex;height:100vh;justify-content:center;left:0;pointer-events:none;position:fixed;right:0;top:0;width:100vw;z-index:500}.gatsby-code-button-toaster-text{animation:animation 3s cubic-bezier(.98,.01,.53,.47);background-color:#000;border-radius:2px;color:#fff;font-family:monospace;font-size:24px;letter-spacing:-1px;margin:0 15px;max-width:850px;opacity:0;padding:20px;text-align:center;width:100%}.gatsby-code-button-buffer{opacity:0;position:fixed;top:-9999px}@keyframes animation{0%,50%{opacity:1}50%,to{opacity:0}}code[class*=language-],pre[class*=language-]{word-wrap:normal;background:none;color:#ccc;font-family:Consolas,Monaco,Andale Mono,Ubuntu Mono,monospace;font-size:1em;-webkit-hyphens:none;hyphens:none;line-height:1.5;tab-size:4;text-align:left;white-space:pre;word-break:normal;word-spacing:normal}pre[class*=language-]{margin:.5em 0;overflow:auto;padding:1em}:not(pre)>code[class*=language-],pre[class*=language-]{background:#2d2d2d}:not(pre)>code[class*=language-]{border-radius:.3em;padding:.1em;white-space:normal}.token.block-comment,.token.cdata,.token.comment,.token.doctype,.token.prolog{color:#999}.token.punctuation{color:#ccc}.token.attr-name,.token.deleted,.token.namespace,.token.tag{color:#e2777a}.token.function-name{color:#6196cc}.token.boolean,.token.function,.token.number{color:#f08d49}.token.class-name,.token.constant,.token.property,.token.symbol{color:#f8c555}.token.atrule,.token.builtin,.token.important,.token.keyword,.token.selector{color:#cc99cd}.token.attr-value,.token.char,.token.regex,.token.string,.token.variable{color:#7ec699}.token.entity,.token.operator,.token.url{color:#67cdcc}.token.bold,.token.important{font-weight:700}.token.italic{font-style:italic}.token.entity{cursor:help}.token.inserted{color:green}</style><style type="text/css">:root, :host {
+<!DOCTYPE html><html lang="ko"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta name="generator" content="Gatsby 5.9.1"/><meta data-react-helmet="true" name="google-site-verification" content="i1k9fAJNvByDpCtfnvLiC1aCfhuag46Ftm5CVnntwrI"/><meta data-react-helmet="true" name="google-adsense-account" content="ca-pub-2027013404980781"/><meta data-react-helmet="true" name="description" content="Git 사용자라면 필수로 이용하게 되는 마크다운. 테크 블로그에서도, 기타 문서 작성에도 자주 이용되는 마크다운 문법에 대해 정리해보자."/><meta data-react-helmet="true" name="viewport" content="width=device-width, initial-scale=1.0"/><meta data-react-helmet="true" http-equiv="Content-Type" content="text/html;charset=UTF-8"/><meta data-react-helmet="true" property="og:type" content="website"/><meta data-react-helmet="true" property="og:title" content="마크다운 markdown 사용법 총정리 - 기본편"/><meta data-react-helmet="true" property="og:description" content="Git 사용자라면 필수로 이용하게 되는 마크다운. 테크 블로그에서도, 기타 문서 작성에도 자주 이용되는 마크다운 문법에 대해 정리해보자."/><meta data-react-helmet="true" property="og:image" content="/static/53f2005a49bc6341f76a3d8c9bf09219/markdown.png"/><meta data-react-helmet="true" property="og:url"/><meta data-react-helmet="true" property="og:site_name" content="마크다운 markdown 사용법 총정리 - 기본편"/><style data-href="/styles.03e4a39d999a2f5373eb.css" data-identity="gatsby-global-css">.gatsby-code-button-container{display:flex;justify-content:flex-end;pointer-events:none;position:relative;top:28px;touch-action:none;z-index:100}.gatsby-code-button{cursor:pointer;pointer-events:auto}.gatsby-code-button:after{background-color:#000;color:#fff;content:attr(data-tooltip);display:none;font-size:16px;padding:5px;position:absolute;visibility:hidden;white-space:nowrap}.gatsby-code-button[data-tooltip]:after{right:0;top:26px}.gatsby-code-button[data-tooltip]:focus:after,.gatsby-code-button[data-tooltip]:hover:after{display:block;visibility:visible;z-index:200}.gatsby-code-button-toaster{align-items:center;bottom:0;display:flex;height:100vh;justify-content:center;left:0;pointer-events:none;position:fixed;right:0;top:0;width:100vw;z-index:500}.gatsby-code-button-toaster-text{animation:animation 3s cubic-bezier(.98,.01,.53,.47);background-color:#000;border-radius:2px;color:#fff;font-family:monospace;font-size:24px;letter-spacing:-1px;margin:0 15px;max-width:850px;opacity:0;padding:20px;text-align:center;width:100%}.gatsby-code-button-buffer{opacity:0;position:fixed;top:-9999px}@keyframes animation{0%,50%{opacity:1}50%,to{opacity:0}}code[class*=language-],pre[class*=language-]{word-wrap:normal;background:none;color:#ccc;font-family:Consolas,Monaco,Andale Mono,Ubuntu Mono,monospace;font-size:1em;-webkit-hyphens:none;hyphens:none;line-height:1.5;tab-size:4;text-align:left;white-space:pre;word-break:normal;word-spacing:normal}pre[class*=language-]{margin:.5em 0;overflow:auto;padding:1em}:not(pre)>code[class*=language-],pre[class*=language-]{background:#2d2d2d}:not(pre)>code[class*=language-]{border-radius:.3em;padding:.1em;white-space:normal}.token.block-comment,.token.cdata,.token.comment,.token.doctype,.token.prolog{color:#999}.token.punctuation{color:#ccc}.token.attr-name,.token.deleted,.token.namespace,.token.tag{color:#e2777a}.token.function-name{color:#6196cc}.token.boolean,.token.function,.token.number{color:#f08d49}.token.class-name,.token.constant,.token.property,.token.symbol{color:#f8c555}.token.atrule,.token.builtin,.token.important,.token.keyword,.token.selector{color:#cc99cd}.token.attr-value,.token.char,.token.regex,.token.string,.token.variable{color:#7ec699}.token.entity,.token.operator,.token.url{color:#67cdcc}.token.bold,.token.important{font-weight:700}.token.italic{font-style:italic}.token.entity{cursor:help}.token.inserted{color:green}</style><style type="text/css">:root, :host {
   --fa-font-solid: normal 900 1em/1 "Font Awesome 6 Solid";
   --fa-font-regular: normal 400 1em/1 "Font Awesome 6 Regular";
   --fa-font-light: normal 300 1em/1 "Font Awesome 6 Light";
@@ -834,7 +834,7 @@ svg:not(:root).svg-inline--fa, svg:not(:host).svg-inline--fa {
 <h3 id="211-제목-사용법" style="position:relative;"><a href="#211-%EC%A0%9C%EB%AA%A9-%EC%82%AC%EC%9A%A9%EB%B2%95" aria-label="211 제목 사용법 permalink" class="anchor-header before"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>2.1.1 제목 사용법</h3>
 <div
               class="gatsby-code-button-container"
-              data-toaster-id="2147145941164541000"
+              data-toaster-id="98546146023321630000"
               data-toaster-class="gatsby-code-button-toaster"
               data-toaster-text-class="gatsby-code-button-toaster-text"
               data-toaster-text="📋  코드를 복사했습니다."
@@ -844,7 +844,7 @@ svg:not(:root).svg-inline--fa, svg:not(:host).svg-inline--fa {
 ### h3 제목 3
 #### h4 제목 4
 ##### h5 제목 5
-###### h6 제목 6`, `2147145941164541000`)"
+###### h6 제목 6`, `98546146023321630000`)"
             >
               <div
                 class="gatsby-code-button"
@@ -873,13 +873,13 @@ svg:not(:root).svg-inline--fa, svg:not(:host).svg-inline--fa {
 <h3 id="-큰제목-문서-제목" style="position:relative;"><a href="#-%ED%81%B0%EC%A0%9C%EB%AA%A9-%EB%AC%B8%EC%84%9C-%EC%A0%9C%EB%AA%A9" aria-label=" 큰제목 문서 제목 permalink" class="anchor-header before"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>❏ 큰제목: 문서 제목</h3>
 <div
               class="gatsby-code-button-container"
-              data-toaster-id="31615115230389580000"
+              data-toaster-id="65523971715497130000"
               data-toaster-class="gatsby-code-button-toaster"
               data-toaster-text-class="gatsby-code-button-toaster-text"
               data-toaster-text="📋  코드를 복사했습니다."
               data-toaster-duration="3000"
               onClick="copyToClipboard(`H1: 문서 제목
-=============`, `31615115230389580000`)"
+=============`, `65523971715497130000`)"
             >
               <div
                 class="gatsby-code-button"
@@ -895,13 +895,13 @@ svg:not(:root).svg-inline--fa, svg:not(:host).svg-inline--fa {
 <h3 id="-작은제목-문서-부제목" style="position:relative;"><a href="#-%EC%9E%91%EC%9D%80%EC%A0%9C%EB%AA%A9-%EB%AC%B8%EC%84%9C-%EB%B6%80%EC%A0%9C%EB%AA%A9" aria-label=" 작은제목 문서 부제목 permalink" class="anchor-header before"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>❏ 작은제목: 문서 부제목</h3>
 <div
               class="gatsby-code-button-container"
-              data-toaster-id="64501582857249915000"
+              data-toaster-id="33686030552540760000"
               data-toaster-class="gatsby-code-button-toaster"
               data-toaster-text-class="gatsby-code-button-toaster-text"
               data-toaster-text="📋  코드를 복사했습니다."
               data-toaster-duration="3000"
               onClick="copyToClipboard(`H2: 문서 부제목
--------------`, `64501582857249915000`)"
+-------------`, `33686030552540760000`)"
             >
               <div
                 class="gatsby-code-button"
@@ -919,12 +919,12 @@ svg:not(:root).svg-inline--fa, svg:not(:host).svg-inline--fa {
 <h3 id="221-single-blockquote" style="position:relative;"><a href="#221-single-blockquote" aria-label="221 single blockquote permalink" class="anchor-header before"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>2.2.1 Single BlockQuote</h3>
 <div
               class="gatsby-code-button-container"
-              data-toaster-id="70006159263686790000"
+              data-toaster-id="45034486184890120000"
               data-toaster-class="gatsby-code-button-toaster"
               data-toaster-text-class="gatsby-code-button-toaster-text"
               data-toaster-text="📋  코드를 복사했습니다."
               data-toaster-duration="3000"
-              onClick="copyToClipboard(`> This is a single blockqute.`, `70006159263686790000`)"
+              onClick="copyToClipboard(`> This is a single blockqute.`, `45034486184890120000`)"
             >
               <div
                 class="gatsby-code-button"
@@ -940,14 +940,14 @@ svg:not(:root).svg-inline--fa, svg:not(:host).svg-inline--fa {
 <h3 id="221-nested-blockquote" style="position:relative;"><a href="#221-nested-blockquote" aria-label="221 nested blockquote permalink" class="anchor-header before"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>2.2.1 Nested BlockQuote</h3>
 <div
               class="gatsby-code-button-container"
-              data-toaster-id="59187406379710200000"
+              data-toaster-id="79381715425231210000"
               data-toaster-class="gatsby-code-button-toaster"
               data-toaster-text-class="gatsby-code-button-toaster-text"
               data-toaster-text="📋  코드를 복사했습니다."
               data-toaster-duration="3000"
               onClick="copyToClipboard(`> This is nested blockqute.
 > > This is nested blockqute.
-> > > This is nested blockqute.`, `59187406379710200000`)"
+> > > This is nested blockqute.`, `79381715425231210000`)"
             >
               <div
                 class="gatsby-code-button"
@@ -983,14 +983,14 @@ svg:not(:root).svg-inline--fa, svg:not(:host).svg-inline--fa {
 <p>순서있는 목록은 숫자와 점을 사용한다.</p>
 <div
               class="gatsby-code-button-container"
-              data-toaster-id="3748001771313381000"
+              data-toaster-id="13105721489955525000"
               data-toaster-class="gatsby-code-button-toaster"
               data-toaster-text-class="gatsby-code-button-toaster-text"
               data-toaster-text="📋  코드를 복사했습니다."
               data-toaster-duration="3000"
               onClick="copyToClipboard(`1. 첫번째
 2. 두번째
-3. 세번째`, `3748001771313381000`)"
+3. 세번째`, `13105721489955525000`)"
             >
               <div
                 class="gatsby-code-button"
@@ -1011,14 +1011,14 @@ svg:not(:root).svg-inline--fa, svg:not(:host).svg-inline--fa {
 <p>글머리 기호: <code class="language-text">*</code>, <code class="language-text">+</code>, <code class="language-text">-</code> 를 지원한다.</p>
 <div
               class="gatsby-code-button-container"
-              data-toaster-id="82537106300616460000"
+              data-toaster-id="83201458969770500000"
               data-toaster-class="gatsby-code-button-toaster"
               data-toaster-text-class="gatsby-code-button-toaster-text"
               data-toaster-text="📋  코드를 복사했습니다."
               data-toaster-duration="3000"
               onClick="copyToClipboard(`* 별표
   + 더하기
-    - 빼기`, `82537106300616460000`)"
+    - 빼기`, `83201458969770500000`)"
             >
               <div
                 class="gatsby-code-button"
@@ -1046,7 +1046,7 @@ svg:not(:root).svg-inline--fa, svg:not(:host).svg-inline--fa {
 <code class="language-text">ul</code> 안에 sub list는 탭 한번으로 가능해보인다.</p>
 <div
               class="gatsby-code-button-container"
-              data-toaster-id="31739146056351707000"
+              data-toaster-id="93745828911620730000"
               data-toaster-class="gatsby-code-button-toaster"
               data-toaster-text-class="gatsby-code-button-toaster-text"
               data-toaster-text="📋  코드를 복사했습니다."
@@ -1060,7 +1060,7 @@ svg:not(:root).svg-inline--fa, svg:not(:host).svg-inline--fa {
   1. 숫자
   * 별표
     + 더하기
-      - 대쉬`, `31739146056351707000`)"
+      - 대쉬`, `93745828911620730000`)"
             >
               <div
                 class="gatsby-code-button"
@@ -1113,7 +1113,7 @@ svg:not(:root).svg-inline--fa, svg:not(:host).svg-inline--fa {
 <h2 id="24-강조emphasis" style="position:relative;"><a href="#24-%EA%B0%95%EC%A1%B0emphasis" aria-label="24 강조emphasis permalink" class="anchor-header before"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>2.4. 강조(Emphasis)</h2>
 <div
               class="gatsby-code-button-container"
-              data-toaster-id="44404780289603330000"
+              data-toaster-id="93735072992699270000"
               data-toaster-class="gatsby-code-button-toaster"
               data-toaster-text-class="gatsby-code-button-toaster-text"
               data-toaster-text="📋  코드를 복사했습니다."
@@ -1124,7 +1124,7 @@ _Italic: single underscores_
 __Bold: double underscores__
 **Bold and _Italic_** and normal
 <u>Underline: use \`u\`</u>
-~~LineThrough: double wavy~~`, `44404780289603330000`)"
+~~LineThrough: double wavy~~`, `93735072992699270000`)"
             >
               <div
                 class="gatsby-code-button"
@@ -1156,7 +1156,7 @@ __Bold: double underscores__
 <p><code class="language-text">[링크 설명](url)</code> 방식으로 표현하여 url을 <code class="language-text">[Keyword]</code>로 표현 할 수 있다.</p>
 <div
               class="gatsby-code-button-container"
-              data-toaster-id="7399954745095961000"
+              data-toaster-id="17183270117364158000"
               data-toaster-class="gatsby-code-button-toaster"
               data-toaster-text-class="gatsby-code-button-toaster-text"
               data-toaster-text="📋  코드를 복사했습니다."
@@ -1169,7 +1169,7 @@ __Bold: double underscores__
 
 4. [GitHub][1]
 
-[1]: https://github.com`, `7399954745095961000`)"
+[1]: https://github.com`, `17183270117364158000`)"
             >
               <div
                 class="gatsby-code-button"
@@ -1204,14 +1204,14 @@ __Bold: double underscores__
 <h3 id="252-참조-링크" style="position:relative;"><a href="#252-%EC%B0%B8%EC%A1%B0-%EB%A7%81%ED%81%AC" aria-label="252 참조 링크 permalink" class="anchor-header before"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>2.5.2 참조 링크</h3>
 <div
               class="gatsby-code-button-container"
-              data-toaster-id="63597914649842590000"
+              data-toaster-id="40511293883551990000"
               data-toaster-class="gatsby-code-button-toaster"
               data-toaster-text-class="gatsby-code-button-toaster-text"
               data-toaster-text="📋  코드를 복사했습니다."
               data-toaster-duration="3000"
               onClick="copyToClipboard(`문서 안에 [참조 링크]를 사용할 수 있다.
 
-[참조 링크]: https://github.co`, `63597914649842590000`)"
+[참조 링크]: https://github.co`, `40511293883551990000`)"
             >
               <div
                 class="gatsby-code-button"
@@ -1228,14 +1228,14 @@ __Bold: double underscores__
 <p>일반 URL 이나 이메일 주소, 또는 꺾쇠 괄호(<code class="language-text">&lt; ></code>, Angle Brackets)안의 URL은 자동으로 링크를 생성한다.</p>
 <div
               class="gatsby-code-button-container"
-              data-toaster-id="59384622062534830000"
+              data-toaster-id="40188016493989290000"
               data-toaster-class="gatsby-code-button-toaster"
               data-toaster-text-class="gatsby-code-button-toaster-text"
               data-toaster-text="📋  코드를 복사했습니다."
               data-toaster-duration="3000"
               onClick="copyToClipboard(`* 구글 홈페이지: https://google.com
 * 외부링크: <http://example.com/>
-* 이메일링크: <address@example.com>`, `59384622062534830000`)"
+* 이메일링크: <address@example.com>`, `40188016493989290000`)"
             >
               <div
                 class="gatsby-code-button"
@@ -1256,7 +1256,7 @@ __Bold: double underscores__
 <p>마크다운에서는 엔터키 대신 띄어쓰기 두번을 사용해야한다.</p>
 <div
               class="gatsby-code-button-container"
-              data-toaster-id="70899219032679310000"
+              data-toaster-id="93471645476067850000"
               data-toaster-class="gatsby-code-button-toaster"
               data-toaster-text-class="gatsby-code-button-toaster-text"
               data-toaster-text="📋  코드를 복사했습니다."
@@ -1270,7 +1270,7 @@ __Bold: double underscores__
 뛰어쓰기로 사용되는 &nbsp;&nbsp;
 는 진짜 띄어쓰기만 된다.
 
-또는 쉽게 <br> 태그를 활용할 수 있다.`, `70899219032679310000`)"
+또는 쉽게 <br> 태그를 활용할 수 있다.`, `93471645476067850000`)"
             >
               <div
                 class="gatsby-code-button"
@@ -1301,7 +1301,7 @@ __Bold: double underscores__
 <code class="language-text">&lt;hr/></code> 태그를 아래와 같이 표현 할 수 있다.</p>
 <div
               class="gatsby-code-button-container"
-              data-toaster-id="83632325922300990000"
+              data-toaster-id="33685575406051414000"
               data-toaster-class="gatsby-code-button-toaster"
               data-toaster-text-class="gatsby-code-button-toaster-text"
               data-toaster-text="📋  코드를 복사했습니다."
@@ -1315,7 +1315,7 @@ ___
 (asterisks x3) 
 ***
 
-<hr/>`, `83632325922300990000`)"
+<hr/>`, `33685575406051414000`)"
             >
               <div
                 class="gatsby-code-button"
@@ -1345,6 +1345,6 @@ ___
           <script
             id="gatsby-chunk-mapping"
           >
-            window.___chunkMapping="{\"app\":[\"/app-7db770f7b9ace0b407e0.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-af3aff115addf8eeb88a.js\"],\"component---src-pages-diary-tsx\":[\"/component---src-pages-diary-tsx-5eec0c8129b0868b8727.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-90fabd5c6fb219cf1742.js\"],\"component---src-pages-search-tsx\":[\"/component---src-pages-search-tsx-c4425d2a28d8dfde927f.js\"],\"component---src-templates-diary-template-tsx\":[\"/component---src-templates-diary-template-tsx-f1818d0a0e638f2769ec.js\"],\"component---src-templates-post-template-tsx\":[\"/component---src-templates-post-template-tsx-652ebc802cd46e84f992.js\"]}";
+            window.___chunkMapping="{\"app\":[\"/app-7db770f7b9ace0b407e0.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-a544e4ef16dcf1654739.js\"],\"component---src-pages-diary-tsx\":[\"/component---src-pages-diary-tsx-5eec0c8129b0868b8727.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-90fabd5c6fb219cf1742.js\"],\"component---src-pages-search-tsx\":[\"/component---src-pages-search-tsx-c4425d2a28d8dfde927f.js\"],\"component---src-templates-diary-template-tsx\":[\"/component---src-templates-diary-template-tsx-f1818d0a0e638f2769ec.js\"],\"component---src-templates-post-template-tsx\":[\"/component---src-templates-post-template-tsx-652ebc802cd46e84f992.js\"]}";
           </script>
-        <script>window.___webpackCompilationHash="ee3d195aca4c72007210";</script><script src="/webpack-runtime-0e88ee38a31d8d99c3cc.js" async></script><script src="/framework-934970064493ef69fe96.js" async></script><script src="/app-7db770f7b9ace0b407e0.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
+        <script>window.___webpackCompilationHash="d0fdd5f5f61db514dce9";</script><script src="/webpack-runtime-53f48ad76ac3a4080bea.js" async></script><script src="/framework-934970064493ef69fe96.js" async></script><script src="/app-7db770f7b9ace0b407e0.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
